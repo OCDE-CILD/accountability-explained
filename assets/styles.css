@@ -55,15 +55,11 @@ a {
 }
 
 .brand-mark {
-  width: 64px;
-  height: 64px;
+  width: 86px;
+  height: 58px;
   display: grid;
   place-items: center;
-  border-radius: 999px;
-  border: 1px solid rgba(243, 183, 63, 0.95);
-  background: rgba(255, 255, 255, 0.05);
   flex: 0 0 auto;
-  padding: 7px;
 }
 
 .brand-mark svg {
@@ -146,21 +142,6 @@ a {
   max-width: 1480px;
   margin: 0 auto;
   padding: 14px 28px 30px;
-}
-
-.hero-plain {
-  max-width: 1020px;
-  margin: 6px auto 4px;
-  padding: 4px 0 0;
-  text-align: center;
-}
-
-.hero-plain h1 {
-  margin: 0;
-  font-size: clamp(2.1rem, 3.3vw, 3.2rem);
-  line-height: 1.05;
-  letter-spacing: -0.05em;
-  color: var(--navy);
 }
 
 .section {
@@ -297,46 +278,46 @@ a {
 }
 
 .group-arrow {
-  color: var(--accent);
+  color: var(--navy);
   font-size: 2rem;
   line-height: 1;
   font-weight: 500;
 }
 
-/* muted palette from the provided references */
-.accent-teal {
-  --accent: #4b7c79;
-  --accent-rgb: 75, 124, 121;
+/* approved student group colors */
+.accent-race {
+  --accent: #157381;
+  --accent-rgb: 21, 115, 129;
 }
 
-.accent-blue {
-  --accent: #4f6d8a;
-  --accent-rgb: 79, 109, 138;
+.accent-sed {
+  --accent: #3c679e;
+  --accent-rgb: 60, 103, 158;
 }
 
-.accent-sky {
-  --accent: #5a7b94;
-  --accent-rgb: 90, 123, 148;
+.accent-english {
+  --accent: #4f7391;
+  --accent-rgb: 79, 115, 145;
 }
 
-.accent-green {
-  --accent: #6a8265;
-  --accent-rgb: 106, 130, 101;
+.accent-ltel {
+  --accent: #4d7150;
+  --accent-rgb: 77, 113, 80;
 }
 
-.accent-indigo {
-  --accent: #46657a;
-  --accent-rgb: 70, 101, 122;
+.accent-swd {
+  --accent: #344d7d;
+  --accent-rgb: 52, 77, 125;
 }
 
-.accent-lavender {
-  --accent: #766b8d;
-  --accent-rgb: 118, 107, 141;
+.accent-homeless {
+  --accent: #716095;
+  --accent-rgb: 113, 96, 149;
 }
 
-.accent-plum {
-  --accent: #6c587a;
-  --accent-rgb: 108, 88, 122;
+.accent-foster {
+  --accent: #7b4776;
+  --accent-rgb: 123, 71, 118;
 }
 
 .band {
@@ -571,10 +552,6 @@ a {
 
   .page {
     padding: 14px;
-  }
-
-  .hero-plain {
-    padding: 6px 0 0;
   }
 
   .portal-grid {
