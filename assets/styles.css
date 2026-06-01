@@ -367,27 +367,28 @@ a {
   border-radius: 999px;
   display: grid;
   place-items: center;
-  color: #fff;
   flex: 0 0 auto;
-  padding: 8px;
+  overflow: hidden;
+  background: transparent;
 }
 
-.how-icon svg {
+.how-image {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
 }
 
 .icon-blue {
-  background: #2d6cdf;
+  background: transparent;
 }
 
 .icon-green {
-  background: #4f8b57;
+  background: transparent;
 }
 
 .icon-gold {
-  background: #e0a11f;
+  background: transparent;
 }
 
 .note {
@@ -408,16 +409,17 @@ a {
   width: 64px;
   height: 64px;
   flex: 0 0 auto;
-  padding: 12px;
-  color: #d08a20;
+  padding: 10px;
   border-radius: 999px;
   border: 1px solid #ecd9b8;
   background: rgba(255, 255, 255, 0.7);
+  overflow: hidden;
 }
 
-.note-icon svg {
+.note-image {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
 }
 
