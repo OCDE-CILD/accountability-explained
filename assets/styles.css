@@ -62,9 +62,10 @@ a {
   flex: 0 0 auto;
 }
 
-.brand-mark svg {
+.brand-logo {
   width: 100%;
   height: 100%;
+  object-fit: contain;
   display: block;
 }
 
@@ -284,7 +285,6 @@ a {
   font-weight: 500;
 }
 
-/* approved student group colors */
 .accent-race {
   --accent: #157381;
   --accent-rgb: 21, 115, 129;
