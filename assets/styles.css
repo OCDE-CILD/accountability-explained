@@ -277,6 +277,7 @@ a {
   font-weight: 500;
 }
 
+/* Cool palette only, no red/gold */
 .group-1,
 .accent-teal {
   --accent: #0f766e;
@@ -293,8 +294,8 @@ a {
 }
 
 .group-4,
-.accent-lightblue {
-  --accent: #60a5fa;
+.accent-darkteal {
+  --accent: #0b7a75;
 }
 
 .group-5,
@@ -308,8 +309,8 @@ a {
 }
 
 .group-7,
-.accent-darkteal {
-  --accent: #0b7a75;
+.accent-deepblue {
+  --accent: #17386a;
 }
 
 .band {
