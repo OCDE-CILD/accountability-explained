@@ -363,7 +363,7 @@ a {
   border: 1px solid #ecd9b8;
   background: #fff7ec;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   color: var(--navy);
@@ -391,19 +391,21 @@ a {
   flex: 1 1 460px;
   text-align: left;
   padding-top: 2px;
+  font-size: 0.88rem;
+  line-height: 1.35;
 }
 
 .note-copy strong {
-  display: block;
-  margin-bottom: 8px;
+  display: inline;
+  margin-right: 6px;
   white-space: nowrap;
   color: var(--navy);
 }
 
 .note-copy span {
-  display: inline-block;
+  display: inline;
   color: var(--navy);
-  line-height: 1.45;
+  line-height: 1.35;
 }
 
 .note-link {
@@ -413,6 +415,7 @@ a {
   margin-left: auto;
   align-self: center;
 }
+
 .hero.compact {
   margin-top: 8px;
 }
