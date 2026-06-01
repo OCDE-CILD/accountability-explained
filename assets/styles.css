@@ -279,10 +279,18 @@ a {
 }
 
 .group-arrow {
-  color: var(--navy);
-  font-size: 2rem;
+  color: var(--accent);
+  font-size: 2.4rem;
   line-height: 1;
-  font-weight: 500;
+  font-weight: 800;
+
+  display: inline-block;
+
+  transition: transform 0.2s ease;
+}
+
+.group-card:hover .group-arrow {
+  transform: translateX(3px);
 }
 
 .accent-race {
