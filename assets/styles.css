@@ -370,11 +370,12 @@ a {
   flex: 0 0 auto;
   overflow: hidden;
   background: transparent;
+  padding: 8px;
 }
 
 .how-image {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
   object-fit: contain;
   display: block;
 }
