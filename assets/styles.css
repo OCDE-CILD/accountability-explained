@@ -279,14 +279,10 @@ a {
 }
 
 .group-arrow {
-  color: var(--accent);
-  font-size: 2.4rem;
-  line-height: 1;
-  font-weight: 800;
-
-  display: inline-block;
-
-  transition: transform 0.2s ease;
+    color: var(--accent);
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .group-card:hover .group-arrow {
