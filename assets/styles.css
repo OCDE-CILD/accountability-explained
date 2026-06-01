@@ -55,16 +55,21 @@ a {
 }
 
 .brand-mark {
-  width: 54px;
-  height: 54px;
+  width: 64px;
+  height: 64px;
   display: grid;
   place-items: center;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: rgba(255, 255, 255, 0.06);
-  font-weight: 800;
-  letter-spacing: 0.06em;
   flex: 0 0 auto;
+  padding: 10px;
+}
+
+.brand-mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .brand-copy {
@@ -81,7 +86,8 @@ a {
 .brand-subtitle {
   margin-top: 5px;
   font-size: 0.84rem;
-  color: rgba(255, 255, 255, 0.78);
+  color: #f8c44f;
+  font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -138,38 +144,38 @@ a {
 .page {
   max-width: 1480px;
   margin: 0 auto;
-  padding: 22px 28px 40px;
+  padding: 16px 28px 34px;
 }
 
 .hero-plain {
-  max-width: 1060px;
-  margin: 12px auto 10px;
-  padding: 12px 0 4px;
+  max-width: 1020px;
+  margin: 8px auto 8px;
+  padding: 10px 0 2px;
   text-align: center;
 }
 
 .hero-plain h1 {
   margin: 0;
-  font-size: clamp(2.6rem, 5vw, 4.15rem);
-  line-height: 1.04;
+  font-size: clamp(2.1rem, 3.3vw, 3.2rem);
+  line-height: 1.05;
   letter-spacing: -0.05em;
-  color: #17386a;
+  color: var(--navy);
 }
 
 .lead {
   max-width: 920px;
-  margin: 14px auto 0;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--muted);
+  margin: 12px auto 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--navy);
 }
 
 .section {
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .section-heading {
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .section-heading.centered {
@@ -178,18 +184,19 @@ a {
 
 .section-heading h2 {
   margin: 0;
-  font-size: 1.92rem;
+  font-size: 1.55rem;
   letter-spacing: -0.04em;
-  color: var(--text);
+  color: var(--navy);
 }
 
 .section-heading p {
-  margin: 6px 0 0;
-  color: var(--muted);
+  margin: 4px 0 0;
+  color: var(--navy);
+  font-size: 0.94rem;
 }
 
 .portal-grid {
-  margin-top: 14px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 14px;
@@ -197,7 +204,7 @@ a {
 
 .group-card {
   --accent: #1d4ed8;
-  min-height: 330px;
+  min-height: 320px;
   padding: 18px 16px 14px;
   border-radius: 20px;
   border: 1px solid rgba(213, 223, 239, 0.95);
@@ -217,46 +224,57 @@ a {
 .group-content {
   display: flex;
   flex-direction: column;
-  min-height: 250px;
+  min-height: 240px;
 }
 
 .group-top {
-  min-height: 126px;
+  min-height: 122px;
 }
 
 .group-order {
-  display: inline-grid;
+  display: grid;
   place-items: center;
   width: 42px;
   height: 42px;
+  margin: 0 auto 16px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 1);
-  border: 2px solid color-mix(in srgb, var(--accent) 35%, white);
+  border: 2px solid color-mix(in srgb, var(--accent) 40%, white);
   color: var(--accent);
   font-weight: 900;
-  margin-bottom: 18px;
+  background:
+    radial-gradient(circle at 28% 26%, rgba(255,255,255,0.65), transparent 28%),
+    radial-gradient(circle at 72% 74%, rgba(255,255,255,0.55), transparent 22%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent) 13%, white),
+      color-mix(in srgb, var(--accent) 22%, white));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.75),
+    inset 0 -6px 14px rgba(255,255,255,0.24),
+    0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
 .group-card h3 {
   margin: 0;
   font-size: 1.08rem;
   letter-spacing: -0.02em;
-  line-height: 1.18;
+  line-height: 1.15;
+  text-align: center;
   color: var(--accent);
 }
 
 .group-card p {
-  margin: 0;
-  color: #42546d;
-  line-height: 1.65;
-  font-size: 0.92rem;
+  margin: 8px 0 0;
+  color: var(--navy);
+  line-height: 1.45;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 .group-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 10px;
+  justify-content: flex-end;
+  padding-top: 8px;
 }
 
 .group-arrow {
@@ -275,11 +293,11 @@ a {
 .group-7 { --accent: #0f766e; }
 
 .band {
-  padding-top: 24px;
+  padding-top: 18px;
 }
 
 .how-grid {
-  margin-top: 16px;
+  margin-top: 12px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
@@ -294,7 +312,7 @@ a {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 20px 18px;
+  padding: 18px 18px;
   background: rgba(255, 255, 255, 0.42);
 }
 
@@ -304,14 +322,15 @@ a {
 
 .how-item h3 {
   margin: 0 0 8px;
-  font-size: 1.04rem;
-  color: var(--text);
+  font-size: 1rem;
+  color: var(--navy);
 }
 
 .how-item p {
   margin: 0;
-  line-height: 1.68;
-  color: var(--muted);
+  line-height: 1.62;
+  color: var(--navy);
+  font-size: 0.94rem;
 }
 
 .how-icon {
@@ -321,9 +340,14 @@ a {
   display: grid;
   place-items: center;
   color: #fff;
-  font-weight: 900;
-  font-size: 1.1rem;
   flex: 0 0 auto;
+  padding: 11px;
+}
+
+.how-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .icon-blue { background: #2d6cdf; }
@@ -331,32 +355,56 @@ a {
 .icon-teal { background: #2fb4bd; }
 
 .note {
-  margin-top: 18px;
-  padding: 16px 18px;
+  margin-top: 16px;
+  padding: 14px 18px;
   border-radius: 18px;
   border: 1px solid #ecd9b8;
   background: #fff7ec;
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-wrap: wrap;
-  color: #3e4b60;
+  color: var(--navy);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
 }
 
-.note strong {
+.note-icon {
+  width: 54px;
+  height: 54px;
+  flex: 0 0 auto;
+  padding: 10px;
+  color: #d08a20;
+}
+
+.note-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.note-copy {
+  flex: 1 1 460px;
+  text-align: center;
+}
+
+.note-copy strong {
+  display: block;
+  margin-bottom: 8px;
   white-space: nowrap;
+  color: var(--navy);
 }
 
-.note span {
-  flex: 1 1 420px;
-  line-height: 1.65;
+.note-copy span {
+  display: inline-block;
+  color: var(--navy);
+  line-height: 1.5;
 }
 
-.note a {
+.note-link {
   white-space: nowrap;
   color: #1d4ed8;
   font-weight: 800;
+  margin-left: auto;
 }
 
 .hero.compact {
@@ -460,11 +508,11 @@ a {
   }
 
   .page {
-    padding: 16px;
+    padding: 14px;
   }
 
   .hero-plain {
-    padding: 8px 0 0;
+    padding: 6px 0 0;
   }
 
   .portal-grid {
@@ -481,5 +529,13 @@ a {
 
   .group-top {
     min-height: 0;
+  }
+
+  .note-copy {
+    text-align: left;
+  }
+
+  .note-link {
+    margin-left: 0;
   }
 }
