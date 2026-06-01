@@ -136,7 +136,7 @@ a {
 }
 
 .page {
-  max-width: 1220px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 28px 28px 40px;
 }
@@ -218,14 +218,14 @@ a {
 .portal-grid {
   margin-top: 16px;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .group-card {
-  min-height: 220px;
-  padding: 20px 20px 18px;
-  border-radius: 24px;
+  min-height: 350px;
+  padding: 18px 16px 14px;
+  border-radius: 20px;
   border: 1px solid rgba(213, 223, 239, 0.95);
   box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
   display: flex;
@@ -252,7 +252,7 @@ a {
 
 .group-card h3 {
   margin: 0;
-  font-size: 1.18rem;
+  font-size: 1.08rem;
   letter-spacing: -0.02em;
   line-height: 1.18;
 }
@@ -261,7 +261,7 @@ a {
   margin: 12px 0 0;
   color: #42546d;
   line-height: 1.65;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
 }
 
 .group-link {
@@ -269,7 +269,7 @@ a {
   align-items: center;
   justify-content: space-between;
   margin-top: 18px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -281,6 +281,7 @@ a {
 .group-4 { background: linear-gradient(135deg, #effdf2, #eefbcb); color: #15803d; }
 .group-5 { background: linear-gradient(135deg, #fff7ec, #ffe8d1); color: #c2410c; }
 .group-6 { background: linear-gradient(135deg, #edfdfd, #d7f7ff); color: #0284c7; }
+.group-7 { background: linear-gradient(135deg, #eef8ff, #dff2ff); color: #0f766e; }
 
 .band {
   padding-top: 24px;
@@ -290,18 +291,24 @@ a {
   margin-top: 16px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: rgba(235, 242, 255, 0.48);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
 }
 
 .how-item {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 20px;
-  border-radius: 22px;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid var(--border);
-  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05);
+  padding: 20px 18px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.how-item + .how-item {
+  border-left: 1px solid rgba(214, 224, 239, 0.95);
 }
 
 .how-item h3 {
@@ -423,12 +430,27 @@ a {
   margin-bottom: 0;
 }
 
+@media (max-width: 1400px) {
+  .portal-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 1100px) {
   .hero,
   .portal-grid,
   .how-grid,
   .three-up {
     grid-template-columns: 1fr;
+  }
+
+  .portal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .how-item + .how-item {
+    border-left: 0;
+    border-top: 1px solid rgba(214, 224, 239, 0.95);
   }
 }
 
@@ -453,5 +475,9 @@ a {
   .hero {
     padding: 22px;
     border-radius: 26px;
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
   }
 }
