@@ -22,8 +22,10 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(59, 130, 246, 0.06), transparent 28%),
-    radial-gradient(circle at top right, rgba(79, 70, 229, 0.05), transparent 28%),
+    radial-gradient(circle at top left, rgba(75, 124, 121, 0.16), transparent 26%),
+    radial-gradient(circle at top right, rgba(79, 109, 138, 0.13), transparent 24%),
+    radial-gradient(circle at 24% 72%, rgba(106, 130, 101, 0.10), transparent 20%),
+    radial-gradient(circle at 88% 86%, rgba(118, 107, 141, 0.08), transparent 18%),
     var(--bg);
 }
 
@@ -406,6 +408,27 @@ a {
   flex-wrap: wrap;
   color: var(--navy);
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.note::before {
+  content: "";
+  position: absolute;
+  right: 8px;
+  bottom: -8px;
+  width: 150px;
+  height: 170px;
+  background: url("../images/california/ca-outline.svg") no-repeat center / contain;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.note > * {
+  position: relative;
+  z-index: 1;
 }
 
 .note-icon {
