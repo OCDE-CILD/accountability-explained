@@ -17,6 +17,7 @@
 
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -27,6 +28,12 @@ body {
     radial-gradient(circle at 90% 14%, rgba(79, 109, 138, 0.18) 0%, rgba(79, 109, 138, 0.10) 20%, transparent 44%),
     radial-gradient(circle at 18% 84%, rgba(106, 130, 101, 0.16) 0%, rgba(106, 130, 101, 0.08) 20%, transparent 46%),
     radial-gradient(circle at 88% 86%, rgba(118, 107, 141, 0.12) 0%, rgba(118, 107, 141, 0.06) 18%, transparent 42%);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -142,6 +149,7 @@ a {
 }
 
 .page {
+  flex: 1 0 auto;
   max-width: 1480px;
   margin: 0 auto;
   padding: 14px 28px 30px;
@@ -281,10 +289,10 @@ a {
 }
 
 .group-arrow {
-    color: var(--accent);
-    font-size: 1.9rem;
-    font-weight: 700;
-    line-height: 1;
+  color: var(--accent);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .group-card:hover .group-arrow {
@@ -527,19 +535,20 @@ a {
   margin-bottom: 0;
 }
 
-/* ==========================================
-   CALIFORNIA SCENE BAND
-   ========================================== */
-
 .scene-band {
   width: 100%;
   margin-top: 18px;
+  height: 170px;
+  overflow: hidden;
 }
 
 .scene-image {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
   opacity: 1;
   transition: opacity 0.45s ease;
 }
@@ -554,14 +563,17 @@ a {
 }
 
 .bottom-bar-inner {
-  max-width: 1480px;
-  margin: 0 auto;
+  width: 100%;
   padding: 10px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-bar p {
   margin: 0;
-  color: rgba(255,255,255,.92);
+  color: #ffffff;
+  text-align: center;
   font-size: 0.86rem;
   line-height: 1.45;
   font-weight: 400;
@@ -588,6 +600,10 @@ a {
   .how-item + .how-item {
     border-left: 0;
     border-top: 1px solid rgba(214, 224, 239, 0.95);
+  }
+
+  .scene-band {
+    height: 150px;
   }
 }
 
@@ -631,5 +647,13 @@ a {
 
   .note-link {
     margin-left: 0;
+  }
+
+  .scene-band {
+    height: 130px;
+  }
+
+  .bottom-bar-inner {
+    padding: 10px 14px;
   }
 }
