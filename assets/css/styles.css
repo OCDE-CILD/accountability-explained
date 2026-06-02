@@ -523,6 +523,43 @@ a {
   margin: 0 0 14px;
 }
 
+.scene-gallery {
+  margin-top: 18px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(216, 226, 241, 0.85);
+  background: #fff;
+}
+
+.scene-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+.scene-image.is-fading {
+  opacity: 0;
+}
+
+.disclaimer-bar {
+  margin-top: 12px;
+  border-radius: 16px;
+  background: var(--navy);
+  color: rgba(255, 255, 255, 0.92);
+  padding: 12px 18px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.disclaimer-bar p {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.45;
+  font-weight: 400;
+}
+
 .narration p:last-child {
   margin-bottom: 0;
 }
