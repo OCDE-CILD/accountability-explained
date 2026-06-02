@@ -3,112 +3,169 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Accountability Explained | Discovery Portal</title>
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="brand">
-      <div class="brand-mark">AE</div>
-      <div>
+      <div class="brand-mark" aria-hidden="true">
+        <img src="book_logo.png" alt="" class="brand-logo" />
+      </div>
+
+      <div class="brand-copy">
         <div class="brand-title">ACCOUNTABILITY EXPLAINED</div>
-        <div class="brand-subtitle">Understanding how student groups connect to accountability indicators</div>
+        <div class="brand-subtitle">Understanding Data. Improving Outcomes.</div>
       </div>
     </div>
+
     <nav class="top-nav" aria-label="Primary">
       <a href="index.html" class="active">Home</a>
-      <a href="domains/foster-youth/index.html">Foster Youth</a>
+      <a href="#resources">Resources</a>
+      <a href="#glossary">Glossary</a>
+      <a href="#about">About</a>
+      <label class="search-box" aria-label="Search">
+        <span class="search-icon">⌕</span>
+        <input type="search" placeholder="Search..." />
+      </label>
     </nav>
   </header>
 
   <main class="page">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Discovery Portal</p>
-        <h1>Start with a student group, then explore how it connects to accountability.</h1>
-        <p class="lead">
-          Select a student group to begin. The portal follows Table 9 order and is designed to grow into a complete
-          learning and reference library.
-        </p>
-      </div>
-      <div class="hero-panel">
-        <h2>How to use the platform</h2>
-        <ol>
-          <li>Choose a student group.</li>
-          <li>Use the 3-point entry.</li>
-          <li>Explore accountability connections by indicator.</li>
-        </ol>
-      </div>
-    </section>
-
     <section class="section">
-      <div class="section-heading">
+      <div class="section-heading centered section-heading-ornamented">
+        <div class="ornament-row" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <svg class="ornament-star" viewBox="0 0 24 24">
+            <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z" fill="#f3b73f"/>
+          </svg>
+        </div>
+
         <h2>Explore Student Groups</h2>
-        <p>Select a student group to begin your learning journey.</p>
+
+        <div class="ornament-row" aria-hidden="true">
+          <svg class="ornament-star" viewBox="0 0 24 24">
+            <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z" fill="#f3b73f"/>
+          </svg>
+          <span class="ornament-line"></span>
+        </div>
       </div>
 
       <div class="portal-grid">
-        <a class="group-card group-1" href="domains/foster-youth/index.html">
-          <span class="group-order">1</span>
-          <h3>Foster Youth</h3>
-          <p>Understand how Foster Youth are identified, reported, and included in accountability.</p>
-          <span class="group-link">Open <span>→</span></span>
+        <a class="group-card accent-race" href="#coming-soon" aria-label="Explore Race/Ethnicity">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">1</span>
+              <h3>Race/Ethnicity</h3>
+            </div>
+            <p>Understand how Race/Ethnicity is reported and used in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
         </a>
 
-        <a class="group-card group-2" href="#coming-soon">
-          <span class="group-order">2</span>
-          <h3>Homeless Youth</h3>
-          <p>Understand how Homeless Youth are identified, reported, and included in accountability.</p>
-          <span class="group-link">Coming soon <span>→</span></span>
+        <a class="group-card accent-sed" href="#coming-soon" aria-label="Explore Socioeconomically Disadvantaged">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">2</span>
+              <h3>Socioeconomically Disadvantaged</h3>
+            </div>
+            <p>Understand how Socioeconomically Disadvantaged students are identified, reported, and included in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
         </a>
 
-        <a class="group-card group-3" href="#coming-soon">
-          <span class="group-order">3</span>
-          <h3>Students with Disabilities</h3>
-          <p>Understand how Students with Disabilities are identified, reported, and included in accountability.</p>
-          <span class="group-link">Coming soon <span>→</span></span>
+        <a class="group-card accent-english" href="#coming-soon" aria-label="Explore English Learners">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">3</span>
+              <h3>English Learners</h3>
+            </div>
+            <p>Understand how English Learners are identified, reported, and included in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
         </a>
 
-        <a class="group-card group-4" href="#coming-soon">
-          <span class="group-order">4</span>
-          <h3>Socioeconomically Disadvantaged</h3>
-          <p>Understand how Socioeconomically Disadvantaged students are identified, reported, and included in accountability.</p>
-          <span class="group-link">Coming soon <span>→</span></span>
+        <a class="group-card accent-ltel" href="#coming-soon" aria-label="Explore Long-Term English Learners">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">4</span>
+              <h3>Long-Term English Learners</h3>
+            </div>
+            <p>Understand how Long-Term English Learners are identified, reported, and included in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
         </a>
 
-        <a class="group-card group-5" href="#coming-soon">
-          <span class="group-order">5</span>
-          <h3>English Learners</h3>
-          <p>Understand how English Learners are identified, reported, and included in accountability.</p>
-          <span class="group-link">Coming soon <span>→</span></span>
+        <a class="group-card accent-swd" href="#coming-soon" aria-label="Explore Students with Disabilities">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">5</span>
+              <h3>Students with Disabilities</h3>
+            </div>
+            <p>Understand how Students with Disabilities are identified, reported, and included in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
         </a>
 
-        <a class="group-card group-6" href="#coming-soon">
-          <span class="group-order">6</span>
-          <h3>Long-Term English Learners</h3>
-          <p>Understand how Long-Term English Learners are identified, reported, and included in accountability.</p>
-          <span class="group-link">Coming soon <span>→</span></span>
+        <a class="group-card accent-homeless" href="#coming-soon" aria-label="Explore Homeless Youth">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">6</span>
+              <h3>Homeless Youth</h3>
+            </div>
+            <p>Understand how Homeless Youth are identified, reported, and included in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
+        </a>
+
+        <a class="group-card accent-foster" href="#coming-soon" aria-label="Explore Foster Youth">
+          <div class="group-content">
+            <div class="group-top">
+              <span class="group-order">7</span>
+              <h3>Foster Youth</h3>
+            </div>
+            <p>Understand how Foster Youth are identified, reported, and included in accountability.</p>
+          </div>
+          <div class="group-footer">
+            <span class="group-arrow">➜</span>
+          </div>
         </a>
       </div>
     </section>
 
     <section class="section band">
-      <div class="section-heading">
+      <div class="section-heading centered">
         <h2>How to Use This Site</h2>
-        <p>Each student group section includes three ways to learn:</p>
       </div>
 
       <div class="how-grid">
         <article class="how-item">
-          <div class="how-icon icon-blue">1</div>
+          <div class="how-icon icon-blue">
+            <img src="understanding.png" alt="" class="how-image" />
+          </div>
           <div>
-            <h3>Understanding [Student Group]</h3>
-            <p>Build foundational knowledge about the student group and how it appears across accountability.</p>
+            <h3>Understanding Student Groups</h3>
+            <p>Build foundational knowledge about each student group and how it factors into accountability.</p>
           </div>
         </article>
 
         <article class="how-item">
-          <div class="how-icon icon-purple">2</div>
+          <div class="how-icon icon-green">
+            <img src="guided.png" alt="" class="how-image" />
+          </div>
           <div>
             <h3>Guided Learning</h3>
             <p>Follow a step-by-step learning path across key accountability indicators.</p>
@@ -116,22 +173,28 @@
         </article>
 
         <article class="how-item">
-          <div class="how-icon icon-teal">3</div>
+          <div class="how-icon icon-gold">
+            <img src="explore.png" alt="" class="how-image" />
+          </div>
           <div>
             <h3>Explore Accountability Connections</h3>
-            <p>Jump directly to any accountability indicator to see how the student group is used in that context.</p>
+            <p>Jump directly to any accountability indicator to see how the student group is used in each context.</p>
           </div>
         </article>
       </div>
     </section>
 
-    <section class="note">
-      <strong>Important Note</strong>
-      <span>
-        Information on this site is provided for educational purposes. Always refer to official California Department
-        of Education resources for authoritative guidance.
-      </span>
-      <a href="#disclaimer">View Disclaimer →</a>
+    <section class="note" id="disclaimer">
+      <div class="note-icon" aria-hidden="true">
+        <img src="note.png" alt="" class="note-image" />
+      </div>
+
+      <div class="note-copy">
+        <strong>Important Note:</strong>
+        <span>Information on this site is provided for educational purposes. Always refer to California Department of Education resources for official guidance.</span>
+      </div>
+
+      <a href="#disclaimer" class="note-link">View Disclaimer</a>
     </section>
   </main>
 </body>
