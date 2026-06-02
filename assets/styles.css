@@ -290,13 +290,13 @@ a {
 }
 
 .accent-race {
-  --accent: #157381;
-  --accent-rgb: 21, 115, 129;
+  --accent: #4d7150;
+  --accent-rgb: 77, 113, 80;
 }
 
 .accent-sed {
-  --accent: #3c679e;
-  --accent-rgb: 60, 103, 158;
+  --accent: #157381;
+  --accent-rgb: 21, 115, 129;
 }
 
 .accent-english {
@@ -305,8 +305,8 @@ a {
 }
 
 .accent-ltel {
-  --accent: #4d7150;
-  --accent-rgb: 77, 113, 80;
+  --accent: #5a7b94;
+  --accent-rgb: 90, 123, 148;
 }
 
 .accent-swd {
