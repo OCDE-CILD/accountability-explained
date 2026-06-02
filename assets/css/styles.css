@@ -423,11 +423,11 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  opacity: 0.08;
+  opacity: 0.16;
   pointer-events: none;
   z-index: 0;
   transform: rotate(3deg);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 170'%3E%3Cpath d='M96 8 L84 17 L78 30 L69 43 L62 58 L64 73 L57 88 L47 101 L43 117 L49 131 L59 143 L65 157 L76 163 L88 154 L95 140 L101 122 L113 107 L110 92 L114 78 L109 63 L102 49 L98 33 L96 8 Z' fill='%23157381' fill-opacity='.05' stroke='%2312224a' stroke-opacity='.18' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 170'%3E%3Cpath d='M96 8 L84 17 L78 30 L69 43 L62 58 L64 73 L57 88 L47 101 L43 117 L49 131 L59 143 L65 157 L76 163 L88 154 L95 140 L101 122 L113 107 L110 92 L114 78 L109 63 L102 49 L98 33 L96 8 Z' fill='%23157381' fill-opacity='.10' stroke='%2312224a' stroke-opacity='.30' stroke-width='3.2' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
 .note > * {
