@@ -24,31 +24,26 @@
       <a href="#resources">Resources</a>
       <a href="#glossary">Glossary</a>
       <a href="#about">About</a>
+
       <label class="search-box" aria-label="Search">
-        <span class="search-icon">⌕</span>
+        <span class="search-icon" aria-hidden="true">⌕</span>
         <input type="search" placeholder="Search..." />
       </label>
     </nav>
   </header>
 
   <main class="page">
-    <section class="section">
+    <section class="hero-panel">
       <div class="section-heading centered section-heading-ornamented">
         <div class="ornament-row" aria-hidden="true">
           <span class="ornament-line"></span>
-          <svg class="ornament-star" viewBox="0 0 24 24">
-            <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z" fill="#f3b73f"/>
-          </svg>
-        </div>
-
-        <h2>Explore Student Groups</h2>
-
-        <div class="ornament-row" aria-hidden="true">
-          <svg class="ornament-star" viewBox="0 0 24 24">
+          <svg class="ornament-star" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z" fill="#f3b73f"/>
           </svg>
           <span class="ornament-line"></span>
         </div>
+
+        <h2>Explore Student Groups</h2>
       </div>
 
       <div class="portal-grid">
@@ -57,63 +52,65 @@
             <span class="group-title">Race/<br>Ethnicity</span>
           </span>
         </a>
-      
+
         <a class="group-card accent-sed" href="#coming-soon" aria-label="Explore Socioeconomically Disadvantaged">
           <span class="group-card-inner">
             <span class="group-title">Socioeconomically<br>Disadvantaged</span>
           </span>
         </a>
-      
+
         <a class="group-card accent-english" href="#coming-soon" aria-label="Explore English Learners">
           <span class="group-card-inner">
             <span class="group-title">English<br>Learners</span>
           </span>
         </a>
-      
+
         <a class="group-card accent-ltel" href="#coming-soon" aria-label="Explore Long-Term English Learners">
           <span class="group-card-inner">
             <span class="group-title">Long-Term<br>English Learners</span>
           </span>
         </a>
-      
+
         <a class="group-card accent-swd" href="#coming-soon" aria-label="Explore Students with Disabilities">
           <span class="group-card-inner">
             <span class="group-title">Students with<br>Disabilities</span>
           </span>
         </a>
-      
+
         <a class="group-card accent-homeless" href="#coming-soon" aria-label="Explore Homeless Youth">
           <span class="group-card-inner">
             <span class="group-title">Homeless<br>Youth</span>
           </span>
         </a>
-      
+
         <a class="group-card accent-foster" href="#coming-soon" aria-label="Explore Foster Youth">
           <span class="group-card-inner">
             <span class="group-title">Foster<br>Youth</span>
           </span>
         </a>
       </div>
-            
-          </section>
-        </main>
-      
-        <section class="scene-band" aria-label="California scene gallery">
-          <img
-            id="sceneImage"
-            class="scene-image"
-            src="assets/images/california/long-beach.png"
-            alt="California scenic illustration"
-          />
-        </section>
-      
-        <footer class="bottom-bar">
-          <div class="bottom-bar-inner">
-            <p>
-              Information on this site is provided for educational purposes. Always refer to California Department of Education resources for official guidance.
-            </p>
-          </div>
-          <div class="scene-divider">Serving Students Across California</div>
+
+      <div class="scene-divider" aria-label="Serving Students Across California">
+        <span>Serving Students Across California</span>
+      </div>
+    </section>
+  </main>
+
+  <section class="scene-band" aria-label="California scene gallery">
+    <img
+      id="sceneImage"
+      class="scene-image"
+      src="assets/images/california/long-beach.png"
+      alt="California scenic illustration"
+    />
+  </section>
+
+  <footer class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <p>
+        Information on this site is provided for educational purposes. Always refer to California Department of Education resources for official guidance.
+      </p>
+    </div>
   </footer>
 
   <script src="assets/js/california-scenes.js"></script>
