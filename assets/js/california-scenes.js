@@ -1,25 +1,56 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sceneImage = document.getElementById("sceneImage");
+const sceneImages = [
+  "assets/images/california/long-beach.png",
+  "assets/images/california/huntington-pier.png",
+  "assets/images/california/coronado-bridge.png",
 
+  "assets/images/california/central-valley.png",
+
+  "assets/images/california/griffith-observatory.png",
+  "assets/images/california/hollywood.png",
+
+  "assets/images/california/mt-rubidoux.png",
+
+  "assets/images/california/golden-gate.png",
+
+  "assets/images/california/sierra-lake.png",
+
+  "assets/images/california/central-coast.png",
+
+  "assets/images/california/tower-bridge.png"
+];
+
+const sceneImage = document.getElementById("sceneImage");
+
+let currentIndex = 0;
+const ROTATION_INTERVAL = 5000; // 5 seconds
+const FADE_DURATION = 450; // matches CSS transition
+
+// Preload all images for smoother transitions
+sceneImages.forEach((src) => {
+  const img = new Image();
+  img.src = src;
+});
+
+function changeScene(nextIndex) {
   if (!sceneImage) return;
 
-  const scenes = [
-    "assets/images/california/long-beach.png",
-    "assets/images/california/central-valley.png",
-    "assets/images/california/san-francisco.png",
-    "assets/images/california/sierras.png",
-    "assets/images/california/central-coast.png"
-  ];
+  sceneImage.classList.add("is-fading");
 
-  let currentScene = localStorage.getItem("caSceneIndex");
+  window.setTimeout(() => {
+    sceneImage.src = sceneImages[nextIndex];
+    sceneImage.classList.remove("is-fading");
+  }, FADE_DURATION / 2);
+}
 
-  if (currentScene === null) {
-    currentScene = 0;
-  } else {
-    currentScene = (parseInt(currentScene, 10) + 1) % scenes.length;
-  }
+function rotateScene() {
+  currentIndex = (currentIndex + 1) % sceneImages.length;
+  changeScene(currentIndex);
+}
 
-  localStorage.setItem("caSceneIndex", currentScene);
+if (sceneImage) {
+  // Ensure first image is loaded
+  sceneImage.src = sceneImages[0];
 
-  sceneImage.src = scenes[currentScene];
-});
+  // Start rotation
+  window.setInterval(rotateScene, ROTATION_INTERVAL);
+}
