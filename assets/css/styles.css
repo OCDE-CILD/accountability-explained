@@ -380,33 +380,6 @@ a {
   opacity: 0;
 }
 
-.ca-badge {
-  position: absolute;
-  left: clamp(16px, 2vw, 28px);
-  top: clamp(8px, 1.5vw, 18px);
-  width: clamp(72px, 4.5vw, 96px);
-  aspect-ratio: 0.62 / 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px 8px;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 50% 48%, rgba(253, 238, 213, 0.86) 0%, rgba(253, 238, 213, 0.62) 44%, rgba(253, 238, 213, 0.15) 67%, rgba(253, 238, 213, 0) 76%);
-  box-shadow:
-    0 0 18px rgba(253, 238, 213, 0.78),
-    0 0 0 1px rgba(188, 146, 68, 0.18) inset;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.ca-outline {
-  width: 100%;
-  height: 100%;
-  display: block;
-  filter: drop-shadow(0 0 8px rgba(253, 238, 213, 0.82));
-}
-
 .bottom-bar {
   width: 100%;
   background: var(--navy);
@@ -515,12 +488,6 @@ a {
 
   .scene-band {
     height: 130px;
-  }
-
-  .ca-badge {
-    width: 70px;
-    top: 6px;
-    left: 10px;
   }
 
   .bottom-bar-inner {
