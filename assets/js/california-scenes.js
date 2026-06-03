@@ -27,34 +27,19 @@ function pickSceneIndex() {
   return nextIndex;
 }
 
-function showScene(src, alt) {
-  if (!sceneImage) return;
-
-  const loader = new Image();
-  loader.onload = () => {
-    sceneImage.classList.add("is-fading");
-    window.setTimeout(() => {
-      sceneImage.src = src;
-      sceneImage.alt = alt;
-      sceneImage.classList.remove("is-fading");
-      sceneImage.classList.add("is-ready");
-    }, 120);
-  };
-
-  loader.onerror = () => {
-    console.warn("Scene image failed to load:", src);
-  };
-
-  loader.src = src;
-}
-
 if (sceneImage) {
-  sceneImage.classList.remove("is-ready");
-  sceneImage.classList.add("is-fading");
+  const src = sceneImages[pickSceneIndex()];
 
-  const index = pickSceneIndex();
-  const src = sceneImages[index];
-  const alt = "California scenic illustration";
+  const preload = new Image();
+  preload.onload = () => {
+    sceneImage.src = src;
+    sceneImage.alt = "California scenic illustration";
+  };
 
-  showScene(src, alt);
+  preload.onerror = () => {
+    sceneImage.src = "assets/images/california/long-beach.png";
+    sceneImage.alt = "California scenic illustration";
+  };
+
+  preload.src = src;
 }
