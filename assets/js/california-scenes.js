@@ -1,25 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const sceneImage = document.getElementById("sceneImage");
+const sceneImages = [
+  "assets/images/california/long-beach.png",
+  "assets/images/california/huntington-pier.png",
+  "assets/images/california/coronado-bridge.png",
+  "assets/images/california/central-valley.png",
+  "assets/images/california/griffith-observatory.png",
+  "assets/images/california/hollywood.png",
+  "assets/images/california/mt-rubidoux.png",
+  "assets/images/california/golden-gate.png",
+  "assets/images/california/sierras.png",
+  "assets/images/california/central-coast.png",
+  "assets/images/california/tower-bridge.png"
+];
 
-  if (!sceneImage) return;
+const sceneImage = document.getElementById("sceneImage");
+const STORAGE_KEY = "lastSceneIndex";
 
-  const scenes = [
-    "assets/images/california/long-beach.png",
-    "assets/images/california/central-valley.png",
-    "assets/images/california/san-francisco.png",
-    "assets/images/california/sierras.png",
-    "assets/images/california/central-coast.png"
-  ];
+function pickSceneIndex() {
+  const lastIndex = Number(localStorage.getItem(STORAGE_KEY));
+  let nextIndex = Math.floor(Math.random() * sceneImages.length);
 
-  let currentScene = localStorage.getItem("caSceneIndex");
-
-  if (currentScene === null) {
-    currentScene = 0;
-  } else {
-    currentScene = (parseInt(currentScene, 10) + 1) % scenes.length;
+  while (sceneImages.length > 1 && nextIndex === lastIndex) {
+    nextIndex = Math.floor(Math.random() * sceneImages.length);
   }
 
-  localStorage.setItem("caSceneIndex", currentScene);
+  localStorage.setItem(STORAGE_KEY, String(nextIndex));
+  return nextIndex;
+}
 
-  sceneImage.src = scenes[currentScene];
-});
+function showScene(src, alt) {
+  if (!sceneImage) return;
+
+  const loader = new Image();
+  loader.onload = () => {
+    sceneImage.classList.add("is-fading");
+    window.setTimeout(() => {
+      sceneImage.src = src;
+      sceneImage.alt = alt;
+      sceneImage.classList.remove("is-fading");
+      sceneImage.classList.add("is-ready");
+    }, 120);
+  };
+
+  loader.onerror = () => {
+    console.warn("Scene image failed to load:", src);
+  };
+
+  loader.src = src;
+}
+
+if (sceneImage) {
+  sceneImage.classList.remove("is-ready");
+  sceneImage.classList.add("is-fading");
+
+  const index = pickSceneIndex();
+  const src = sceneImages[index];
+  const alt = "California scenic illustration";
+
+  showScene(src, alt);
+}
