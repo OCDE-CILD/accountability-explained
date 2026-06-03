@@ -412,12 +412,8 @@ a {
 
 .bottom-bar-inner {
   position: relative;
-
-  max-width: 1480px;
-  margin: 0 auto;
-
+  width: 100%;
   padding: 10px 28px;
-
   display: flex;
   justify-content: center;
   align-items: center;
