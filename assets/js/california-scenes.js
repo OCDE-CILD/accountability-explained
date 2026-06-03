@@ -13,20 +13,48 @@ const sceneImages = [
 ];
 
 const sceneImage = document.getElementById("sceneImage");
+const STORAGE_KEY = "lastSceneIndex";
+
+function pickSceneIndex() {
+  const lastIndex = Number(localStorage.getItem(STORAGE_KEY));
+  let nextIndex = Math.floor(Math.random() * sceneImages.length);
+
+  while (sceneImages.length > 1 && nextIndex === lastIndex) {
+    nextIndex = Math.floor(Math.random() * sceneImages.length);
+  }
+
+  localStorage.setItem(STORAGE_KEY, String(nextIndex));
+  return nextIndex;
+}
+
+function showScene(src, alt) {
+  if (!sceneImage) return;
+
+  const loader = new Image();
+  loader.onload = () => {
+    sceneImage.classList.add("is-fading");
+    window.setTimeout(() => {
+      sceneImage.src = src;
+      sceneImage.alt = alt;
+      sceneImage.classList.remove("is-fading");
+      sceneImage.classList.add("is-ready");
+    }, 120);
+  };
+
+  loader.onerror = () => {
+    console.warn("Scene image failed to load:", src);
+  };
+
+  loader.src = src;
+}
 
 if (sceneImage) {
-  const lastIndex = Number(localStorage.getItem("lastSceneIndex"));
+  sceneImage.classList.remove("is-ready");
+  sceneImage.classList.add("is-fading");
 
-  let nextIndex;
+  const index = pickSceneIndex();
+  const src = sceneImages[index];
+  const alt = "California scenic illustration";
 
-  do {
-    nextIndex = Math.floor(Math.random() * sceneImages.length);
-  } while (
-    sceneImages.length > 1 &&
-    nextIndex === lastIndex
-  );
-
-  localStorage.setItem("lastSceneIndex", nextIndex);
-
-  sceneImage.src = sceneImages[nextIndex];
+  showScene(src, alt);
 }
