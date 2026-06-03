@@ -7,7 +7,7 @@ const sceneImages = [
   "assets/images/california/hollywood.png",
   "assets/images/california/mt-rubidoux.png",
   "assets/images/california/golden-gate.png",
-  "assets/images/california/sierra-lake.png",
+  "assets/images/california/sierras.png",
   "assets/images/california/central-coast.png",
   "assets/images/california/tower-bridge.png"
 ];
