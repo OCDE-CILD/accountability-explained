@@ -415,7 +415,12 @@ a {
   display: block;
   object-fit: cover;
   object-position: center;
+  opacity: 1;
   transition: opacity 0.45s ease;
+}
+
+.scene-image.is-fading {
+  opacity: 0;
 }
 
 .scene-image.is-fading {
