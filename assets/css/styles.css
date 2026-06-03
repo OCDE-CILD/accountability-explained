@@ -477,7 +477,7 @@ a {
 
 .footer-owner {
   color: rgba(255,255,255,.92);
-
+  opacity: .82;
   font-size: .84rem;
   font-weight: 600;
 
