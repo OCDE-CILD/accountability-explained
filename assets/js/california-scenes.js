@@ -1,4 +1,5 @@
 const sceneImages = [
+  "assets/images/california/sacramento-capitol.png", // put your Sacramento image here
   "assets/images/california/long-beach.png",
   "assets/images/california/huntington-pier.png",
   "assets/images/california/coronado-bridge.png",
@@ -12,8 +13,8 @@ const sceneImages = [
   "assets/images/california/tower-bridge.png"
 ];
 
-const sceneImage = document.getElementById("sceneImage");
 const STORAGE_KEY = "californiaSceneIndex";
+const sceneImage = document.getElementById("sceneImage");
 
 function getStoredIndex() {
   try {
@@ -21,7 +22,7 @@ function getStoredIndex() {
     const parsed = Number.parseInt(value ?? "0", 10);
 
     if (Number.isInteger(parsed) && parsed >= 0) {
-      return parsed;
+      return parsed % sceneImages.length;
     }
   } catch {
     // localStorage may be unavailable; fall through to 0
@@ -32,35 +33,50 @@ function getStoredIndex() {
 
 function setStoredIndex(index) {
   try {
-    window.localStorage.setItem(STORAGE_KEY, String(index));
+    window.localStorage.setItem(STORAGE_KEY, String(index % sceneImages.length));
   } catch {
     // ignore storage failures
   }
 }
 
-function showScene(src, alt) {
-  if (!sceneImage) return;
-
-  const preload = new Image();
-
-  preload.onload = () => {
-    sceneImage.src = src;
-    sceneImage.alt = alt;
-  };
-
-  preload.onerror = () => {
-    // Fallback to the first image if the chosen file is missing
-    sceneImage.src = sceneImages[0];
-    sceneImage.alt = "California scenic illustration";
-  };
-
-  preload.src = src;
+function preloadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(src);
+    img.onerror = reject;
+    img.src = src;
+  });
 }
 
-if (sceneImage && sceneImages.length > 0) {
-  const currentIndex = getStoredIndex() % sceneImages.length;
+async function showScene(src, alt) {
+  if (!sceneImage) return;
+
+  try {
+    await preloadImage(src);
+
+    sceneImage.classList.add("is-fading");
+
+    window.setTimeout(() => {
+      sceneImage.src = src;
+      sceneImage.alt = alt;
+      sceneImage.classList.remove("is-fading");
+    }, 150);
+  } catch {
+    if (sceneImages.length > 0) {
+      sceneImage.src = sceneImages[0];
+      sceneImage.alt = "California scenic illustration";
+    }
+  }
+}
+
+function initSceneRotation() {
+  if (!sceneImage || sceneImages.length === 0) return;
+
+  const currentIndex = getStoredIndex();
   const nextIndex = (currentIndex + 1) % sceneImages.length;
 
   showScene(sceneImages[currentIndex], "California scenic illustration");
   setStoredIndex(nextIndex);
 }
+
+document.addEventListener("DOMContentLoaded", initSceneRotation);
