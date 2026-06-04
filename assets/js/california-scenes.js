@@ -52,20 +52,17 @@ async function showScene(src, alt) {
   if (!sceneImage) return;
 
   try {
-    await preloadImage(src);
+    const img = new Image();
+    img.src = src;
+    await img.decode(); // waits until the image is fully decoded
 
-    sceneImage.classList.add("is-fading");
-
-    window.setTimeout(() => {
-      sceneImage.src = src;
-      sceneImage.alt = alt;
-      sceneImage.classList.remove("is-fading");
-    }, 150);
+    sceneImage.src = src;
+    sceneImage.alt = alt;
+    sceneImage.classList.add("is-visible");
   } catch {
-    if (sceneImages.length > 0) {
-      sceneImage.src = sceneImages[0];
-      sceneImage.alt = "California scenic illustration";
-    }
+    sceneImage.src = sceneImages[0];
+    sceneImage.alt = "California scenic illustration";
+    sceneImage.classList.add("is-visible");
   }
 }
 
