@@ -159,7 +159,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 18px 28px 14px;
+  padding: 18px 28px 0;
   background: transparent;
 }
 
@@ -326,6 +326,12 @@ img {
 .accent-foster {
   --accent: #7b4776;
   --accent-rgb: 123, 71, 118;
+}
+
+.scene-wrap {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 
 .scene-divider {
