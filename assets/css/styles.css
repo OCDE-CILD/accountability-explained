@@ -158,8 +158,8 @@ img {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 18px 28px 14px;
+  justify-content: flex-start;
+  padding: 18px 28px 0;
   background: transparent;
 }
 
@@ -328,6 +328,12 @@ img {
   --accent-rgb: 123, 71, 118;
 }
 
+.scene-wrap {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
 .scene-divider {
   width: 100%;
   display: flex;
@@ -335,7 +341,7 @@ img {
   justify-content: center;
   gap: 16px;
   padding: 10px clamp(18px, 4vw, 56px) 8px;
-  margin: 8px 0 6px;
+  margin: 0;
   color: var(--navy);
   text-align: center;
   font-size: 0.82rem;
@@ -366,6 +372,12 @@ img {
   height: 156px;
   overflow: hidden;
   background: #fff;
+  visibility: hidden;
+  margin: 0;
+}
+
+.scene-band.is-ready {
+  visibility: visible;
 }
 
 .scene-image {
@@ -385,6 +397,7 @@ img {
 .bottom-bar {
   width: 100%;
   background: var(--navy);
+  margin-top: 0;
 }
 
 .bottom-bar-inner {

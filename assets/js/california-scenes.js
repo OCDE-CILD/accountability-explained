@@ -15,6 +15,7 @@ const sceneImages = [
 
 const STORAGE_KEY = "californiaSceneIndex";
 const sceneImage = document.getElementById("sceneImage");
+const sceneBand = document.querySelector(".scene-band");
 
 function getStoredIndex() {
   try {
@@ -49,10 +50,17 @@ function preloadImage(src) {
 }
 
 async function showScene(src, alt) {
-  if (!sceneImage) return;
+  if (!sceneImage || !sceneBand) return;
 
   try {
-    await preloadImage(src);
+    const img = new Image();
+    img.src = src;
+
+    if (typeof img.decode === "function") {
+      await img.decode();
+    } else {
+      await preloadImage(src);
+    }
 
     sceneImage.classList.add("is-fading");
 
@@ -60,17 +68,19 @@ async function showScene(src, alt) {
       sceneImage.src = src;
       sceneImage.alt = alt;
       sceneImage.classList.remove("is-fading");
+      sceneBand.classList.add("is-ready");
     }, 150);
   } catch {
     if (sceneImages.length > 0) {
       sceneImage.src = sceneImages[0];
       sceneImage.alt = "California scenic illustration";
     }
+    sceneBand.classList.add("is-ready");
   }
 }
 
 function initSceneRotation() {
-  if (!sceneImage || sceneImages.length === 0) return;
+  if (!sceneImage || !sceneBand || sceneImages.length === 0) return;
 
   const currentIndex = getStoredIndex();
   const nextIndex = (currentIndex + 1) % sceneImages.length;
@@ -79,4 +89,4 @@ function initSceneRotation() {
   setStoredIndex(nextIndex);
 }
 
-document.addEventListener("DOMContentLoaded", initSceneRotation);
+window.addEventListener("load", initSceneRotation);
