@@ -1,5 +1,5 @@
 const sceneImages = [
-  "assets/images/california/sacramento-capitol.png", // put your Sacramento image here
+  "assets/images/california/sacramento-capitol.png",
   "assets/images/california/long-beach.png",
   "assets/images/california/huntington-pier.png",
   "assets/images/california/coronado-bridge.png",
