@@ -48,21 +48,23 @@ function preloadImage(src) {
   });
 }
 
+const sceneBand = document.querySelector(".scene-band");
+
 async function showScene(src, alt) {
-  if (!sceneImage) return;
+  if (!sceneImage || !sceneBand) return;
 
   try {
-    const img = new Image();
-    img.src = src;
-    await img.decode(); // waits until the image is fully decoded
+    const preloaded = new Image();
+    preloaded.src = src;
+    await preloaded.decode();
 
     sceneImage.src = src;
     sceneImage.alt = alt;
-    sceneImage.classList.add("is-visible");
+    sceneBand.classList.add("is-ready");
   } catch {
     sceneImage.src = sceneImages[0];
     sceneImage.alt = "California scenic illustration";
-    sceneImage.classList.add("is-visible");
+    sceneBand.classList.add("is-ready");
   }
 }
 
