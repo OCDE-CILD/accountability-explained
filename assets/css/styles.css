@@ -366,12 +366,6 @@ img {
   height: 156px;
   overflow: hidden;
   background: #fff;
-
-  visibility: hidden;
-}
-
-.scene-band.is-ready {
-  visibility: visible;
 }
 
 .scene-image {
