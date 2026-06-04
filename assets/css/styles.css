@@ -22,7 +22,7 @@
 html,
 body {
   min-height: 100%;
-  margin: 0;
+  margin: 0;.page
   padding: 0;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: var(--text);
@@ -158,7 +158,7 @@ img {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 18px 28px 0;
   background: transparent;
 }
@@ -329,9 +329,9 @@ img {
 }
 
 .scene-wrap {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: 100%;
+  margin: 0;
+  display: block;
 }
 
 .scene-divider {
@@ -341,7 +341,7 @@ img {
   justify-content: center;
   gap: 16px;
   padding: 10px clamp(18px, 4vw, 56px) 8px;
-  margin: 8px 0 6px;
+  margin: 0;
   color: var(--navy);
   text-align: center;
   font-size: 0.82rem;
@@ -373,6 +373,7 @@ img {
   overflow: hidden;
   background: #fff;
   visibility: hidden;
+  margin: 0;
 }
 
 .scene-band.is-ready {
@@ -396,6 +397,7 @@ img {
 .bottom-bar {
   width: 100%;
   background: var(--navy);
+  margin-top: 0;
 }
 
 .bottom-bar-inner {
