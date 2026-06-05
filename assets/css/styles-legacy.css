@@ -1,3 +1,25 @@
+/*
+==================================================
+LEGACY STYLESHEET
+
+Retained temporarily during migration.
+
+Do not add new styles here.
+
+All new development belongs in:
+
+assets/css/core.css
+assets/css/layout.css
+assets/css/components.css
+assets/css/navigation.css
+assets/css/footer.css
+
+or the appropriate domain stylesheet.
+
+Target for removal after migration validation.
+==================================================
+*/
+
 :root {
   --navy: #12224a;
   --navy-dark: #0c1731;
