@@ -1,1 +1,399 @@
-components.css
+.portal-grid {
+  width: min(100%, var(--tile-max-row));
+  margin: 18px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--tile-gap);
+}
+
+.group-card {
+  --accent: #1d4ed8;
+  --accent-rgb: 29, 78, 216;
+
+  flex: 0 1 var(--tile-size);
+  width: min(100%, var(--tile-size));
+  aspect-ratio: 1 / 1;
+  border-radius: 18px;
+  border: 3px solid rgba(var(--accent-rgb), 0.58);
+  background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.11), rgba(var(--accent-rgb), 0.05));
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.group-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 12px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(255, 255, 255, 0.64) 58%,
+    rgba(255, 255, 255, 0.54) 100%
+  );
+  pointer-events: none;
+}
+
+.group-card::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  pointer-events: none;
+}
+
+.group-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.1);
+  border-color: rgba(var(--accent-rgb), 0.75);
+}
+
+.group-card-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.group-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: var(--accent);
+  font-weight: 850;
+  font-size: clamp(0.88rem, 0.95vw, 1rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.accent-race {
+  --accent: #4d7150;
+  --accent-rgb: 77, 113, 80;
+}
+
+.accent-sed {
+  --accent: #157381;
+  --accent-rgb: 21, 115, 129;
+}
+
+.accent-english {
+  --accent: #4f7391;
+  --accent-rgb: 79, 115, 145;
+}
+
+.accent-ltel {
+  --accent: #5a7b94;
+  --accent-rgb: 90, 123, 148;
+}
+
+.accent-swd {
+  --accent: #344d7d;
+  --accent-rgb: 52, 77, 125;
+}
+
+.accent-homeless {
+  --accent: #716095;
+  --accent-rgb: 113, 96, 149;
+}
+
+.accent-foster {
+  --accent: #7b4776;
+  --accent-rgb: 123, 71, 118;
+}
+
+.scene-wrap {
+  width: 100%;
+  margin: 0;
+  display: block;
+}
+
+.scene-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px clamp(18px, 4vw, 56px) 8px;
+  margin: 0;
+  color: var(--navy);
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.scene-divider::before,
+.scene-divider::after {
+  content: "";
+  flex: 1 1 280px;
+  height: 2px;
+  border-radius: 999px;
+}
+
+.scene-divider::before {
+  background: linear-gradient(90deg, rgba(18, 34, 74, 0.12), rgba(18, 34, 74, 0.55));
+}
+
+.scene-divider::after {
+  background: linear-gradient(90deg, rgba(18, 34, 74, 0.55), rgba(18, 34, 74, 0.12));
+}
+
+.scene-band {
+  position: relative;
+  width: 100%;
+  height: 156px;
+  overflow: hidden;
+  background: #fff;
+  visibility: hidden;
+  margin: 0;
+}
+
+.scene-band.is-ready {
+  visibility: visible;
+}
+
+.scene-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  transition: opacity 0.45s ease;
+}
+
+.scene-image.is-fading {
+  opacity: 0;
+}
+
+.domain-hero {
+  background: var(--domain-light);
+  border-bottom: 4px solid var(--domain-primary);
+  padding: 4rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.domain-tag {
+  display: inline-block;
+  background: var(--domain-primary);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  max-width: 850px;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.primary-button {
+  display: inline-block;
+  margin-top: 1rem;
+  background: var(--domain-primary);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 3rem 0;
+}
+
+.feature-card {
+  border: 1px solid #ddd;
+  border-top: 4px solid var(--domain-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: white;
+}
+
+.feature-card h2 {
+  margin-top: 0;
+}
+
+.feature-card a {
+  color: var(--domain-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tutorial-hero {
+  background: var(--domain-light);
+  border-bottom: 4px solid var(--domain-primary);
+  padding: 3rem 2rem;
+}
+
+.tutorial-label {
+  display: inline-block;
+  background: var(--domain-primary);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.tutorial-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+.tutorial-slide {
+  padding: 3rem 0 2rem;
+}
+
+.slide-number {
+  color: var(--domain-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.what-youll-learn {
+  padding: 2rem 0;
+}
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.learning-card {
+  border: 1px solid #ddd;
+  border-top: 4px solid var(--domain-primary);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.tutorial-navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 0;
+  gap: 1rem;
+}
+
+.secondary-button {
+  border: 1px solid var(--domain-primary);
+  color: var(--domain-primary);
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --tile-size: 210px;
+  }
+
+  .hero-section {
+    max-width: 1120px;
+  }
+
+  .scene-band {
+    height: 142px;
+  }
+}
+
+@media (max-width: 1060px) {
+  :root {
+    --tile-size: 200px;
+  }
+
+  .scene-band {
+    height: 136px;
+  }
+}
+
+@media (max-width: 900px) {
+  :root {
+    --tile-size: 190px;
+  }
+
+  .portal-grid {
+    width: min(100%, calc((var(--tile-size) * 2) + var(--tile-gap)));
+  }
+}
+
+@media (max-width: 820px) {
+  .portal-grid {
+    width: min(100%, var(--tile-size));
+    gap: 12px;
+  }
+
+  .group-card {
+    flex-basis: 100%;
+  }
+
+  .group-card-inner {
+    padding: 18px 16px;
+  }
+
+  .scene-divider {
+    gap: 12px;
+    font-size: 0.74rem;
+    letter-spacing: 0.12em;
+    padding: 10px 8px 8px;
+  }
+
+  .scene-divider::before,
+  .scene-divider::after {
+    flex-basis: 100px;
+  }
+
+  .scene-band {
+    height: 130px;
+  }
+
+  .domain-hero {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .tutorial-hero {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .tutorial-slide {
+    padding: 2rem 0 1rem;
+  }
+
+  .what-youll-learn {
+    padding: 1.5rem 0;
+  }
+
+  .tutorial-navigation {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    text-align: center;
+  }
+}

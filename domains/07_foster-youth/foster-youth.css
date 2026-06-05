@@ -1,1 +1,8 @@
-foster-youth.css
+.domain-foster-youth {
+  --domain-primary: #2f855a;
+  --domain-light: #e6f4ea;
+}
+
+.domain-foster-youth .brand-subtitle {
+  color: var(--domain-primary);
+}

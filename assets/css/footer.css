@@ -1,1 +1,53 @@
-footer.css
+.bottom-bar {
+  width: 100%;
+  background: var(--navy);
+  margin-top: 0;
+}
+
+.bottom-bar-inner {
+  position: relative;
+  width: 100%;
+  padding: 10px 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-guidance {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.footer-owner {
+  position: absolute;
+  right: 28px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
+@media (max-width: 820px) {
+  .bottom-bar-inner {
+    position: static;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px 14px;
+  }
+
+  .footer-owner {
+    position: static;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .footer-guidance,
+  .footer-owner {
+    font-size: 0.78rem;
+    text-align: center;
+  }
+}
