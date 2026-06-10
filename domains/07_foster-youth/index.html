@@ -4,122 +4,652 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Foster Youth | Accountability Explained</title>
-
   <link rel="stylesheet" href="../../assets/css/core.css" />
   <link rel="stylesheet" href="../../assets/css/layout.css" />
   <link rel="stylesheet" href="../../assets/css/components.css" />
   <link rel="stylesheet" href="../../assets/css/navigation.css" />
   <link rel="stylesheet" href="../../assets/css/footer.css" />
-  <link rel="stylesheet" href="foster-youth.css" />
+  <link rel="stylesheet" href="./foster-youth.css" />
 </head>
-
 <body class="domain-foster-youth">
-
-  <header class="site-header">
-    <div class="brand">
-      <div class="brand-mark" aria-hidden="true">
-        <img src="../../assets/images/branding/book_logo.png" alt="" class="brand-logo" />
+  <div class="page-wrap">
+    <header class="site-header site-header--shared">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="../../assets/images/branding/book_logo.png" alt="" class="brand-logo" />
+        </div>
+        <div class="brand-copy">
+          <div class="brand-title">Accountability Explained</div>
+          <div class="brand-subtitle">Foster Youth</div>
+        </div>
       </div>
 
-      <div class="brand-copy">
-        <div class="brand-title">ACCOUNTABILITY EXPLAINED</div>
-        <div class="brand-subtitle">Foster Youth domain</div>
-      </div>
-    </div>
+      <nav class="top-nav" aria-label="Primary">
+        <a href="../../index.html">Home</a>
+        <a href="../../index.html">Domains</a>
+        <a href="../../resources.html">Resources</a>
+        <a href="../../glossary.html">Glossary</a>
+        <a href="../../about.html">About</a>
 
-    <nav class="top-nav" aria-label="Primary">
-      <a href="../../index.html">Home</a>
-      <a href="index.html" class="active">Foster Youth</a>
-    </nav>
-  </header>
+        <form class="header-search" role="search" action="#">
+          <button type="submit" class="header-search-button" aria-label="Search">
+            <span aria-hidden="true">⌕</span>
+          </button>
+          <input
+            type="search"
+            class="header-search-input"
+            aria-label="Search"
+            placeholder="Search..."
+          />
+        </form>
+      </nav>
+    </header>
 
-  <main class="page">
-    <section class="container">
+    <main class="domain-shell">
+      <section class="stage" aria-label="Foster Youth learning stage">
+        <div class="stage-inner">
+          <section class="domain-intro" aria-labelledby="fy-title">
+            <h1 id="fy-title">Foster Youth</h1>
+            <p class="domain-summary">
+              Explore how Foster Youth students move through California’s accountability system and why counts can look different across reports.
+            </p>
+            <p class="domain-note">
+              Use the viewer to move through the core ideas in order or jump straight to the topic you need.
+            </p>
+          </section>
 
-      <div class="domain-hero">
-        <div class="domain-tag">
-          Accountability Focus Area
+          <div class="stage-divider" aria-hidden="true"></div>
+
+          <section class="viewer-shell" aria-label="Learning viewer">
+            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-overview" checked />
+            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-definitions" />
+            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-counts" />
+            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-journey" />
+            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-questions" />
+
+            <div class="viewer-tabs" role="tablist" aria-label="Foster Youth learning topics">
+              <label class="viewer-tab" for="fy-tab-overview">Overview</label>
+              <label class="viewer-tab" for="fy-tab-definitions">Definitions</label>
+              <label class="viewer-tab" for="fy-tab-counts">Counts</label>
+              <label class="viewer-tab" for="fy-tab-journey">Journey</label>
+              <label class="viewer-tab" for="fy-tab-questions">Questions</label>
+            </div>
+
+            <div class="viewer-panels">
+              <article class="viewer-panel panel-overview">
+                <div class="panel-pill">Why is this important?</div>
+
+                <div class="panel-body">
+                  <p>
+                    Foster Youth is an important student group in accountability because it can surface differences between local records, state matching, and Dashboard reporting.
+                  </p>
+                  <ul class="panel-list">
+                    <li>Students move through multiple systems before they appear in reporting.</li>
+                    <li>Different reports answer different questions.</li>
+                    <li>Counts can be correct even when they do not match.</li>
+                  </ul>
+                </div>
+
+                <div class="panel-nav">
+                  <span class="panel-chevron panel-chevron--disabled" aria-hidden="true">❮</span>
+
+                  <div class="panel-dots" aria-label="Overview progress">
+                    <span class="panel-dot is-current" aria-current="step" aria-label="Overview"></span>
+                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
+                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
+                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
+                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
+                  </div>
+
+                  <label class="panel-chevron" for="fy-tab-definitions" aria-label="Next">❯</label>
+                </div>
+              </article>
+
+              <article class="viewer-panel panel-definitions">
+                <div class="panel-pill">Who is included?</div>
+
+                <div class="panel-body">
+                  <p>
+                    Foster Youth does not always mean the same thing in every context. The definition matters because it determines who is included in a given report or system.
+                  </p>
+                  <ul class="panel-list">
+                    <li>Some definitions support accountability reporting.</li>
+                    <li>Some definitions support educational rights and services.</li>
+                    <li>Some students may qualify in one context but not another.</li>
+                  </ul>
+                </div>
+
+                <div class="panel-nav">
+                  <label class="panel-chevron" for="fy-tab-overview" aria-label="Back">❮</label>
+
+                  <div class="panel-dots" aria-label="Definitions progress">
+                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
+                    <span class="panel-dot is-current" aria-current="step" aria-label="Definitions"></span>
+                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
+                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
+                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
+                  </div>
+
+                  <label class="panel-chevron" for="fy-tab-counts" aria-label="Next">❯</label>
+                </div>
+              </article>
+
+              <article class="viewer-panel panel-counts">
+                <div class="panel-pill">Why do counts differ?</div>
+
+                <div class="panel-body">
+                  <p>
+                    Reports update on different schedules and often use different populations, timeframes, and business rules. That is why two reports can both be correct while showing different numbers.
+                  </p>
+                  <ul class="panel-list">
+                    <li>Timing matters.</li>
+                    <li>System purpose matters.</li>
+                    <li>Report design matters.</li>
+                  </ul>
+                </div>
+
+                <div class="panel-nav">
+                  <label class="panel-chevron" for="fy-tab-definitions" aria-label="Back">❮</label>
+
+                  <div class="panel-dots" aria-label="Counts progress">
+                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
+                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
+                    <span class="panel-dot is-current" aria-current="step" aria-label="Counts"></span>
+                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
+                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
+                  </div>
+
+                  <label class="panel-chevron" for="fy-tab-journey" aria-label="Next">❯</label>
+                </div>
+              </article>
+
+              <article class="viewer-panel panel-journey">
+                <div class="panel-pill">How information moves</div>
+
+                <div class="panel-body panel-split">
+
+                  <div class="panel-copy">
+
+                    <p>
+                      Foster Youth information travels through a path that can include county systems, matching processes, statewide student data, and accountability reporting.
+                    </p>
+
+                    <div class="journey-flow" aria-label="Foster Youth information flow">
+                      <span>County systems</span>
+                      <span>→</span>
+                      <span>State match</span>
+                      <span>→</span>
+                      <span>CALPADS</span>
+                      <span>→</span>
+                      <span>Dashboard</span>
+                    </div>
+
+                  </div>
+
+                  <div class="panel-visual">
+                    <img
+                      src="../../assets/images/branding/book_logo.png"
+                      alt="Test visual"
+                    >
+                  </div>
+
+                </div>
+
+                <div class="panel-nav">
+                  <label class="panel-chevron" for="fy-tab-counts" aria-label="Back">❮</label>
+
+                  <div class="panel-dots" aria-label="Journey progress">
+                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
+                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
+                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
+                    <span class="panel-dot is-current" aria-current="step" aria-label="Journey"></span>
+                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
+                  </div>
+
+                  <label class="panel-chevron" for="fy-tab-questions" aria-label="Next">❯</label>
+                </div>
+              </article>
+
+              <article class="viewer-panel panel-questions">
+                <div class="panel-pill">Common questions</div>
+
+                <div class="panel-body">
+                  <p>
+                    This section is for quick answers to the questions users bring to the site most often.
+                  </p>
+                  <ul class="panel-list">
+                    <li>Why doesn’t my count match?</li>
+                    <li>Why is a student on one report but not another?</li>
+                    <li>What changed between reports?</li>
+                  </ul>
+                </div>
+
+                <div class="panel-nav">
+                  <label class="panel-chevron" for="fy-tab-journey" aria-label="Back">❮</label>
+
+                  <div class="panel-dots" aria-label="Questions progress">
+                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
+                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
+                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
+                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
+                    <span class="panel-dot is-current" aria-current="step" aria-label="Questions"></span>
+                  </div>
+
+                  <span class="panel-chevron panel-chevron--disabled" aria-hidden="true">❯</span>
+                </div>
+              </article>
+            </div>
+          </section>
         </div>
 
-        <h1>Foster Youth</h1>
+        <div class="explorer-stage" aria-label="Indicator Explorer">
+          <input class="explorer-toggle-input" type="checkbox" id="explorer-toggle" />
 
-        <p class="intro-text">
-          Foster Youth is one of several accountability focus areas explored throughout
-          Accountability Explained.
-        </p>
+          <div class="explorer-drawer">
+            <label class="explorer-handle" for="explorer-toggle">
+              <span class="explorer-decor" aria-hidden="true">
+                <span class="explorer-line"></span>
 
-        <p class="intro-text">
-          Although the term Foster Youth may seem straightforward, questions often arise
-          when information appears differently across reports, systems, and accountability
-          indicators.
-        </p>
+                <svg class="explorer-star" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z"></path>
+                </svg>
+              </span>
 
-        <p class="intro-text">
-          This learning experience will help you understand who is included, why counts
-          may differ, and how Foster Youth information is represented throughout
-          California's accountability system.
-        </p>
+              <span class="explorer-handle-text explorer-handle-closed">
+                Open Indicator Explorer
+              </span>
 
-        <a href="01_understanding/index.html" class="primary-button">
-          Start Tutorial
-        </a>
-      </div>
+              <span class="explorer-handle-text explorer-handle-open">
+                Close Indicator Explorer
+              </span>
 
-      <section class="card-grid">
+              <span class="explorer-decor" aria-hidden="true">
+                <svg class="explorer-star" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z"></path>
+                </svg>
 
-        <article class="feature-card">
-          <h2>Understanding Foster Youth</h2>
+                <span class="explorer-line"></span>
+              </span>
+            </label>
 
-          <p>
-            Start with a high-level overview designed for newcomers and anyone
-            looking for a refresher.
-          </p>
+            <div class="explorer-panel">
+              <div class="explorer-inner">
+                <div class="explorer-content">
+                  <div class="explorer-heading" id="explorerHeading">
+                    <h2>Indicator Explorer</h2>
+                  </div>
 
-          <a href="01_understanding/index.html">
-            Start Tutorial →
-          </a>
-        </article>
+                  <div class="indicator-grid">
+                    <a
+                      class="indicator-tile tile-academic"
+                      href="#"
+                      id="academicTile"
+                      aria-label="Academic Performance"
+                    >
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img
+                          src="../../assets/images/indicators/academic-performance.png"
+                          alt="Academic performance icon"
+                        >
+                      </div>
+                      <div class="indicator-copy">
+                        <h3>Academic Performance</h3>
+                        <p>English Language Arts and Math assessment results.</p>
+                      </div>
+                    </a>
 
-        <article class="feature-card">
-          <h2>Accountability Connections</h2>
+                    <a class="indicator-tile tile-attendance" href="#" aria-label="Chronic Absenteeism">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img
+                          src="../../assets/images/indicators/chronic-absenteeism.png"
+                          alt="Chronic absenteeism icon"
+                        >
+                      </div>
+                      <div class="indicator-copy">
+                        <h3>Chronic Absenteeism</h3>
+                        <p>Students missing 10% or more of school days.</p>
+                      </div>
+                    </a>
 
-          <p>
-            Explore how Foster Youth information is represented across Dashboard indicators.
-          </p>
+                    <a class="indicator-tile tile-suspension" href="#" aria-label="Suspension Rate">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img
+                          src="../../assets/images/indicators/suspension-rate.png"
+                          alt="Suspension rate icon"
+                        >
+                      </div>
+                      <div class="indicator-copy">
+                        <h3>Suspension Rate</h3>
+                        <p>Students suspended at least one day.</p>
+                      </div>
+                    </a>
 
-          <a href="03_connections/index.html">
-            Explore Indicators →
-          </a>
-        </article>
+                    <a class="indicator-tile tile-graduation" href="#" aria-label="Graduation Rate">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img
+                          src="../../assets/images/indicators/graduation-rate.png"
+                          alt="Graduation rate icon"
+                        >
+                      </div>
+                      <div class="indicator-copy">
+                        <h3>Graduation Rate</h3>
+                        <p>Students who graduated within 4 or 5 years.</p>
+                      </div>
+                    </a>
 
-        <article class="feature-card">
-          <h2>Resources</h2>
+                    <a class="indicator-tile tile-college" href="#" aria-label="College Career Indicator">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img
+                          src="../../assets/images/indicators/college-career.png"
+                          alt="college career indicator icon"
+                        >
+                      </div>
+                      <div class="indicator-copy">
+                        <h3>College/Career Indicator</h3>
+                        <p>College, career, and workforce readiness measures.</p>
+                      </div>
+                    </a>
 
-          <p>
-            Access supporting documentation, references, and source materials.
-          </p>
+                    <a class="indicator-tile tile-science" href="#" aria-label="Science">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img
+                          src="../../assets/images/indicators/science.png"
+                          alt="Science icon"
+                        >
+                      </div>
+                      <div class="indicator-copy">
+                        <h3>Science</h3>
+                        <p>5th, 8th, and once in high school assessment results.</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="academic-workspace" id="academicWorkspace" hidden>
 
-          <a href="../../resources.html">
-            View Resources →
-          </a>
-        </article>
+                    <div class="workspace-header">
+                      <div class="workspace-header-main">
+                        <div class="workspace-icon">
+                          <img
+                            src="../../assets/images/indicators/academic-performance.png"
+                            alt="Academic Performance"
+                          >
+                        </div>
 
+                        <div class="workspace-header-copy">
+                          <h2>Academic Performance Indicator</h2>
+                          <p>
+                            English Language Arts and Math assessment results
+                            for Grades 3–8 and 11.
+                          </p>
+                        </div>
+                      </div>
+
+                      <button
+                        class="workspace-close"
+                        id="closeAcademicWorkspace"
+                        aria-label="Close Academic Workspace"
+                      >
+                        ×
+                      </button>
+                    </div>
+
+                    <div class="workspace-tabs" role="tablist" aria-label="Academic indicator sections">
+                      <button class="workspace-tab active" type="button" data-section="overview">Overview</button>
+                      <button class="workspace-tab" type="button" data-section="rules">Inclusion Rules</button>
+                      <button class="workspace-tab" type="button" data-section="confusion">Common Confusion</button>
+                      <button class="workspace-tab" type="button" data-section="check">Check Understanding</button>
+                    </div>
+
+                    <div class="workspace-stage">
+                      <section class="workspace-section is-active" data-section="overview">
+                        <div class="workspace-section-copy">
+                          <div class="workspace-kicker">Overview</div>
+                          <h3>What is measured?</h3>
+                          <p>
+                            This placeholder section will explain what the Academic indicator measures,
+                            why it matters, and how it connects to Dashboard reporting.
+                          </p>
+
+                          <div class="placeholder-grid">
+                            <article class="placeholder-card">
+                              <h4>What is measured?</h4>
+                              <p>Placeholder content for the Academic indicator summary.</p>
+                            </article>
+                            <article class="placeholder-card">
+                              <h4>Why it matters</h4>
+                              <p>Placeholder content for the learning goal and dashboard relevance.</p>
+                            </article>
+                            <article class="placeholder-card">
+                              <h4>Quick facts</h4>
+                              <p>Placeholder content for the key facts users should remember.</p>
+                            </article>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="workspace-section" data-section="rules" hidden>
+                        <div class="split-shell">
+                          <div class="split-visual">
+                            <div class="split-visual-card">
+                              <div class="split-visual-label">Visual / tool area</div>
+                              <p>Placeholder space for a diagram, image, callout, or interactive tool.</p>
+                            </div>
+                          </div>
+
+                          <div class="split-copy">
+                            <div class="workspace-kicker">Inclusion Rules</div>
+                            <h3>Two-step inclusion process</h3>
+                            <p>
+                              Placeholder content for the indicator rule and Foster Youth rule. This area can
+                              later host a split-screen walkthrough, examples, or an interactive tool.
+                            </p>
+
+                            <div class="split-stepper" aria-label="Inclusion Rules sub-screens">
+                              <button type="button" class="split-step is-active" data-substep="0">1</button>
+                              <button type="button" class="split-step" data-substep="1">2</button>
+                              <button type="button" class="split-step" data-substep="2">3</button>
+                            </div>
+
+                            <div class="placeholder-callout">
+                              <h4>Road sign placeholder</h4>
+                              <p>This section will eventually hold verified inclusion logic.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="workspace-section" data-section="confusion" hidden>
+                        <div class="split-shell">
+                          <div class="split-visual">
+                            <div class="split-visual-card">
+                              <div class="split-visual-label">Common misconception</div>
+                              <p>Placeholder space for a graphic, example, or comparison tool.</p>
+                            </div>
+                          </div>
+
+                          <div class="split-copy">
+                            <div class="workspace-kicker">Common Confusion</div>
+                            <h3>What users often get wrong</h3>
+                            <p>
+                              Placeholder content for the most common misunderstanding. This area can later
+                              become a short sequence of sub-screens with examples.
+                            </p>
+
+                            <div class="placeholder-list">
+                              <div class="placeholder-item">Common confusion example one</div>
+                              <div class="placeholder-item">Common confusion example two</div>
+                              <div class="placeholder-item">Common confusion example three</div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <section class="workspace-section" data-section="check" hidden>
+                        <div class="split-shell">
+                          <div class="split-visual">
+                            <div class="split-visual-card">
+                              <div class="split-visual-label">Scenario card</div>
+                              <p>Placeholder space for a student profile, image, or interactive scenario.</p>
+                            </div>
+                          </div>
+
+                          <div class="split-copy">
+                            <div class="workspace-kicker">Check Understanding</div>
+                            <h3>Scenario-based practice</h3>
+                            <p>
+                              Placeholder content for the scenario and feedback area. This section can later
+                              support branching exercises and immediate feedback.
+                            </p>
+
+                            <div class="scenario-placeholder">
+                              <div class="scenario-placeholder-question">
+                                Should this student be included in the Academic indicator?
+                              </div>
+                              <div class="scenario-placeholder-buttons">
+                                <button type="button">Yes</button>
+                                <button type="button">No</button>
+                              </div>
+                              <div class="scenario-placeholder-feedback">
+                                Feedback will appear here.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                    <div class="workspace-footer">
+                      <button class="panel-chevron workspace-nav-btn" id="workspacePrev" type="button" aria-label="Previous section" disabled>❮</button>
+
+                      <div class="workspace-dots" id="workspaceDots" aria-label="Academic progress">
+                        <button type="button" class="panel-dot is-current" data-section="overview" aria-current="step" aria-label="Overview"></button>
+                        <button type="button" class="panel-dot" data-section="rules" aria-label="Inclusion Rules"></button>
+                        <button type="button" class="panel-dot" data-section="confusion" aria-label="Common Confusion"></button>
+                        <button type="button" class="panel-dot" data-section="check" aria-label="Check Understanding"></button>
+                      </div>
+
+                      <button class="panel-chevron workspace-nav-btn" id="workspaceNext" type="button" aria-label="Next section">❯</button>
+                    </div>
+                  </div>                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+    </main>
 
-    </section>
-  </main>
+    <footer class="bottom-bar">
+      <div class="bottom-bar-inner">
+        <span class="footer-guidance">Refer to California Department of Education resources for official guidance.</span>
+        <span class="footer-owner">Orange County Department of Education © 2026</span>
+      </div>
+    </footer>
+  </div>
+ <script>
 
-  <footer class="bottom-bar">
-    <div class="bottom-bar-inner">
-      <span class="footer-guidance">
-        Refer to California Department of Education resources for official guidance.
-      </span>
+const academicTile =
+  document.getElementById("academicTile");
 
-      <span class="footer-owner">
-        Orange County Department of Education © 2026
-      </span>
-    </div>
-  </footer>
+const academicWorkspace =
+  document.getElementById("academicWorkspace");
 
+const indicatorGrid =
+  document.querySelector(".indicator-grid");
+
+const explorerHeading =
+  document.getElementById("explorerHeading");
+
+const closeAcademicWorkspace =
+  document.getElementById("closeAcademicWorkspace");
+
+const explorerToggle =
+  document.getElementById("explorer-toggle");  
+
+function resetAcademicWorkspace() {
+  academicWorkspace.hidden = true;
+  indicatorGrid.style.display = "grid";
+  explorerHeading.style.display = "block";
+  setWorkspaceSection("overview");
+}  
+
+const workspaceTabs = document.querySelectorAll(".workspace-tab");
+const workspaceSections = document.querySelectorAll(".workspace-section");
+const workspaceDots = document.getElementById("workspaceDots");
+const workspacePrev = document.getElementById("workspacePrev");
+const workspaceNext = document.getElementById("workspaceNext");
+
+const workspaceSectionOrder = ["overview", "rules", "confusion", "check"];
+let activeWorkspaceSection = "overview";
+
+function renderWorkspaceDots() {
+  const dots = workspaceDots.querySelectorAll(".panel-dot");
+
+  dots.forEach((dot) => {
+    const active = dot.dataset.section === activeWorkspaceSection;
+    dot.classList.toggle("is-current", active);
+    dot.setAttribute("aria-current", active ? "step" : "false");
+  });
+}
+
+function setWorkspaceSection(sectionName) {
+  activeWorkspaceSection = sectionName;
+
+  workspaceTabs.forEach((tab) => {
+    const active = tab.dataset.section === sectionName;
+    tab.classList.toggle("active", active);
+  });
+
+  workspaceSections.forEach((section) => {
+    const active = section.dataset.section === sectionName;
+    section.classList.toggle("is-active", active);
+    section.hidden = !active;
+  });
+
+  const index = workspaceSectionOrder.indexOf(sectionName);
+  workspacePrev.disabled = index === 0;
+  workspaceNext.disabled = index === workspaceSectionOrder.length - 1;
+
+  renderWorkspaceDots();
+}
+
+  workspaceTabs.forEach((tab) => {
+    tab.addEventListener("click", function () {
+      setWorkspaceSection(tab.dataset.section);
+    });
+  });
+
+  workspaceDots.addEventListener("click", function (e) {
+    const dot = e.target.closest("[data-section]");
+    if (!dot) return;
+    setWorkspaceSection(dot.dataset.section);
+  });
+
+  workspacePrev.addEventListener("click", function () {
+    const index = workspaceSectionOrder.indexOf(activeWorkspaceSection);
+    if (index > 0) setWorkspaceSection(workspaceSectionOrder[index - 1]);
+  });
+
+  workspaceNext.addEventListener("click", function () {
+    const index = workspaceSectionOrder.indexOf(activeWorkspaceSection);
+    if (index < workspaceSectionOrder.length - 1) setWorkspaceSection(workspaceSectionOrder[index + 1]);
+});
+
+setWorkspaceSection("overview");
+  academicTile.addEventListener("click", function(e) {
+  e.preventDefault();
+  indicatorGrid.style.display = "none";
+  explorerHeading.style.display = "none";
+  academicWorkspace.hidden = false;
+});
+
+  closeAcademicWorkspace.addEventListener("click", function() {
+    resetAcademicWorkspace();
+});
+
+  explorerToggle.addEventListener("change", function() {
+    if (!explorerToggle.checked) {
+      resetAcademicWorkspace();
+  }
+});
+</script> 
 </body>
 </html>

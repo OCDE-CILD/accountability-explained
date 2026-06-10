@@ -35,6 +35,8 @@ Target for removal after migration validation.
   --tile-size: 220px;
   --tile-gap: 14px;
   --tile-max-row: calc((var(--tile-size) * 4) + (var(--tile-gap) * 3));
+
+  --footer-h: 52px;
 }
 
 * {
@@ -58,6 +60,7 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   position: relative;
+  padding-bottom: var(--footer-h);
 }
 
 a {
@@ -417,9 +420,14 @@ img {
 }
 
 .bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
   background: var(--navy);
   margin-top: 0;
+  z-index: 200;
 }
 
 .bottom-bar-inner {
@@ -429,6 +437,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: var(--footer-h);
 }
 
 .footer-guidance {
@@ -488,6 +497,11 @@ img {
 }
 
 @media (max-width: 820px) {
+    
+  :root {
+    --footer-h: 72px;
+  }
+  
   .site-header {
     flex-direction: column;
     align-items: flex-start;
