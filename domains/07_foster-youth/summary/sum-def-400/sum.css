@@ -1,0 +1,463 @@
+.summary-content--def400,
+.panel-body--def400 {
+  height: 100%;
+  min-height: 0;
+}
+
+.panel-body--def400 {
+  padding: 0;
+  overflow: hidden;
+}
+
+.def-400-shell {
+  display: grid;
+  grid-template-columns: minmax(255px, 27%) minmax(0, 1fr);
+  gap: 14px;
+  height: 100%;
+  min-height: 0;
+  padding: 14px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+.def-400-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  padding: 14px 14px 12px;
+  border: 1px solid rgba(23, 52, 95, 0.10);
+  border-radius: 22px;
+  background: #ffffff;
+}
+
+.def-400-left-panel h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem);
+  line-height: 1.02;
+  color: #17345f;
+}
+
+.def-400-title-rule {
+  border: 0;
+  width: 64px;
+  height: 4px;
+  margin: 6px 0 22px;
+  background: #C09A5A;
+  border-radius: 999px;
+  display: block;
+}
+
+.def-400-left-panel p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #17345f;
+}
+
+.def-400-left-panel h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem);
+  line-height: 1.02;
+  color: #17345f;
+}
+
+.def-400-left-panel p {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #17345f;
+}
+
+.def-400-callout {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #edf4ff 0%, #e7f0fd 100%);
+  border: 1px solid rgba(23, 52, 95, 0.08);
+}
+
+.def-400-callout-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #17345f;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  margin-top: 1px;
+}
+
+.def-400-callout-copy {
+  min-width: 0;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  color: #17345f;
+}
+
+.status-list {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.status-list li {
+  margin: 0.35rem 0;
+}
+
+.def-explorer-detail-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0;
+}
+
+.def-explorer-detail-col {
+  min-width: 0;
+  min-height: 0;
+  padding: 0 18px;
+  border-right: 1px solid rgba(23, 52, 95, 0.10);
+  display: flex;
+  flex-direction: column;
+}
+
+.def-explorer-detail-col:first-child {
+  border-left: 0;
+}
+
+.def-explorer-detail-kicker {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.def-explorer-detail-kicker-icon[hidden] {
+  display: none;
+}
+
+.def-explorer-detail-kicker-text {
+  color: #17345f;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.def-explorer-detail-copy {
+  margin: 0;
+  color: #17345f;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ==================================================
+   Explorer Detail Layout (matches def-300)
+   ================================================== */
+
+.def-explorer {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  gap: 10px;
+}
+
+.def-explorer-top {
+  flex: 0 0 auto;
+}
+
+.def-explorer-detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.def-explorer-detail-grid {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  overflow-y: auto;
+}
+
+/* ==================================================
+   RESPONSIVE OVERRIDES — def-400
+   ================================================== */
+
+@media (min-width: 1201px) and (max-height: 800px) {
+  .def-400-shell {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .def-400-left-panel,
+  .def-400-right-panel {
+    padding: 12px 12px 10px;
+    border-radius: 20px;
+  }
+
+  .def-400-left-panel h2 {
+    font-size: clamp(1.28rem, 1.65vw, 1.65rem);
+  }
+
+  .def-400-title-rule {
+    width: 48px;
+    height: 3px;
+    margin: 8px 0 12px;
+  }
+
+  .def-400-left-panel p,
+  .def-400-callout-copy,
+  .def-explorer-detail-copy {
+    font-size: 0.90rem;
+    line-height: 1.45;
+  }
+
+  .def-400-callout {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .def-400-callout-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .def-explorer-detail-grid {
+    gap: 0;
+  }
+
+  .def-explorer-detail-col {
+    padding: 0 14px;
+  }
+
+  .def-explorer-detail-kicker {
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .def-explorer-detail-kicker-text {
+    font-size: 0.9rem;
+  }
+
+  .def-explorer-detail-copy {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  }
+
+@media (max-width: 900px) {
+  .summary-content--def400,
+  .summary-content--def400 .panel-body,
+  .summary-content--def400 .def-400-shell {
+    height: auto;
+    min-height: 0;
+  }
+
+  .summary-content--def400 .panel-body {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .def-400-shell {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    height: auto;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .def-400-left-panel,
+  .def-400-right-panel {
+    height: auto;
+    min-height: 0;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .def-400-left-panel {
+    gap: 12px;
+  }
+
+  .def-400-title-rule {
+    width: 52px;
+    height: 3px;
+    margin: 8px 0 12px;
+  }
+
+  .def-400-left-panel h2 {
+    font-size: clamp(1.32rem, 4vw, 1.75rem);
+  }
+
+  .def-400-left-panel p,
+  .def-400-callout-copy,
+  .def-explorer-detail-copy {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .def-400-callout {
+    margin-top: 0;
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .def-400-callout-icon {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    font-size: 0.88rem;
+  }
+
+  .def-400-right-panel {
+    padding: 14px;
+  }
+
+  .def-explorer-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .def-explorer-detail-col {
+    padding: 0 0 14px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(23, 52, 95, 0.1);
+  }
+
+  .def-explorer-detail-col:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .def-explorer-detail-kicker {
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .def-explorer-detail-kicker-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .summary-content--def400,
+  .summary-content--def400 .panel-body,
+  .summary-content--def400 .def-400-shell {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .summary-content--def400 .panel-body {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin: 0;
+  }
+
+  .def-400-shell {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .def-400-left-panel,
+  .def-400-right-panel {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .def-400-left-panel {
+    gap: 10px;
+  }
+
+  .def-400-left-panel h2 {
+    font-size: clamp(1.2rem, 6.5vw, 1.5rem);
+  }
+
+  .def-400-title-rule {
+    width: 48px;
+    height: 3px;
+    margin: 6px 0 12px;
+  }
+
+  .def-400-left-panel p,
+  .def-400-callout-copy,
+  .def-explorer-detail-copy {
+    font-size: 0.88rem;
+    line-height: 1.42;
+  }
+
+  .def-400-callout {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+
+  .def-400-callout-icon {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    font-size: 0.85rem;
+  }
+
+  .def-400-callout-copy {
+    font-size: 0.88rem;
+  }
+
+  .def-400-right-panel {
+    padding: 12px;
+  }
+
+  .def-explorer-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .def-explorer-detail-col {
+    padding: 0 0 12px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(23, 52, 95, 0.1);
+  }
+
+  .def-explorer-detail-col:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .def-explorer-detail-kicker {
+    margin-bottom: 8px;
+    gap: 8px;
+  }
+
+  .def-explorer-detail-kicker-text {
+    font-size: 0.88rem;
+  }
+
+  .def-explorer-detail-copy {
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+}

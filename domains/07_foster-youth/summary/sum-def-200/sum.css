@@ -1,0 +1,465 @@
+sum.css.summary-content--def200,
+.panel-body--def200 {
+  height: 100%;
+  min-height: 0;
+}
+
+.panel-body--def200 {
+  padding: 0;
+  overflow: hidden;
+}
+
+.def-200-shell {
+  display: grid;
+  grid-template-columns: minmax(300px, 39%) minmax(0, 1fr);
+  gap: 14px;
+  height: 100%;
+  min-height: 0;
+  padding: 14px;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* LEFT PANEL */
+
+.def-200-title-rule {
+  border: 0;
+  width: 64px;
+  height: 4px;
+  margin: 6px 0 22px;
+  background: #C09A5A;
+  border-radius: 999px;
+  display: block;
+}
+
+.def-200-left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+
+  padding: 16px 16px 14px;
+  border: 1px solid rgba(23, 52, 95, 0.10);
+  border-radius: 22px;
+  background: #ffffff;
+}
+
+.def-200-text-block {
+  padding: 2px 0 0;
+}
+
+.def-200-text-block > strong {
+  display: block;
+  margin: 0 0 8px;
+  color: #17345f;
+  font-size: 1rem;
+  line-height: 1.15;
+}
+
+.def-200-left-panel h2 {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.9vw, 1.9rem);
+  line-height: 1.02;
+  color: #17345f;
+}
+
+.def-200-left-panel p {
+  margin: -16px 0 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: #17345f;
+}
+
+.def-200-highlight {
+  display: flex;
+  margin-bottom: 14px;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #edf4ff 0%, #e7f0fd 100%);
+  border: 1px solid rgba(23, 52, 95, 0.08);
+}
+
+.def-200-highlight-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #17345f;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.def-200-highlight-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.def-200-highlight-copy strong {
+  font-size: 1rem;
+  line-height: 1.15;
+  color: #17345f;
+}
+
+.def-200-highlight-copy span {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: #17345f;
+}
+
+.def-200-criteria-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.def-200-criteria-list li {
+  margin-bottom: 6px;
+  line-height: 1.45;
+  font-size: 1rem;
+}
+
+.def-200-used-by h3 {
+  margin: 0 0 8px;
+  color: #17345f;
+  font-size: 1.15rem;
+  line-height: 1.15;
+}
+
+.def-200-used-by-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.def-200-used-by-list li {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+.def-200-takeaway {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #fff8e6 0%, #fff3cf 100%);
+  border: 1px solid rgba(192, 154, 90, 0.20);
+}
+
+.def-200-takeaway-icon {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #17345f;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.def-200-takeaway-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-left: -42px;
+  line-height: 1.45;
+}
+
+.def-200-takeaway-copy strong {
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  line-height: 1.1;
+  margin:8px 0 8px 40px;
+  letter-spacing: 0.02em;
+}
+
+.def-200-takeaway-copy p {
+  margin: 0;
+}
+
+
+/* RIGHT PANEL */
+
+.def-200-right-panel {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 12px;
+  height: 100%;
+  min-width: 0;
+
+  padding: 16px;
+  border: 1px solid rgba(23, 52, 95, 0.10);
+  border-radius: 22px;
+  background: linear-gradient(180deg, #f8fbff 0%, #f2f7fd 100%);
+}
+
+.def-200-visual-header {
+  text-align: center;
+}
+
+.def-200-visual-header h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.35rem, 1.75vw, 1.7rem);
+  line-height: 1.08;
+  color: #17345f;
+}
+
+.def-200-visual-header p {
+  margin: 0 auto;
+  max-width: 75ch;
+  font-size: 0.94rem;
+  line-height: 1.45;
+  color: #17345f;
+}
+
+.def-200-visual-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.def-200-visual-image {
+  width: 100%;
+  max-width: 100%;
+  max-height: 375px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==================================================
+   RESPONSIVE OVERRIDES — def-200
+   ================================================== */
+
+/* 1280x800 and similar compact landscape layouts */
+@media (min-width: 1201px) and (max-height: 800px) {
+  .def-200-shell {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .def-200-left-panel,
+  .def-200-right-panel {
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .def-200-title-rule {
+    margin: 8px 0 16px;
+    width: 56px;
+  }
+
+  .def-200-left-panel h2 {
+    font-size: clamp(1.28rem, 1.65vw, 1.65rem);
+  }
+
+  .def-200-highlight,
+  .def-200-takeaway {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .def-200-highlight-icon,
+  .def-200-takeaway-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .def-200-used-by h3 {
+    font-size: 1.02rem;
+  }
+
+  .def-200-right-panel {
+    gap: 10px;
+  }
+
+  .def-200-visual-header h3 {
+    font-size: clamp(1.15rem, 1.5vw, 1.45rem);
+  }
+
+  .def-200-visual-header p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .def-200-visual-image {
+    max-height: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .summary-content--def200,
+  .panel-body--def200 {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .summary-content--def200 .panel-body {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .def-200-shell {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    height: auto;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .def-200-left-panel,
+  .def-200-right-panel {
+    height: auto;
+    min-height: 0;
+    padding: 14px;
+    border-radius: 20px;
+  }
+
+  .def-200-left-panel {
+    gap: 8px;
+  }
+
+  .def-200-title-rule {
+    width: 54px;
+    margin: 0px 0 14px;
+  }
+
+  .def-200-left-panel h2 {
+    font-size: clamp(1.3rem, 4vw, 1.7rem);
+  }
+
+  .def-200-left-panel p,
+  .def-200-highlight-copy span,
+  .def-200-used-by-list li,
+  .def-200-visual-header p {
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .def-200-highlight,
+  .def-200-takeaway {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 16px;
+  }
+
+  .def-200-highlight-icon,
+  .def-200-takeaway-icon {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+    font-size: 0.9rem;
+  }
+
+  .def-200-criteria-list {
+    padding-left: 18px;
+  }
+
+  .def-200-visual-header h3 {
+    font-size: clamp(1.15rem, 3.8vw, 1.5rem);
+  }
+
+  .def-200-visual-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .summary-content--def200,
+  .panel-body--def200 {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .summary-content--def200 .panel-body {
+    display: flex;
+    flex-direction: column;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .def-200-shell {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .def-200-left-panel,
+  .def-200-right-panel {
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .def-200-title-rule {
+    width: 48px;
+    margin: 6px 0 12px;
+  }
+
+  .def-200-left-panel h2 {
+    font-size: clamp(1.2rem, 6.5vw, 1.55rem);
+  }
+
+  .def-200-left-panel p,
+  .def-200-highlight-copy span,
+  .def-200-used-by-list li,
+  .def-200-visual-header p {
+    font-size: 0.88rem;
+    line-height: 1.42;
+  }
+
+  .def-200-highlight,
+  .def-200-takeaway {
+    padding: 10px 12px;
+    gap: 8px;
+    border-radius: 14px;
+  }
+
+  .def-200-highlight-icon,
+  .def-200-takeaway-icon {
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    font-size: 0.85rem;
+  }
+
+  .def-200-highlight-copy strong {
+    font-size: 0.95rem;
+  }
+
+  .def-200-criteria-list,
+  .def-200-used-by-list {
+    padding-left: 18px;
+  }
+
+  .def-200-used-by h3 {
+    font-size: 0.98rem;
+  }
+
+  .def-200-visual-header h3 {
+    font-size: clamp(1.1rem, 6vw, 1.3rem);
+  }
+
+  .def-200-visual-image {
+    max-height: 240px;
+  }
+}

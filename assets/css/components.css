@@ -70,6 +70,28 @@
   text-align: center;
 }
 
+.group-card.coming-soon .group-card-inner::after {
+  content: "COMING SOON";
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  padding: 6px 11px;
+  border: 1px solid rgba(243, 183, 63, 0.55);
+  background: rgba(243, 183, 63, 0.14);
+  color: #8a651d;
+  font-size: 0.64rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+  pointer-events: none;
+
+  border-top-left-radius: 16px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 0;
+}
+
 .group-title {
   display: block;
   width: 100%;
@@ -82,38 +104,38 @@
 }
 
 .accent-race {
-  --accent: #4d7150;
-  --accent-rgb: 77, 113, 80;
+  --accent: #718D69;
+  --accent-rgb: 110, 148, 113;
 }
 
 .accent-sed {
-  --accent: #157381;
-  --accent-rgb: 21, 115, 129;
+  --accent: #4E7A5A;
+  --accent-rgb: 47, 143, 125;
 }
 
 .accent-english {
-  --accent: #4f7391;
-  --accent-rgb: 79, 115, 145;
+  --accent: #3A8E98;
+  --accent-rgb: 74, 175, 176;
 }
 
 .accent-ltel {
-  --accent: #5a7b94;
-  --accent-rgb: 90, 123, 148;
+  --accent: #5B98BF;
+  --accent-rgb: 91, 152, 191;
 }
 
 .accent-swd {
-  --accent: #344d7d;
-  --accent-rgb: 52, 77, 125;
+  --accent: #557DBA;
+  --accent-rgb: 109, 135, 190;
 }
 
 .accent-homeless {
-  --accent: #716095;
-  --accent-rgb: 113, 96, 149;
+  --accent: #5F7087;
+  --accent-rgb: 95, 112, 135;
 }
 
 .accent-foster {
-  --accent: #7b4776;
-  --accent-rgb: 123, 71, 118;
+  --accent: #A87E3D;
+  --accent-rgb: 168, 126, 61;
 }
 
 .scene-wrap {
@@ -157,9 +179,9 @@
 .scene-band {
   position: relative;
   width: 100%;
-  height: 156px;
+  height: 215px;
   overflow: hidden;
-  background: #fff;
+  background: var(--bg);
   visibility: hidden;
   margin: 0;
 }
@@ -169,17 +191,19 @@
 }
 
 .scene-image {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center;
-  opacity: 1;
-  transition: opacity 0.45s ease;
+  object-position: center 35%;
+  opacity: 0;
+  transition: opacity var(--scene-fade-ms, 850ms) ease-in-out;
 }
 
-.scene-image.is-fading {
-  opacity: 0;
+.scene-image.is-active {
+  opacity: 1;
 }
 
 .domain-hero {
@@ -316,7 +340,7 @@
   }
 
   .scene-band {
-    height: 142px;
+    height: 170px;
   }
 }
 
@@ -326,17 +350,7 @@
   }
 
   .scene-band {
-    height: 136px;
-  }
-}
-
-@media (max-width: 900px) {
-  :root {
-    --tile-size: 190px;
-  }
-
-  .portal-grid {
-    width: min(100%, calc((var(--tile-size) * 2) + var(--tile-gap)));
+    height: 160px;
   }
 }
 
@@ -367,7 +381,7 @@
   }
 
   .scene-band {
-    height: 130px;
+    height: 145px;
   }
 
   .domain-hero {

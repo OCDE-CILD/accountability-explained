@@ -13,6 +13,8 @@
   --tile-size: 220px;
   --tile-gap: 14px;
   --tile-max-row: calc((var(--tile-size) * 4) + (var(--tile-gap) * 3));
+
+  --scene-fade-ms: 1000ms;
 }
 
 * {

@@ -13,7 +13,7 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   padding: 18px 28px 0;
-  background: transparent;
+  background:var(--bg);
 }
 
 .section {

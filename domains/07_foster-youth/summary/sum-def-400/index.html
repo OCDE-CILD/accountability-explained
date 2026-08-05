@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foster Youth | Who Is Not Included?</title>
+
+  <link rel="stylesheet" href="../../../../assets/css/core.css" />
+  <link rel="stylesheet" href="../../../../assets/css/layout.css" />
+  <link rel="stylesheet" href="../../../../assets/css/components.css" />
+  <link rel="stylesheet" href="../../../../assets/css/navigation.css" />
+  <link rel="stylesheet" href="../../../../assets/css/footer.css" />
+  <link rel="stylesheet" href="../../foster-youth.css" />
+  <link rel="stylesheet" href="../def-explorer.css" />
+  <link rel="stylesheet" href="sum.css" />
+  <link rel="stylesheet" href="../../../../assets/css/responsive.css" />
+</head>
+
+<body class="domain-foster-youth summary-silo">
+  <main class="summary-content summary-content--def400">
+    <div class="panel-body panel-body--def400">
+      <section class="def-400-shell" aria-label="Who Is Not Included?">
+        <section class="def-400-left-panel" aria-labelledby="def400Title">
+          <h2 id="def400Title">Who Is Not Included?</h2>
+
+          <div class="def-400-title-rule" aria-hidden="true"></div>
+
+          <p>
+            Students in these situations generally do not meet the LCFF
+            Foster Youth definition used for accountability reporting.
+          </p>
+
+          <p>
+            Select a category card to see a plain-language explanation describing the situation,
+            why these students are not included, and how this may affect reporting measures.
+          </p>
+
+          <div
+            class="def-400-callout"
+            role="note"
+            aria-label="Not included in reporting"
+          >
+            <div class="def-400-callout-icon" aria-hidden="true">✕</div>
+
+            <div class="def-400-callout-copy">
+              These students are typically not included in Foster Youth reporting and accountability measures.
+            </div>
+          </div>
+        </section>
+
+        <section class="def-explorer" aria-label="Category explorer">
+          <div class="def-explorer-top">
+            <div class="def-explorer-cards" role="tablist" aria-label="Category cards">
+              <button class="def-explorer-card is-active" type="button" role="tab" aria-selected="true" data-index="0">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">WIC 602<br>Petition/<br>In-Home</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="1">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">Unaccompanied Refugee Minor (URM)</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="2">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">Guardianship &<br>Parent<br>Placement</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="3">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">Probation - Imminent Risk of Removal (IIR)</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="4">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">Other<br>Situations</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="def-explorer-detail" role="tabpanel" aria-label="Category details">
+            <div class="def-explorer-detail-grid"></div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const EXPLORER_DATA = [
+      {
+        cols: 2,
+        items: [
+          { title: "Situation", copy: "A youth is under the jurisdiction of the Juvenile Delinquency Court following a WIC 602 petition, but the court has not ordered an out-of-home foster care placement. Instead, the youth remains in the custody of a parent or guardian under probation supervision or resides in a county-operated juvenile detention facility. Although these students qualify for Foster Youth education rights and may receive LEA Foster Youth services, they have not entered foster care placement, which is required for inclusion under the LCFF Foster Youth definition." },
+          { title: "Why Not Included", copy: "The LCFF Foster Youth definition is limited to students who have entered qualifying foster care placements. A WIC 602 petition by itself does not establish LCFF Foster Youth eligibility. When a youth remains at home under probation supervision or is detained in juvenile hall without a foster care placement, they are excluded from CALPADS Foster Youth reporting, the California School Dashboard Foster Youth subgroup, and other LCFF accountability measures. However, these students continue to qualify for Foster Youth education rights and may receive local Foster Youth program services through the broader education-rights definition." },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          { title: "Situation", copy: "An Unaccompanied Refugee Minor (URM) is a child who entered the United States without a parent or legal guardian and has been placed through the federal Unaccompanied Refugee Minor Program. These youth are typically cared for by licensed foster families, group homes, or guardians under federal refugee services rather than California's child welfare dependency or probation systems. Although their living arrangements may resemble foster care, their placement authority comes from the federal refugee program rather than a California juvenile court." },
+          { title: "Why Not Included", copy: "Although Unaccompanied Refugee Minors receive many of the same educational supports and protections as foster youth, they are not included in California's LCFF Foster Youth definition. Their placement is established through the federal refugee program instead of a qualifying California dependency or probation foster care placement. Because they are not part of the statewide LCFF Foster Youth identification process, they are excluded from CALPADS Foster Youth reporting, Dashboard Foster Youth accountability measures, and LCFF Foster Youth funding calculations. However, LEAs should continue to ensure these students receive any educational rights and supports for which they qualify under applicable state and federal law." },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          { title: "Situation", copy: "A child is living with a relative, legal guardian, or other caregiver outside the care of a parent, but is not in a qualifying foster care placement. This may occur through a Probate Guardianship ordered by a civil court, a private guardianship arranged by a parent, or another custody arrangement that transfers responsibility without involving California's dependency or probation foster care systems. Although the child may no longer live with a parent, the placement is established through guardianship or custody—not foster care." },
+          { title: "Why Not Included", copy: "California's LCFF Foster Youth definition applies only to students in qualifying foster care placements under the dependency or probation systems. A guardianship or private custody arrangement does not create LCFF Foster Youth eligibility, even when the child lives with relatives or another caregiver. These students are excluded from CALPADS Foster Youth reporting, Dashboard Foster Youth accountability measures, and LCFF Foster Youth funding. However, they may qualify for other educational programs or supports based on their individual circumstances, such as low-income (FRPM), homelessness, or other eligibility categories." },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          { title: "Situation", copy: "A youth is under the jurisdiction of the Juvenile Delinquency Court and remains at home under probation supervision. The probation department has determined the youth is at Imminent Risk of Removal (IRR), meaning placement into foster care may become necessary if current interventions are unsuccessful. Beginning in 2025, these youth became eligible to receive prevention-focused services through California's Foster Youth Services Coordinating Program (FYSCP). However, they remain at home and have not entered a qualifying foster care placement." },
+          { title: "Why Not Included", copy: "Although Probation-IRR youth may receive FYSCP services and other educational supports, they are not included in California's LCFF Foster Youth definition. Eligibility for LCFF Foster Youth reporting requires a qualifying foster care placement—not simply the risk of future placement. Because these students remain at home under probation supervision, they are excluded from CALPADS Foster Youth reporting, Dashboard Foster Youth accountability measures, and LCFF Foster Youth funding unless they later enter a qualifying foster care placement." },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          { title: "Pre Foster Youth Status", copy: "<strong>Informal Supervision / Voluntary Family Maintenance:</strong> The child remains safely at home while the family voluntarily receives child welfare services. Without court jurisdiction, the student is not an LCFF Foster Youth.<br><br><strong>Emergency Removal* (before petition filing):</strong> A child may be removed for immediate safety, but Foster Youth status does not begin until a Juvenile Dependency Court petition is filed." },
+          { title: "Post Foster Youth Status", copy: "<strong>Guardianship:</strong> The student has permanently exited foster care through a court-approved guardianship. Because the dependency case has closed, the student is no longer included in the LCFF Foster Youth count. Districts provide ongoing support as students settle into their permanent homes.<br><br><strong>Adopted:</strong> The student has permanently exited foster care through adoption. Although no longer included in the LCFF Foster Youth count, schools may continue supporting the student as a former foster youth." },
+        ]
+      }
+    ];
+
+    function initExplorer(root) {
+      const cards = Array.from(root.querySelectorAll(".def-explorer-card"));
+      const grid = root.querySelector(".def-explorer-detail-grid");
+
+      if (!cards.length || !grid) return;
+
+      function render(index) {
+        const state = EXPLORER_DATA[index] || EXPLORER_DATA[0];
+
+        cards.forEach((card, i) => {
+          const active = i === index;
+          card.classList.toggle("is-active", active);
+          card.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        grid.innerHTML = "";
+        grid.style.gridTemplateColumns = `repeat(${state.cols || state.items.length}, minmax(0, 1fr))`;
+
+        state.items.forEach((item) => {
+          const col = document.createElement("div");
+          col.className = "def-explorer-detail-col";
+
+          const kicker = document.createElement("div");
+          kicker.className = "def-explorer-detail-kicker";
+
+          const iconEl = document.createElement("span");
+          iconEl.className = "def-explorer-detail-kicker-icon";
+          iconEl.setAttribute("aria-hidden", "true");
+          if (item.icon) iconEl.textContent = item.icon;
+          else iconEl.hidden = true;
+
+          const titleEl = document.createElement("span");
+          titleEl.className = "def-explorer-detail-kicker-text";
+          titleEl.textContent = item.title || "";
+
+          kicker.append(iconEl, titleEl);
+
+          const copyEl = document.createElement("div");
+          copyEl.className = "def-explorer-detail-copy";
+          copyEl.innerHTML = item.copy || "";
+
+          col.append(kicker, copyEl);
+          grid.appendChild(col);
+        });
+      }
+
+      cards.forEach((card, index) => {
+        card.addEventListener("click", () => render(index));
+      });
+
+      render(0);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".summary-content--def400").forEach(initExplorer);
+    });
+  </script>
+</body>
+</html>

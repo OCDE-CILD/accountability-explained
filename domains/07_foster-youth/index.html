@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../assets/css/navigation.css" />
   <link rel="stylesheet" href="../../assets/css/footer.css" />
   <link rel="stylesheet" href="./foster-youth.css" />
+
 </head>
 <body class="domain-foster-youth">
   <div class="page-wrap">
@@ -48,202 +49,75 @@
     <main class="domain-shell">
       <section class="stage" aria-label="Foster Youth learning stage">
         <div class="stage-inner">
-          <section class="domain-intro" aria-labelledby="fy-title">
-            <h1 id="fy-title">Foster Youth</h1>
-            <p class="domain-summary">
-              Explore how Foster Youth students move through California’s accountability system and why counts can look different across reports.
-            </p>
-            <p class="domain-note">
-              Use the viewer to move through the core ideas in order or jump straight to the topic you need.
-            </p>
+          <section class="domain-intro" aria-labelledby="summarySideTitle">
+            <h1 id="summarySideTitle"></h1>
+
+            <div class="domain-intro-copy">
+              <p class="domain-summary" id="summarySideBody"></p>
+              <p class="domain-note" id="summarySideNote" hidden></p>
+            </div>
           </section>
 
           <div class="stage-divider" aria-hidden="true"></div>
 
-          <section class="viewer-shell" aria-label="Learning viewer">
-            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-overview" checked />
-            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-definitions" />
-            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-counts" />
-            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-journey" />
-            <input class="viewer-tab-input" type="radio" name="fy-viewer" id="fy-tab-questions" />
-
-            <div class="viewer-tabs" role="tablist" aria-label="Foster Youth learning topics">
-              <label class="viewer-tab" for="fy-tab-overview">Overview</label>
-              <label class="viewer-tab" for="fy-tab-definitions">Definitions</label>
-              <label class="viewer-tab" for="fy-tab-counts">Counts</label>
-              <label class="viewer-tab" for="fy-tab-journey">Journey</label>
-              <label class="viewer-tab" for="fy-tab-questions">Questions</label>
+          <section class="viewer-shell" aria-label="Foster Youth summary viewer">
+            <div class="viewer-tabs" role="tablist" aria-label="Foster Youth summary sections">
+              <button class="viewer-tab is-active" type="button" data-section="overview">Overview</button>
+              <button class="viewer-tab" type="button" data-section="definitions">Definitions</button>
+              <button class="viewer-tab" type="button" data-section="reporting">Reporting</button>
+              <button class="viewer-tab" type="button" data-section="systems">Systems</button>
+              <button class="viewer-tab" type="button" data-section="questions">Questions</button>
             </div>
 
-            <div class="viewer-panels">
-              <article class="viewer-panel panel-overview">
-                <div class="panel-pill">Why is this important?</div>
+            <div class="viewer-panels summary-viewer">
+              <iframe
+                id="summaryFrame"
+                class="summary-frame"
+                src="./summary/sum-ov-100/index.html"
+                title="Foster Youth Summary Content"
+              ></iframe>
+            </div>
 
-                <div class="panel-body">
-                  <p>
-                    Foster Youth is an important student group in accountability because it can surface differences between local records, state matching, and Dashboard reporting.
-                  </p>
-                  <ul class="panel-list">
-                    <li>Students move through multiple systems before they appear in reporting.</li>
-                    <li>Different reports answer different questions.</li>
-                    <li>Counts can be correct even when they do not match.</li>
-                  </ul>
-                </div>
+            <div class="panel-nav">
+              <button
+                class="panel-chevron panel-chevron--disabled"
+                id="summaryPrev"
+                type="button"
+                aria-label="Previous section"
+                disabled
+              >
+                ❮
+              </button>
 
-                <div class="panel-nav">
-                  <span class="panel-chevron panel-chevron--disabled" aria-hidden="true">❮</span>
+              <div class="panel-dots" id="summaryDots" aria-label="Summary progress"></div>
 
-                  <div class="panel-dots" aria-label="Overview progress">
-                    <span class="panel-dot is-current" aria-current="step" aria-label="Overview"></span>
-                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
-                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
-                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
-                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
-                  </div>
-
-                  <label class="panel-chevron" for="fy-tab-definitions" aria-label="Next">❯</label>
-                </div>
-              </article>
-
-              <article class="viewer-panel panel-definitions">
-                <div class="panel-pill">Who is included?</div>
-
-                <div class="panel-body">
-                  <p>
-                    Foster Youth does not always mean the same thing in every context. The definition matters because it determines who is included in a given report or system.
-                  </p>
-                  <ul class="panel-list">
-                    <li>Some definitions support accountability reporting.</li>
-                    <li>Some definitions support educational rights and services.</li>
-                    <li>Some students may qualify in one context but not another.</li>
-                  </ul>
-                </div>
-
-                <div class="panel-nav">
-                  <label class="panel-chevron" for="fy-tab-overview" aria-label="Back">❮</label>
-
-                  <div class="panel-dots" aria-label="Definitions progress">
-                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
-                    <span class="panel-dot is-current" aria-current="step" aria-label="Definitions"></span>
-                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
-                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
-                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
-                  </div>
-
-                  <label class="panel-chevron" for="fy-tab-counts" aria-label="Next">❯</label>
-                </div>
-              </article>
-
-              <article class="viewer-panel panel-counts">
-                <div class="panel-pill">Why do counts differ?</div>
-
-                <div class="panel-body">
-                  <p>
-                    Reports update on different schedules and often use different populations, timeframes, and business rules. That is why two reports can both be correct while showing different numbers.
-                  </p>
-                  <ul class="panel-list">
-                    <li>Timing matters.</li>
-                    <li>System purpose matters.</li>
-                    <li>Report design matters.</li>
-                  </ul>
-                </div>
-
-                <div class="panel-nav">
-                  <label class="panel-chevron" for="fy-tab-definitions" aria-label="Back">❮</label>
-
-                  <div class="panel-dots" aria-label="Counts progress">
-                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
-                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
-                    <span class="panel-dot is-current" aria-current="step" aria-label="Counts"></span>
-                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
-                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
-                  </div>
-
-                  <label class="panel-chevron" for="fy-tab-journey" aria-label="Next">❯</label>
-                </div>
-              </article>
-
-              <article class="viewer-panel panel-journey">
-                <div class="panel-pill">How information moves</div>
-
-                <div class="panel-body panel-split">
-
-                  <div class="panel-copy">
-
-                    <p>
-                      Foster Youth information travels through a path that can include county systems, matching processes, statewide student data, and accountability reporting.
-                    </p>
-
-                    <div class="journey-flow" aria-label="Foster Youth information flow">
-                      <span>County systems</span>
-                      <span>→</span>
-                      <span>State match</span>
-                      <span>→</span>
-                      <span>CALPADS</span>
-                      <span>→</span>
-                      <span>Dashboard</span>
-                    </div>
-
-                  </div>
-
-                  <div class="panel-visual">
-                    <img
-                      src="../../assets/images/branding/book_logo.png"
-                      alt="Test visual"
-                    >
-                  </div>
-
-                </div>
-
-                <div class="panel-nav">
-                  <label class="panel-chevron" for="fy-tab-counts" aria-label="Back">❮</label>
-
-                  <div class="panel-dots" aria-label="Journey progress">
-                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
-                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
-                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
-                    <span class="panel-dot is-current" aria-current="step" aria-label="Journey"></span>
-                    <label class="panel-dot" for="fy-tab-questions" aria-label="Questions"></label>
-                  </div>
-
-                  <label class="panel-chevron" for="fy-tab-questions" aria-label="Next">❯</label>
-                </div>
-              </article>
-
-              <article class="viewer-panel panel-questions">
-                <div class="panel-pill">Common questions</div>
-
-                <div class="panel-body">
-                  <p>
-                    This section is for quick answers to the questions users bring to the site most often.
-                  </p>
-                  <ul class="panel-list">
-                    <li>Why doesn’t my count match?</li>
-                    <li>Why is a student on one report but not another?</li>
-                    <li>What changed between reports?</li>
-                  </ul>
-                </div>
-
-                <div class="panel-nav">
-                  <label class="panel-chevron" for="fy-tab-journey" aria-label="Back">❮</label>
-
-                  <div class="panel-dots" aria-label="Questions progress">
-                    <label class="panel-dot" for="fy-tab-overview" aria-label="Overview"></label>
-                    <label class="panel-dot" for="fy-tab-definitions" aria-label="Definitions"></label>
-                    <label class="panel-dot" for="fy-tab-counts" aria-label="Counts"></label>
-                    <label class="panel-dot" for="fy-tab-journey" aria-label="Journey"></label>
-                    <span class="panel-dot is-current" aria-current="step" aria-label="Questions"></span>
-                  </div>
-
-                  <span class="panel-chevron panel-chevron--disabled" aria-hidden="true">❯</span>
-                </div>
-              </article>
+              <button class="panel-chevron" id="summaryNext" type="button" aria-label="Next section">
+                ❯
+              </button>
             </div>
           </section>
         </div>
 
-        <div class="explorer-stage" aria-label="Indicator Explorer">
+        <div class="explorer-stage" aria-label="Foster Youth Indicators">
           <input class="explorer-toggle-input" type="checkbox" id="explorer-toggle" />
+
+          <label class="explorer-launcher" for="explorer-toggle">
+            <span class="explorer-decor" aria-hidden="true">
+              <span class="explorer-line"></span>
+              <svg class="explorer-star" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z"></path>
+              </svg>
+            </span>
+
+            <span class="explorer-handle-text">Open Indicator Explorer</span>
+
+            <span class="explorer-decor" aria-hidden="true">
+              <svg class="explorer-star" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1.5l1.7 6.8 6.8 1.7-6.8 1.7-1.7 6.8-1.7-6.8-6.8-1.7 6.8-1.7L12 1.5Z"></path>
+              </svg>
+              <span class="explorer-line"></span>
+            </span>
+          </label>
 
           <div class="explorer-drawer">
             <label class="explorer-handle" for="explorer-toggle">
@@ -276,93 +150,238 @@
               <div class="explorer-inner">
                 <div class="explorer-content">
                   <div class="explorer-heading" id="explorerHeading">
-                    <h2>Indicator Explorer</h2>
+                    <h2>Foster Youth Indicators</h2>
                   </div>
 
                   <div class="indicator-grid">
-                    <a
-                      class="indicator-tile tile-academic"
-                      href="#"
-                      id="academicTile"
-                      aria-label="Academic Performance"
-                    >
+                    <article class="indicator-tile tile-academic" id="academicTile" aria-labelledby="academicTitle">
                       <div class="indicator-icon" aria-hidden="true">
-                        <img
-                          src="../../assets/images/indicators/academic-performance.png"
-                          alt="Academic performance icon"
-                        >
+                        <img src="../../assets/images/indicators/academic-performance.png" alt="Academic performance icon">
                       </div>
-                      <div class="indicator-copy">
-                        <h3>Academic Performance</h3>
-                        <p>English Language Arts and Math assessment results.</p>
-                      </div>
-                    </a>
 
-                    <a class="indicator-tile tile-attendance" href="#" aria-label="Chronic Absenteeism">
-                      <div class="indicator-icon" aria-hidden="true">
-                        <img
-                          src="../../assets/images/indicators/chronic-absenteeism.png"
-                          alt="Chronic absenteeism icon"
-                        >
-                      </div>
-                      <div class="indicator-copy">
-                        <h3>Chronic Absenteeism</h3>
-                        <p>Students missing 10% or more of school days.</p>
-                      </div>
-                    </a>
+                      <h3 id="academicTitle">Academic Performance</h3>
 
-                    <a class="indicator-tile tile-suspension" href="#" aria-label="Suspension Rate">
-                      <div class="indicator-icon" aria-hidden="true">
-                        <img
-                          src="../../assets/images/indicators/suspension-rate.png"
-                          alt="Suspension rate icon"
-                        >
-                      </div>
-                      <div class="indicator-copy">
-                        <h3>Suspension Rate</h3>
-                        <p>Students suspended at least one day.</p>
-                      </div>
-                    </a>
+                      <div class="indicator-content">
+                        <p class="indicator-intro">
+                          A Foster Youth student contributes to the Academic Indicator only if the student participates in the statewide English Language Arts and Mathematics assessments for Grades 3–8 and 11, meets Dashboard accountability requirements, and remains continuously enrolled from Fall Census Day through testing.
+                        </p>
 
-                    <a class="indicator-tile tile-graduation" href="#" aria-label="Graduation Rate">
-                      <div class="indicator-icon" aria-hidden="true">
-                        <img
-                          src="../../assets/images/indicators/graduation-rate.png"
-                          alt="Graduation rate icon"
-                        >
-                      </div>
-                      <div class="indicator-copy">
-                        <h3>Graduation Rate</h3>
-                        <p>Students who graduated within 4 or 5 years.</p>
-                      </div>
-                    </a>
+                        <section class="indicator-section">
+                          <h4>What it measures</h4>
+                          <p>
+                            The Academic Indicator reports statewide ELA and Math results and uses current-year and prior-year performance to determine the Status and Change values that drive the Dashboard color.
+                          </p>
+                        </section>
 
-                    <a class="indicator-tile tile-college" href="#" aria-label="College Career Indicator">
-                      <div class="indicator-icon" aria-hidden="true">
-                        <img
-                          src="../../assets/images/indicators/college-career.png"
-                          alt="college career indicator icon"
-                        >
-                      </div>
-                      <div class="indicator-copy">
-                        <h3>College/Career Indicator</h3>
-                        <p>College, career, and workforce readiness measures.</p>
-                      </div>
-                    </a>
+                        <section class="indicator-section">
+                          <h4>Who is included</h4>
+                          <p>
+                            Students are included only when they participate in the statewide assessments and meet the Dashboard participation and accountability rules. Foster Youth status is based on any qualifying foster match during the school year.
+                          </p>
+                        </section>
 
-                    <a class="indicator-tile tile-science" href="#" aria-label="Science">
+                        <section class="indicator-section">
+                          <h4>Why counts may differ</h4>
+                          <p>
+                            The tested cohort is not the same as every enrolled Foster Youth student. Continuous enrollment, assessment participation, and the timing of foster identification can all change who appears in the Academic indicator.
+                          </p>
+                        </section>
+
+                        <section class="indicator-section">
+                          <h4>Remember this</h4>
+                          <p>
+                            This indicator measures a tested cohort, not a simple enrollment count.
+                          </p>
+                        </section>
+                      </div>
+
+                      <div class="indicator-scroll-cue" aria-hidden="true">
+                        <span class="indicator-scroll-cue-line"></span>
+                        <span class="indicator-scroll-cue-text">SCROLL FOR MORE</span>
+                        <span class="indicator-scroll-cue-line"></span>
+                      </div>
+                    </article>
+
+                    <article class="indicator-tile tile-attendance" aria-labelledby="attendanceTitle">
                       <div class="indicator-icon" aria-hidden="true">
-                        <img
-                          src="../../assets/images/indicators/science.png"
-                          alt="Science icon"
-                        >
+                        <img src="../../assets/images/indicators/chronic-absenteeism.png" alt="Chronic absenteeism icon">
                       </div>
-                      <div class="indicator-copy">
-                        <h3>Science</h3>
-                        <p>5th, 8th, and once in high school assessment results.</p>
+                      <h3 id="attendanceTitle">Chronic Absenteeism</h3>
+                      <div class="indicator-content">
+                        <p class="indicator-intro">A Foster Youth student contributes to the Chronic Absenteeism Indicator only after meeting Dashboard eligibility requirements. Students must be enrolled for at least 31 instructional days before they are included and are identified as chronically absent when they miss 10 percent or more of their enrolled instructional days. Foster Youth status is based on any qualifying foster match during the school year, making cumulative enrollment and attendance reporting essential to understanding Dashboard results</p>
+                        <section class="indicator-section">
+                          <h4>What it measures</h4>
+                          <p>The Chronic Absenteeism Indicator measures the percentage of eligible students who miss 10 percent or more of the instructional days they were enrolled during the school year. Dashboard results are based on cumulative enrollment and attendance data reported through CALPADS.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Who is included</h4>
+                          <p>Students are included only after they have been enrolled for at least 31 instructional days. Foster Youth students are placed in the Foster Youth student group if they are identified through a qualifying state or local foster match at any time during the school year at the reporting school or LEA.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Why counts may differ</h4>
+                          <p>Dashboard results may differ from local attendance reports because eligibility is based on cumulative enrollment, not simply current enrollment. Students who have not yet reached the 31-day enrollment threshold—or whose Foster Youth identification occurs later in the school year—may not appear in the Dashboard denominator even though they are currently enrolled.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Remember this</h4>
+                          <p>A student cannot be chronically absent in the Dashboard until they first become eligible to be counted. Enrollment time matters just as much as attendance.</p>
+                        </section>
                       </div>
-                    </a>
+                      <div class="indicator-scroll-cue" aria-hidden="true">
+                        <span class="indicator-scroll-cue-line"></span>
+                        <span class="indicator-scroll-cue-text">SCROLL FOR MORE</span>
+                        <span class="indicator-scroll-cue-line"></span>
+                      </div>
+                    </article>
+
+                    <article class="indicator-tile tile-suspension" aria-labelledby="suspensionTitle">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img src="../../assets/images/indicators/suspension-rate.png" alt="Suspension rate icon">
+                      </div>
+                      <h3 id="suspensionTitle">Suspension Rate</h3>
+                      <div class="indicator-content">
+                        <p class="indicator-intro">A Foster Youth student contributes to the Suspension Rate Indicator if the student is enrolled for at least one day during the school year and is suspended one or more times. Each student is counted only once regardless of the number of suspensions received. Foster Youth status is based on any qualifying foster match during the school year, making cumulative enrollment and annual identification important when interpreting Dashboard results.</p>
+                        <section class="indicator-section">
+                          <h4>What it measures</h4>
+                          <p>The Suspension Rate Indicator measures the percentage of eligible students who were suspended at least once during the school year. Dashboard calculations use cumulative enrollment as the denominator and compare current-year suspension rates to the prior year to determine performance.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Who is included</h4>
+                          <p>Students are included if they were enrolled for one or more days during the school year. Foster Youth students are placed in the Foster Youth student group if they are identified through a qualifying state or local foster match at any time during the school year at the reporting school or LEA. Students who receive multiple suspensions are counted only once in the suspension numerator.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Why counts may differ</h4>
+                          <p>Dashboard counts often differ from local discipline reports because the indicator is based on cumulative enrollment, not a single enrollment snapshot. Foster Youth identification can also occur at any point during the school year, meaning a student's status may differ depending on the reporting period, enrollment history, and timing of the foster match. Local reports may also count suspension incidents, while the Dashboard counts each suspended student only once.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Remember this</h4>
+                          <p>A student with three suspensions counts the same as a student with one suspension—the Suspension Rate Indicator measures students suspended, not the total number of suspension incidents.</p>
+                        </section>
+                      </div>
+                      <div class="indicator-scroll-cue" aria-hidden="true">
+                        <span class="indicator-scroll-cue-line"></span>
+                        <span class="indicator-scroll-cue-text">SCROLL FOR MORE</span>
+                        <span class="indicator-scroll-cue-line"></span>
+                      </div>
+                    </article>
+
+                    <article class="indicator-tile tile-graduation" aria-labelledby="graduationTitle">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img src="../../assets/images/indicators/graduation-rate.png" alt="Graduation rate icon">
+                      </div>
+                      <h3 id="graduationTitle">Graduation Rate</h3>
+                      <div class="indicator-content">
+                        <p class="indicator-intro">A Foster Youth student contributes to the Graduation Rate Indicator based on the student's assigned four- or five-year graduation cohort, not simply the year the student graduates. Students remain in the Foster Youth student group if they are identified at any time during their graduation cohort, even if they are no longer identified in their final year. Because Dashboard reporting follows cohort rules rather than current enrollment, Graduation results often differ from local graduation reports.</p>
+                        <section class="indicator-section">
+                          <h4>What it measures</h4>
+                          <p>The Graduation Rate Indicator measures the percentage of students who earn a regular high school diploma within their assigned four-year cohort, with eligible fifth-year graduates included in the combined graduation rate. Dashboard performance compares the current combined graduation rate to the prior year's results.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Who is included</h4>
+                          <p>Students are included based on their assigned graduation cohort rather than current enrollment. Foster Youth students remain in the Foster Youth student group if they were identified through a qualifying foster match at any time during the four- or five-year cohort, regardless of whether they remain identified at graduation.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Why counts may differ</h4>
+                          <p>Dashboard Graduation results often differ from local graduation reports because they are based on graduation cohorts, not the students currently enrolled in a school. Students who transfer, graduate early, graduate in a fifth year, or change Foster Youth status during the cohort may appear differently depending on the purpose and methodology of the report being used.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Remember this</h4>
+                          <p>Graduation is not a snapshot—it is a cohort measure. Dashboard follows students throughout their assigned graduation cohort, not just who is enrolled or identified at the time they receive a diploma.</p>
+                        </section>
+                      </div>
+                      <div class="indicator-scroll-cue" aria-hidden="true">
+                        <span class="indicator-scroll-cue-line"></span>
+                        <span class="indicator-scroll-cue-text">SCROLL FOR MORE</span>
+                        <span class="indicator-scroll-cue-line"></span>
+                      </div>
+                    </article>
+
+                    <article class="indicator-tile tile-college" aria-labelledby="collegeTitle">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img src="../../assets/images/indicators/college-career.png" alt="College career indicator icon">
+                      </div>
+                      <h3 id="collegeTitle">College/Career Indicator</h3>
+                      <div class="indicator-content">
+                        <p class="indicator-intro">A Foster Youth student contributes to the College/Career Indicator based on the student's assigned four- or five-year graduation cohort, not current enrollment. Students remain in the Foster Youth student group if they are identified at any time during their graduation cohort. Unlike the Graduation Rate Indicator, the College/Career Indicator measures whether graduates demonstrate college or career readiness through one or more State Board of Education-approved measures.</p>
+                        <section class="indicator-section">
+                          <h4>What it measures</h4>
+                          <p>The College/Career Indicator measures the percentage of graduates who are considered Prepared for college or career using one or more approved readiness measures, such as coursework, assessments, industry certifications, or other State Board of Education-approved pathways. Dashboard performance compares the current college/career readiness rate to the prior year's results.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Who is included</h4>
+                          <p>Students are included based on their assigned four- or five-year graduation cohort. Foster Youth students remain in the Foster Youth student group if they are identified through a qualifying foster match at any time during the graduation cohort, even if they are no longer identified in their graduating year. Only graduates within the cohort are evaluated for college and career readiness.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Why counts may differ</h4>
+                          <p>Dashboard College/Career results may differ from local reports because they are based on graduation cohorts, not currently enrolled students. In addition, only graduates who meet one or more approved college or career readiness criteria are counted as Prepared. Differences in cohort assignment, Foster Youth identification over multiple years, and the readiness measures used can all affect reported results.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Remember this</h4>
+                          <p>The College/Career Indicator does not ask whether students graduated—it asks whether graduates were prepared. Graduation is the first step; college or career readiness is the measure.</p>
+                        </section>
+                      </div>
+                      <div class="indicator-scroll-cue" aria-hidden="true">
+                        <span class="indicator-scroll-cue-line"></span>
+                        <span class="indicator-scroll-cue-text">SCROLL FOR MORE</span>
+                        <span class="indicator-scroll-cue-line"></span>
+                      </div>
+                    </article>
+
+                    <article class="indicator-tile tile-science" aria-labelledby="scienceTitle">
+                      <div class="indicator-icon" aria-hidden="true">
+                        <img src="../../assets/images/indicators/science.png" alt="Science icon">
+                      </div>
+                      <h3 id="scienceTitle">Science</h3>
+                      <div class="indicator-content">
+                        <p class="indicator-intro">A Foster Youth student contributes to the Science Indicator only if the student participates in the California Science Test (CAST) or the California Alternate Assessment (CAA) for Science administered in grades 5, 8, and once in high school. Foster Youth status is based on any qualifying foster match during the school year using the same annual identification rules applied to the Academic Indicator. Unlike the other Dashboard indicators, Science results are reported for informational purposes only and are not used to determine Dashboard performance colors.</p>
+                        <section class="indicator-section">
+                          <h4>What it measures</h4>
+                          <p>The Science Indicator reports statewide science assessment performance for eligible students who participate in the CAST or CAA for Science. Dashboard results display average science achievement but do not assign a Status, Change, or Performance Level for accountability purposes.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Who is included</h4>
+                          <p>Students are included if they participate in the statewide science assessment at the tested grade levels and meet the applicable participation requirements. Foster Youth students are placed in the Foster Youth student group if they are identified through a qualifying foster match at any time during the school year at the reporting school or LEA.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Why counts may differ</h4>
+                          <p>Science results may differ from local assessment reports because only students participating in the statewide science assessments are included. Foster Youth identification timing, statewide participation requirements, and assessment eligibility can all affect which students appear in the Dashboard Science results. Unlike accountability indicators, Science results are presented for informational purposes and are not used in Dashboard performance calculations.</p>
+                        </section>
+                        <section class="indicator-section">
+                          <h4>Remember this</h4>
+                          <p>Science appears on the Dashboard, but it does not affect Dashboard accountability. It is included to provide additional information—not to determine performance colors or accountability outcomes.</p>
+                        </section>
+                      </div>
+                      <div class="indicator-scroll-cue" aria-hidden="true">
+                        <span class="indicator-scroll-cue-line"></span>
+                        <span class="indicator-scroll-cue-text">SCROLL FOR MORE</span>
+                        <span class="indicator-scroll-cue-line"></span>
+                      </div>
+                    </article>
                   </div>
+
+                  <div class="indicator-reader" hidden>
+
+                    <button
+                      type="button"
+                      class="indicator-reader-back"
+                      aria-label="Return to indicator list">
+                      ▲ Show Less
+                    </button>
+
+                    <div class="indicator-reader-header">
+
+                      <div class="indicator-reader-icon"></div>
+
+                      <div class="indicator-reader-copy">
+                        <h2></h2>
+                        <p></p>
+                      </div>
+
+                    </div>
+
+                    <div class="indicator-reader-body"></div>
+
+                  </div>
+
                   <div class="academic-workspace" id="academicWorkspace" hidden>
 
                     <div class="workspace-header">
@@ -427,15 +446,15 @@
                       </section>
 
                       <section class="workspace-section" data-section="rules" hidden>
-                        <div class="split-shell">
-                          <div class="split-visual">
+                        <div class="summary-split-shell">
+                          <div class="summary-split-visual">
                             <div class="split-visual-card">
-                              <div class="split-visual-label">Visual / tool area</div>
+                              <div class="summary-split-visual-label">Visual / tool area</div>
                               <p>Placeholder space for a diagram, image, callout, or interactive tool.</p>
                             </div>
                           </div>
 
-                          <div class="split-copy">
+                          <div class="summary-split-copy">
                             <div class="workspace-kicker">Inclusion Rules</div>
                             <h3>Two-step inclusion process</h3>
                             <p>
@@ -458,15 +477,15 @@
                       </section>
 
                       <section class="workspace-section" data-section="confusion" hidden>
-                        <div class="split-shell">
-                          <div class="split-visual">
+                        <div class="summary-split-shell">
+                          <div class="summary-split-visual">
                             <div class="split-visual-card">
-                              <div class="split-visual-label">Common misconception</div>
+                              <div class="summary-split-visual-label">Common misconception</div>
                               <p>Placeholder space for a graphic, example, or comparison tool.</p>
                             </div>
                           </div>
 
-                          <div class="split-copy">
+                          <div class="summary-split-copy">
                             <div class="workspace-kicker">Common Confusion</div>
                             <h3>What users often get wrong</h3>
                             <p>
@@ -484,15 +503,15 @@
                       </section>
 
                       <section class="workspace-section" data-section="check" hidden>
-                        <div class="split-shell">
-                          <div class="split-visual">
-                            <div class="split-visual-card">
-                              <div class="split-visual-label">Scenario card</div>
+                        <div class="summary-split-shell">
+                          <div class="summary-split-visual">
+                            <div class="summary-split-visual-card">
+                              <div class="summary-split-visual-label">Scenario card</div>
                               <p>Placeholder space for a student profile, image, or interactive scenario.</p>
                             </div>
                           </div>
 
-                          <div class="split-copy">
+                          <div class="summary-split-copy">
                             <div class="workspace-kicker">Check Understanding</div>
                             <h3>Scenario-based practice</h3>
                             <p>
@@ -546,6 +565,197 @@
   </div>
  <script>
 
+const summaryFrame = document.getElementById("summaryFrame");
+const summaryTabs = Array.from(document.querySelectorAll(".viewer-tab"));
+const summaryDots = document.getElementById("summaryDots");
+const summaryPrev = document.getElementById("summaryPrev");
+const summaryNext = document.getElementById("summaryNext");
+
+const sectionPages = {
+  overview: ["sum-ov-100"],
+  definitions: [
+    "sum-def-100",
+    "sum-def-200",
+    "sum-def-300",
+    "sum-def-400",
+    "sum-def-500",
+  ],
+  reporting: [
+    "sum-rpt-100",
+    "sum-rpt-200",
+    "sum-rpt-300",
+    "sum-rpt-400",
+    "sum-rpt-500",
+  ],
+  systems: [
+    "sum-sys-100",
+    "sum-sys-200",
+    "sum-sys-300",
+    "sum-sys-400",
+    "sum-sys-500",
+  ],
+  questions: [
+    "sum-qst-100",
+    // "sum-qst-200",
+    // "sum-qst-300",
+    // "sum-qst-400",
+    // "sum-qst-500",
+  ],
+};
+
+const sectionOrder = ["overview", "definitions", "reporting", "systems", "questions"];
+
+const pageToSection = {};
+sectionOrder.forEach((sectionKey) => {
+  sectionPages[sectionKey].forEach((pageSlug) => {
+    pageToSection[pageSlug] = sectionKey;
+  });
+});
+
+const pageOrder = sectionOrder.flatMap((sectionKey) => sectionPages[sectionKey]);
+
+const summarySideTitle = document.getElementById("summarySideTitle");
+const summarySideBody = document.getElementById("summarySideBody");
+const summarySideNote = document.getElementById("summarySideNote");
+
+const summarySideCopy = {
+  overview: {
+    title: "Foster Youth",
+    body: "Foster youth are among California's most vulnerable student populations and often face educational challenges associated with placement changes, school mobility, and other circumstances related to foster care. The California Department of Education (CDE) monitors educational outcomes for foster youth and works with state and local partners to support student success.",
+    note: "This section provides an overview of foster youth data, reporting, and the systems that support educational services and accountability."
+  },
+  definitions: {
+    title: "Foster Youth",
+    body: "Foster Youth identification can vary by context. Identification requirements may relate to educational rights, available services, or accountability reporting.",
+    note: "To understand why a student may or may not be identified as Foster Youth, it is important to first understand the individual situation and rules that apply."
+  },
+  reporting: {
+    title: "Foster Youth",
+    body: "Reports are designed to serve different purposes. Differences in populations, reporting periods, business rules, or accountability requirements can lead to different student counts—even when all reports are accurate.",
+    note: "Two reports may show different results and still be correct for their intended purpose."
+  },
+  systems: {
+    title: "Foster Youth",
+    body: "No single system has the whole picture. Foster Youth information exists across multiple systems—including child welfare agencies, matching processes, CALPADS, LEAs, and accountability reporting systems—each contributing a different piece of the story.",
+    note: "Understanding the role these systems play in identification and reporting can help explain why results may differ across reports."
+  },
+  questions: {
+    title: "Foster Youth",
+    body: "Most questions about Foster Youth reporting come back to definitions, timing, system movement, or accountability methodology. Understanding those ideas makes many reporting differences easier to explain.",
+    note: "Understanding these underlying concepts helps identify, explain, and reconcile differences in reporting."
+  }
+};
+
+let activeSection = "overview";
+let activePageSlug = sectionPages.overview[0];
+
+function updateSummarySideCopy(sectionKey) {
+  const copy = summarySideCopy[sectionKey];
+  if (!copy || !summarySideTitle || !summarySideBody || !summarySideNote) return;
+
+  summarySideTitle.textContent = copy.title;
+  summarySideBody.textContent = copy.body;
+
+  if (copy.note && copy.note.trim()) {
+    summarySideNote.textContent = copy.note;
+    summarySideNote.hidden = false;
+  } else {
+    summarySideNote.textContent = "";
+    summarySideNote.hidden = true;
+  }
+}
+
+function updateTabs() {
+  summaryTabs.forEach((tab) => {
+    const active = tab.dataset.section === activeSection;
+    tab.classList.toggle("is-active", active);
+    if (active) {
+      tab.setAttribute("aria-current", "page");
+    } else {
+      tab.removeAttribute("aria-current");
+    }
+  });
+}
+
+function renderDots() {
+  const pages = sectionPages[activeSection];
+  const currentIndex = pages.indexOf(activePageSlug);
+
+  summaryDots.innerHTML = "";
+
+  pages.forEach((pageSlug, idx) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "panel-dot";
+    dot.dataset.page = pageSlug;
+    dot.setAttribute("aria-label", `${activeSection} page ${idx + 1}`);
+
+    if (idx === currentIndex) {
+      dot.classList.add("is-current");
+      dot.setAttribute("aria-current", "page");
+    }
+
+    dot.addEventListener("click", () => {
+      setPage(pageSlug);
+    });
+
+    summaryDots.appendChild(dot);
+  });
+}
+
+function updateChevronState() {
+  const globalIndex = pageOrder.indexOf(activePageSlug);
+
+  summaryPrev.disabled = globalIndex <= 0;
+  summaryNext.disabled = globalIndex >= pageOrder.length - 1;
+
+  summaryPrev.classList.toggle("panel-chevron--disabled", summaryPrev.disabled);
+  summaryNext.classList.toggle("panel-chevron--disabled", summaryNext.disabled);
+}
+
+function setPage(pageSlug) {
+  if (!pageToSection[pageSlug]) return;
+
+  activeSection = pageToSection[pageSlug];
+  activePageSlug = pageSlug;
+
+  summaryFrame.src = `./summary/${pageSlug}/index.html`;
+
+  updateSummarySideCopy(activeSection);
+  updateTabs();
+  renderDots();
+  updateChevronState();
+}
+
+function setSection(sectionKey) {
+  const firstPage = sectionPages[sectionKey] && sectionPages[sectionKey][0];
+  if (!firstPage) return;
+
+  setPage(firstPage);
+}
+
+summaryTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    setSection(tab.dataset.section);
+  });
+});
+
+summaryPrev.addEventListener("click", () => {
+  const globalIndex = pageOrder.indexOf(activePageSlug);
+  if (globalIndex > 0) {
+    setPage(pageOrder[globalIndex - 1]);
+  }
+});
+
+summaryNext.addEventListener("click", () => {
+  const globalIndex = pageOrder.indexOf(activePageSlug);
+  if (globalIndex < pageOrder.length - 1) {
+    setPage(pageOrder[globalIndex + 1]);
+  }
+});
+
+setSection("overview");
+
 const academicTile =
   document.getElementById("academicTile");
 
@@ -554,6 +764,27 @@ const academicWorkspace =
 
 const indicatorGrid =
   document.querySelector(".indicator-grid");
+
+const explorerContent =
+  document.querySelector(".explorer-content");
+
+const indicatorReader =
+  document.querySelector(".indicator-reader");
+
+const indicatorReaderIcon =
+  indicatorReader.querySelector(".indicator-reader-icon");
+
+const indicatorReaderTitle =
+  indicatorReader.querySelector(".indicator-reader-copy h2");
+
+const indicatorReaderSubtitle =
+  indicatorReader.querySelector(".indicator-reader-copy p");
+
+const indicatorReaderBody =
+  indicatorReader.querySelector(".indicator-reader-body");
+
+const indicatorReaderBack =
+  indicatorReader.querySelector(".indicator-reader-back");
 
 const explorerHeading =
   document.getElementById("explorerHeading");
@@ -634,22 +865,36 @@ function setWorkspaceSection(sectionName) {
 });
 
 setWorkspaceSection("overview");
-  academicTile.addEventListener("click", function(e) {
-  e.preventDefault();
-  indicatorGrid.style.display = "none";
-  explorerHeading.style.display = "none";
-  academicWorkspace.hidden = false;
+    academicTile.addEventListener("click", function (e) {
+
+    /* Phase 2 workspace intentionally disabled */
+
+    if (!e.target.closest(".indicator-readmore")) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
 });
 
   closeAcademicWorkspace.addEventListener("click", function() {
     resetAcademicWorkspace();
 });
 
-  explorerToggle.addEventListener("change", function() {
+  explorerToggle.addEventListener("change", function () {
+
     if (!explorerToggle.checked) {
+
       resetAcademicWorkspace();
-  }
-});
+
+      document
+        .querySelectorAll(".indicator-content")
+        .forEach(function (panel) {
+          panel.scrollTop = 0;
+        });
+
+    }
+
+  });
 </script> 
 </body>
 </html>

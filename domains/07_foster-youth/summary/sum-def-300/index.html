@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foster Youth | Who Is Included?</title>
+
+  <link rel="stylesheet" href="../../../../assets/css/core.css" />
+  <link rel="stylesheet" href="../../../../assets/css/layout.css" />
+  <link rel="stylesheet" href="../../../../assets/css/components.css" />
+  <link rel="stylesheet" href="../../../../assets/css/navigation.css" />
+  <link rel="stylesheet" href="../../../../assets/css/footer.css" />
+  <link rel="stylesheet" href="../../foster-youth.css" />
+  <link rel="stylesheet" href="../def-explorer.css" />
+  <link rel="stylesheet" href="sum.css" />
+  <link rel="stylesheet" href="../../../../assets/css/responsive.css" />
+</head>
+
+<body class="domain-foster-youth summary-silo">
+  <main class="summary-content summary-content--def300">
+    <div class="panel-body panel-body--def300">
+      <section class="def-300-shell" aria-label="Who Is Included?">
+        <section class="def-300-left-panel" aria-labelledby="def300Title">
+          <h2 id="def300Title">Who Is Included?</h2>
+
+          <div class="def-300-title-rule" aria-hidden="true"></div>
+
+          <p>
+            Students in this category generally meet the LCFF Foster Youth
+            definition used for accountability reporting.
+          </p>
+
+          <p>
+            Select a category card to see a plain-language explanation describing the situation,
+            why these students are included, and how they are accounted for in reporting measures.
+          </p>
+
+          <div class="def-300-fill-space"></div>
+
+          <div
+            class="def-300-callout"
+            role="note"
+            aria-label="Included in reporting"
+          >
+            <div class="def-300-callout-icon" aria-hidden="true">&#10003;</div>
+
+            <div class="def-300-callout-copy">
+              These students are typically included in Foster Youth
+              reporting and accountability measures.
+            </div>
+          </div>
+        </section>
+
+        <section class="def-explorer" aria-label="Category explorer">
+          <div class="def-explorer-top">
+            <div class="def-explorer-cards" role="tablist" aria-label="Category cards">
+              <button class="def-explorer-card is-active" type="button" role="tab" aria-selected="true" data-index="0">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">WIC 300<br>Petition/<br>Placement</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="1">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">WIC 300<br>Family Maintenance</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="2">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">WIC 602<br>Placement</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="3">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">Voluntary Placement Agreements (VPAs)</span>
+              </button>
+
+              <button class="def-explorer-card" type="button" role="tab" aria-selected="false" data-index="4">
+                <img src="../../../../assets/images/foster-youth/people.png" alt="" aria-hidden="true" class="def-explorer-card-img" />
+                <span class="def-explorer-card-title">Other<br>Situations</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="def-explorer-detail" role="tabpanel" aria-label="Category details">
+            <div class="def-explorer-detail-grid"></div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const EXPLORER_DATA = [
+      {
+        cols: 2,
+        items: [
+          {
+            title: "Situation",
+            copy: "Begins when concerns about a child's safety are brought before the Juvenile Dependency Court. The petition identifies the alleged reasons for court involvement, such as abuse, neglect, abandonment, or other circumstances that place the child at risk. The court first determines whether the child should remain safely at home or be placed in protective care. If the allegations are later substantiated, the court decides on the child's placement and orders services designed to support family reunification whenever possible."
+          },
+          {
+            title: "Why Included",
+            copy: "LCFF Foster Youth identification is based on the court's legal jurisdiction—not simply where the student lives. Once the Juvenile Dependency Court assumes responsibility for the child's safety and well-being, the student may qualify whether they remain at home with court-ordered services or are placed in foster care."
+          },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          {
+            title: "Situation",
+            copy: "The court determines that the child can safely remain in the physical custody of the parent or guardian, provided that the county child welfare department actively supervises the home and provides support services (like counseling or parenting classes) to mitigate the risks. The situation is one where the court has stepped in to protect the child, but the child continues to live at home under intensive state supervision rather than being placed in an out-of-home foster placement."
+          },
+          {
+            title: "Why Included",
+            copy: "Although the child continues to live at home, the Juvenile Dependency Court has taken legal jurisdiction to ensure the child's safety and well-being. Because the child remains under the court's protection, they meet California's LCFF Foster Youth definition for accountability reporting."
+          },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          {
+            title: "Situation",
+            copy: "Under California Welfare and Institutions Code (WIC) Section 602, a juvenile court assumes jurisdiction over a minor and declares them a ward of the court because the minor has violated a criminal law. The youth is removed from their home by a judge and placed into the custody of the County Probation Department. Probation then places the youth into an out-of-home foster care setting, such as a Resource Family Approval (RFA) home, a relative's home, or a Short-Term Residential Therapeutic Program (STRTP) / group home."
+          },
+          {
+            title: "Why Included",
+            copy: "Although the case is handled through the Juvenile Justice system rather than the Dependency Court, the youth is living in a court-ordered foster care placement. Because the court has assumed responsibility for the youth's care and placement, they meet California's LCFF Foster Youth definition."
+          },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          {
+            title: "Situation",
+            copy: "A Voluntary Placement Agreement (VPA) is a formal, time-limited contract signed between a parent or legal guardian and the county welfare (or probation) department. Rather than filing a WIC 300 dependency petition in court due to abuse or neglect, a VPA is used as a planned, collaborative strategy to keep a family together long-term. Common scenarios may include medical or psychiatric needs, severe family crisis, or severe parent-child conflict "
+          },
+          {
+            title: "Why Included",
+            copy: "Even though the juvenile court isn’t involved, a student under a VPA is physically living in a foster care setting (e.g., a resource family home, relative placement, or a Short-Term Residential Therapeutic Program). From an educational standpoint, they experience the exact same disruptions as any other foster youth: a sudden change in home environment, emotional stress, and often a forced change in schools."
+          },
+        ]
+      },
+      {
+        cols: 2,
+        items: [
+          {
+            title: "Tribal Foster Youth",
+            copy: "A Native American child who has been placed into foster care under the jurisdiction of a federally recognized Indian tribe, rather than through a county child welfare department or a California state court. These students face the same educational challenges as other foster youth. Since tribal records are not shared with state child welfare systems, school districts identify these students through verification provided by the tribe."
+          },
+          {
+            title: "Nonminor Dependents",
+            copy: "A Nonminor Dependent (NMD) is a young adult, generally ages 18–21, who chooses to remain in California's Extended Foster Care program while completing school or preparing for independent adulthood. Although NMDs are legal adults, they remain under supervision and continue to receive foster care services. California includes them in the LCFF Foster Youth definition so schools can provide continued educational support as they complete high school and transition to adulthood."
+          },
+        ]
+      }
+    ];
+
+    function initDefinitionExplorer(root) {
+      if (!root) return;
+
+      const cards = Array.from(root.querySelectorAll(".def-explorer-card"));
+      const grid = root.querySelector(".def-explorer-detail-grid");
+
+      if (!cards.length || !grid) return;
+
+      function render(index) {
+        const state = EXPLORER_DATA[index] || EXPLORER_DATA[0];
+
+        cards.forEach((card, i) => {
+          const active = i === index;
+          card.classList.toggle("is-active", active);
+          card.setAttribute("aria-selected", active ? "true" : "false");
+        });
+
+        grid.innerHTML = "";
+        grid.style.gridTemplateColumns = `repeat(${state.cols || state.items.length}, minmax(0, 1fr))`;
+
+        state.items.forEach((item) => {
+          const col = document.createElement("div");
+          col.className = "def-explorer-detail-col";
+
+          const kicker = document.createElement("div");
+          kicker.className = "def-explorer-detail-kicker";
+
+          const iconEl = document.createElement("span");
+          iconEl.className = "def-explorer-detail-kicker-icon";
+          iconEl.setAttribute("aria-hidden", "true");
+          if (item.icon) iconEl.textContent = item.icon;
+          else iconEl.hidden = true;
+
+          const titleEl = document.createElement("span");
+          titleEl.className = "def-explorer-detail-kicker-text";
+          titleEl.textContent = item.title || "";
+
+          kicker.append(iconEl, titleEl);
+
+          const copyEl = document.createElement("div");
+          copyEl.className = "def-explorer-detail-copy";
+          copyEl.textContent = item.copy || "";
+
+          col.append(kicker, copyEl);
+          grid.appendChild(col);
+        });
+      }
+
+      cards.forEach((card, index) => {
+        card.addEventListener("click", () => render(index));
+      });
+
+      render(0);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".summary-content--def300").forEach(initDefinitionExplorer);
+    });
+  </script>
+</body>
+</html>
