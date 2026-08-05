@@ -17,7 +17,7 @@
 
   --fy-r-title: clamp(1.12rem, 0.98rem + 1.0vmin, 1.9rem);
   --fy-r-body: clamp(0.80rem, 0.76rem + 0.20vmin, 0.94rem);
-  --fy-r-detail-copy: clamp(0.84rem, 0.78rem + 0.14vmin, 0.95rem);
+  --fy-r-detail-copy: clamp(0.88rem, 0.82rem + 0.15vmin, 0.98rem);
   --fy-r-card-title: clamp(0.82rem, 0.76rem + 0.12vmin, 0.90rem);
 
   --fy-r-rule-w: clamp(38px, 4vmin, 64px);
