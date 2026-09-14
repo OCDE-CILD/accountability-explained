@@ -254,7 +254,7 @@
 @media (min-width: 1001px) and (max-width: 1200px) {
 
   .sys-400-graphic img {
-    width: 83%;
+    width: 75%;
     transform: translateY(-20px);
   }
 
