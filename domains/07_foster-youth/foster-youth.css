@@ -15,7 +15,7 @@
   --fy-shadow-soft: 0 10px 24px rgba(15, 30, 55, 0.06);
   --fy-header-h: clamp(76px, 8vh, 88px);
   --fy-footer-h: 56px;
-  --fy-viewer-h: clamp(560px, calc(100dvh - 220px), 760px);
+  --fy-viewer-h: clamp(500px, calc(100dvh - var(--fy-header-h) - var(--fy-footer-h) - var(--fy-explorer-handle-h) - var(--fy-explorer-seam) - 30px), 760px);
   --fy-explorer-h: clamp(680px, calc(100dvh - 120px), 900px);
   --fy-explorer-handle-h: 56px;
   --fy-explorer-seam: 16px;
@@ -1763,29 +1763,7 @@ body.domain-foster-youth.summary-silo {
    RESPONSIVE OVERRIDES
    ================================================== */
 
-@media (max-height: 800px) {
-  :root {
-    --fy-viewer-h: clamp(535px, calc(100dvh - 225px), 675px);
-  }
 
-  .stage-inner {
-    padding-bottom: 8px;
-  }
-
-  .viewer-shell {
-    min-height: calc(var(--fy-viewer-h) - 12px);
-    height: min(calc(var(--fy-viewer-h) - 12px), 100%);
-  }
-
-  .viewer-panel {
-    padding: 12px 14px 4px;
-  }
-
-  .panel-nav {
-    margin-top: -6px;
-    padding: 0 14px 6px;
-  }
-}
 
 @media (min-width: 1280px) {
   .explorer-stage {
@@ -1804,17 +1782,96 @@ body.domain-foster-youth.summary-silo {
   }
 }
 
+
+/* =================================================
+   COMPACT LANDSCAPE
+   Reserve space between the content viewer and
+   the fixed Indicator Explorer launcher.
+   ================================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+
+  .viewer-shell {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  .viewer-shell .viewer-panels {
+    min-height: 0;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .viewer-shell .viewer-panel {
+    height: 75%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .viewer-shell .summary-frame {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+}
+
+/* =================================================
+   DESKTOP DOMAIN INTRO ALIGNMENT
+   Give the FY summary more left-side breathing room
+   ================================================= */
+
+@media (min-width: 901px) and (max-width: 1200px) {
+
+  .domain-intro {
+    margin-left: 0;
+    padding-left: 12px;
+  }
+
+}
+
 @media (max-width: 900px) {
+
+  /* =================================================
+     PAGE / OUTER SHELL
+     ================================================= */
+
   .page {
     padding: 14px 14px 0;
+  }
+
+  .page-wrap {
+    display: block;
+    min-height: 0;
+  }
+
+  .domain-shell {
+    overflow: visible;
+    height: auto;
+    min-height: 0;
   }
 
   .stage-inner {
     width: min(100%, calc(100% - 24px));
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     gap: 12px;
     padding-top: 12px;
+    align-content: start;
+    min-height: 0;
   }
+
+  .stage {
+    height: auto;
+    min-height: 0;
+  }
+
+
+  /* =================================================
+     DOMAIN INTRO
+     ================================================= */
 
   .stage-divider {
     display: none;
@@ -1844,9 +1901,14 @@ body.domain-foster-youth.summary-silo {
     line-height: 1.55;
   }
 
+
+  /* =================================================
+     CONTENT VIEWER
+     ================================================= */
+
   .viewer-shell {
-    min-height: 0;
     width: 100%;
+    min-height: 360px;
   }
 
   .viewer-tabs {
@@ -1872,71 +1934,86 @@ body.domain-foster-youth.summary-silo {
     padding: 12px 12px 10px;
   }
 
-  .explorer-stage {
-    position: static;
-    inset: auto;
-    width: 100%;
-    pointer-events: auto;
-    margin-top: 8px;
-    z-index: auto;
-  }
 
-  .explorer-launcher,
-  .explorer-drawer {
-    position: static;
-    left: auto;
-    bottom: auto;
-    width: calc(100% - 24px);
-    margin-left: auto;
-    margin-right: auto;
-    transform: none;
+  /* =================================================
+     INDICATOR EXPLORER
+     Compact screens:
+     launcher remains in normal flow;
+     drawer opens upward without adding page height.
+     ================================================= */
+
+  .explorer-stage {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    margin: 0;
+    display: block;
+    pointer-events: auto;
+    z-index: 31;
   }
 
   .explorer-launcher {
-    margin: 0 auto 8px;
+    position: relative;
+    left: auto;
+    right: auto;
+    bottom: auto;
+
+    width: calc(100% - 24px);
+    margin: 0 auto;
+
+    z-index: 32;
   }
 
+  .explorer-drawer {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: var(--fy-explorer-handle-h);
+
+    width: auto;
+    height: min(520px, calc(100dvh - 220px));
+
+    transform: translateY(100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    z-index: 31;
+  }
+
+  /* Hide the launcher while the Explorer is open. */
   .explorer-toggle-input:checked ~ .explorer-launcher {
-    display: none;
-  }
-
-  .explorer-toggle-input:not(:checked) ~ .explorer-drawer {
     display: none;
   }
 
   .explorer-toggle-input:checked ~ .explorer-drawer {
     display: grid;
+    transform: translateY(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-  }
-
-  .explorer-drawer {
-    height: auto;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    grid-template-rows: auto minmax(0, 1fr);
   }
 
   .explorer-panel {
     min-height: 520px;
   }
 
+
+  /* =================================================
+     FOOTER
+     ================================================= */
+
   .bottom-bar {
-    position: static;
-    height: auto;
+    display: none;
   }
 
-  .bottom-bar-inner {
-    padding: 12px 0 0;
-    justify-content: flex-start;
-  }
 
-  .footer-owner {
-    position: static;
-    margin-left: auto;
-  }
+  /* =================================================
+     WORKSPACE
+     ================================================= */
 
   .workspace-stage {
     padding: 16px 16px 0;
@@ -1947,6 +2024,7 @@ body.domain-foster-youth.summary-silo {
     padding-left: 16px;
     padding-right: 16px;
   }
+
 }
 
 @media (max-width: 760px) {
@@ -2013,18 +2091,27 @@ body.domain-foster-youth.summary-silo {
     min-height: 0;
   }
 
-  .domain-intro::after {
-    content: "Best experienced on tablet or larger.";
-    display: block;
-    margin-top: 0.65rem;
-    padding: 0.55rem 0.75rem;
-    border-radius: 12px;
-    background: #edf3fb;
-    color: #17345f;
-    font-size: 0.82rem;
-    font-weight: 700;
-    line-height: 1.35;
-  }
+.domain-intro::after {
+  content: "For easier navigation and viewing, use a tablet or larger screen.";
+
+  display: block;
+  margin-top: 0.65rem;
+  padding: 0.7rem 1rem;
+
+  border: 1px solid rgba(56, 108, 255, 0.18);
+  border-left: 4px solid #386cff;
+  border-radius: 12px;
+
+  background: #edf3fb;
+
+  color: #17345f;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+
+  box-shadow: 0 2px 8px rgba(15, 30, 55, 0.05);
+}
 
   .domain-intro-copy {
     gap: 0.6rem;
@@ -2081,12 +2168,6 @@ body.domain-foster-youth.summary-silo {
     display: none;
   }
 
-  .panel-body--overview > p {
-    text-align: left;
-    text-align-last: auto;
-    hyphens: auto;
-  }
-
   .summary-content {
     padding: 10px 10px 8px;
   }
@@ -2095,7 +2176,6 @@ body.domain-foster-youth.summary-silo {
     max-width: none;
   }
 
-  .overview-image-grid,
   .overview-cards,
   .overview-journey-track,
   .indicator-grid,
@@ -2103,14 +2183,11 @@ body.domain-foster-youth.summary-silo {
     grid-template-columns: 1fr;
   }
 
-  .overview-image-grid::before,
-  .overview-image-grid::after,
   .overview-cards::before,
   .overview-journey-track::before {
     display: none;
   }
 
-  .overview-image-card,
   .overview-card,
   .overview-step {
     max-width: 520px;
@@ -2164,4 +2241,240 @@ body.domain-foster-youth.summary-silo {
   }
 }
 
-</head>
+
+/* =========================================================
+   FOSTER YOUTH | COMPACT SIDE SUMMARY SCROLL
+   Keep full-size summary typography while side-by-side.
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1000px) {
+
+  body.domain-foster-youth .domain-intro {
+    height: calc(100% - 32px);
+    max-height: calc(100% - 32px);
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+}
+
+
+/* =========================================================
+   FOSTER YOUTH | COMPACT VIEWER HEIGHTS
+   Independent control by breakpoint + section.
+   ========================================================= */
+
+
+/* =========================================================
+   1200px
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  /* Overview */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="overview"].is-active) {
+    height: 530px !important;
+    min-height: 530px !important;
+  }
+
+  /* Definitions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="definitions"].is-active) {
+    height: 530px !important;
+    min-height: 530px !important;
+  }
+
+  /* Reporting */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="reporting"].is-active) {
+    height: 530px !important;
+    min-height: 530px !important;
+  }
+
+  /* Systems */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="systems"].is-active) {
+    height: 530px !important;
+    min-height: 530px !important;
+  }
+
+  /* Questions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="questions"].is-active) {
+    height: 530px !important;
+    min-height: 530px !important;
+  }
+
+}
+
+
+/* =========================================================
+   1000px
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  /* Overview */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="overview"].is-active) {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  /* Definitions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="definitions"].is-active) {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  /* Reporting */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="reporting"].is-active) {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  /* Systems */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="systems"].is-active) {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  /* Questions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="questions"].is-active) {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+}
+
+
+/* =========================================================
+   900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* Overview */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="overview"].is-active) {
+    height: 323px !important;
+    min-height: 323px !important;
+  }
+
+  /* Definitions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="definitions"].is-active) {
+    height: 372px !important;
+    min-height: 372px !important;
+  }
+
+  /* Reporting */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="reporting"].is-active) {
+    height: 396px !important;
+    min-height: 396px !important;
+  }
+
+  /* Systems */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="systems"].is-active) {
+    height: 347px !important;
+    min-height: 347px !important;
+  }
+
+  /* Questions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="questions"].is-active) {
+    height: 396px !important;
+    min-height: 396px !important;
+  }
+
+}
+
+
+/* =========================================================
+   800px
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  /* Overview */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="overview"].is-active) {
+    height: 301px !important;
+    min-height: 301px !important;
+  }
+
+  /* Definitions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="definitions"].is-active) {
+    height: 350px !important;
+    min-height: 350px !important;
+  }
+
+  /* Reporting */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="reporting"].is-active) {
+    height: 374px !important;
+    min-height: 374px !important;
+  }
+
+  /* Systems */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="systems"].is-active) {
+    height: 325px !important;
+    min-height: 325px !important;
+  }
+
+  /* Questions */
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="questions"].is-active) {
+    height: 374px !important;
+    min-height: 374px !important;
+  }
+
+}
+
+/* =========================================================
+   FY | 761-799px TRANSITION
+   Targeted patch for Reporting + Questions.
+   ========================================================= */
+
+@media (min-width: 761px) and (max-width: 799px) {
+
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="reporting"].is-active) {
+    height: 350px !important;
+    min-height: 350px !important;
+  }
+
+  body.domain-foster-youth
+  .viewer-shell:has(.viewer-tab[data-section="questions"].is-active) {
+    height: 350px !important;
+    min-height: 350px !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

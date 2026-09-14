@@ -73,6 +73,12 @@
   padding: 14px 12px;
   display: flex;
   flex-direction: column;
+  border-color: rgba(56, 108, 255, 0.18);
+  background: linear-gradient(
+    180deg,
+    rgba(56, 108, 255, 0.08) 100%,
+    rgba(56, 108, 255, 0.04) 100%
+  );
 }
 
 .qst-100-topics-label {
@@ -117,9 +123,9 @@
 }
 
 .qst-100-topic--active {
-  background: linear-gradient(180deg, #fff7e8 0%, #fff1d7 100%);
-  border-color: rgba(192, 154, 90, 0.18);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  background: #dce7ff;
+  border-color: #b9ccf5;
+  box-shadow: inset 3px 0 0 #386cff;
 }
 
 .qst-100-topic-bullet {
@@ -249,12 +255,18 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
+  align-items: stretch;
+  transform: translateY(-14px);
 }
 
 .qst-100-resource-card {
-  border: 1px solid rgba(23, 52, 95, 0.12);
+  border: 1px solid #c9d8ff;
   border-radius: 14px;
-  background: linear-gradient(180deg, #fbfdff 0%, #f7faff 100%);
+  background: #f1f5ff;
+  padding: 14px;
+    180deg,
+    rgba(56, 108, 255, 0.08) 100%,
+    rgba(56, 108, 255, 0.04) 100%
   padding: 14px;
 }
 
@@ -279,13 +291,6 @@
   gap: 12px;
 }
 
-.qst-100-resource-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  align-items: stretch;
-}
-
 .qst-100-resource-card--summary {
   grid-column: 1 / -1;
 }
@@ -294,31 +299,233 @@
   margin-bottom: 6px;
 }
 
-@media (max-width: 980px) {
-  .qst-100-match-grid {
-    grid-template-columns: 1fr;
-  }
+/* =========================================================
+   QST-100 | CLEAN PAGE CANVAS
+   Prevent the parent/viewer background from showing through.
+   ========================================================= */
+
+html,
+body,
+.summary-content--qst100,
+.panel-body--qst100,
+.qst-100-shell,
+.qst-100-main,
+.qst-100-layout {
+  background: #ffffff;
 }
 
+/* =========================================================
+   QST-100 | COMPACT TOPIC NAVIGATION
+   Convert the desktop side navigation into a horizontal
+   pill-style topic selector.
+   ========================================================= */
+
 @media (max-width: 980px) {
-  .qst-100-layout {
-    grid-template-columns: 1fr;
+
+  /* -------------------------------------------------------
+     Main page becomes natural document flow
+     ------------------------------------------------------- */
+
+  .summary-content--qst100,
+  .panel-body--qst100 {
+    height: auto;
+    min-height: 0;
   }
+
+  .panel-body--qst100 {
+    overflow: auto;
+  }
+
+  .summary-content--qst100 .panel-body {
+    height: auto;
+    overflow: visible;
+  }
+
+  .qst-100-main {
+    flex: none;
+    height: auto;
+    min-height: 0;
+    padding: 16px;
+  }
+
+
+  /* -------------------------------------------------------
+     Compact layout
+     ------------------------------------------------------- */
+
+  .qst-100-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    height: auto;
+    min-height: 0;
+    flex: none;
+  }
+
+
+  /* -------------------------------------------------------
+     TOPICS
+     Horizontal pill navigation
+     ------------------------------------------------------- */
 
   .qst-100-topics {
-    order: 2;
+    order: 1;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
-  .qst-100-answer {
-    order: 1;
+  .qst-100-topics-label {
+    margin: 0 0 8px;
+    font-size: 0.82rem;
   }
+
+  .qst-100-topic-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    padding: 2px 2px 6px;
+
+    scrollbar-width: thin;
+  }
+
+  .qst-100-topic {
+    width: auto;
+    flex: 0 0 auto;
+
+    min-height: 40px;
+
+    padding: 9px 13px;
+
+    border: 1px solid #c9d8ff;
+    border-radius: 999px;
+
+    background: #f1f5ff;
+    color: #17345f;
+
+    gap: 7px;
+
+    white-space: nowrap;
+  }
+
+  .qst-100-topic:hover {
+    background: #e8efff;
+  }
+
+  .qst-100-topic--active {
+    background: #dce7ff;
+    border-color: #b9ccf5;
+    box-shadow: inset 3px 0 0 #386cff;
+  }
+
+  .qst-100-topic-bullet {
+    width: auto;
+    font-size: 0.72rem;
+  }
+
+  .qst-100-topic-text {
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+
+
+  /* -------------------------------------------------------
+     ANSWER
+     ------------------------------------------------------- */
+
+  .qst-100-answer {
+    order: 2;
+
+    width: 100%;
+    height: auto;
+    min-height: 0;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+  }
+
+  .qst-100-answer-content {
+    flex: none;
+    min-height: 0;
+  }
+
+  .qst-100-answer-body {
+    flex: none;
+    min-height: 0;
+  }
+
+
+  /* -------------------------------------------------------
+     Resource cards
+     ------------------------------------------------------- */
 
   .qst-100-resource-grid {
     grid-template-columns: 1fr;
+    transform: none;
   }
+
+
+  /* -------------------------------------------------------
+     Quick-check items
+     ------------------------------------------------------- */
 
   .qst-100-check-item {
     grid-template-columns: 1fr;
     gap: 2px;
   }
+
+}
+
+/* =========================================================
+   QST-100 | COMPACT TOPIC PILLS
+   At 900px and below, convert the topic list to a
+   wrapping pill-style navigation.
+   ========================================================= */
+
+@media (max-width: 899px) {
+
+  .qst-100-topic-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    width: 100%;
+    overflow: visible;
+  }
+
+  .qst-100-topic {
+    width: auto;
+    flex: 0 0 auto;
+    min-width: 0;
+    padding: 9px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .qst-100-topic-text {
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+
+  .qst-100-topic-bullet {
+    width: auto;
+    font-size: 0.8rem;
+  }
+
 }

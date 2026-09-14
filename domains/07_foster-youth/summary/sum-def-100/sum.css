@@ -1,3 +1,8 @@
+.summary-content {
+  container-type: inline-size;
+  container-name: cv-player;
+}
+
 .def100-stage {
   display: grid;
   grid-template-columns: minmax(290px, 0.76fr) minmax(0, 1.84fr);
@@ -7,9 +12,14 @@
   box-sizing: border-box;
 }
 
-.def100-copy,
+.def100-copy {
+  min-width: 0;
+}
+
 .def100-visual {
   min-width: 0;
+  container-type: inline-size;
+  container-name: def100-visual;
 }
 
 .def100-copy-card {
@@ -179,7 +189,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  font-size: 1.05rem;
+  font-size: clamp(0.78rem, 1.05cqw, 1.05rem);
   line-height: 1.12;
   font-weight: 900;
   text-transform: uppercase;
@@ -212,8 +222,8 @@
   padding-top: 8px;
   max-width: 21ch;
   color: #17345f;
-  font-size: 0.93rem;
-  line-height: 1.55;
+  font-size: clamp(0.72rem, 0.92cqw, 0.93rem);
+  line-height: 1.45;
   height: 6.8em;
 }
 
@@ -222,15 +232,15 @@
   display: grid;
   place-items: center;
   padding: 12px;
-  background: rgba(63, 109, 211, 0.06);
+  background: #e3edff;
 }
 
 .def100-purpose-card--services .def100-purpose-bottom {
-  background: rgba(103, 184, 106, 0.09);
+  background: #e2f3e4;
 }
 
 .def100-purpose-card--reporting .def100-purpose-bottom {
-  background: rgba(167, 133, 242, 0.08);
+  background:  #eee6fb;
 }
 
 .def100-purpose-icon-bottom {
@@ -302,53 +312,66 @@
   max-width: none;
 }
 
+/* =========================================================
+   DEF-100 | CALLOUT ICON
+   Keep the bulb contained at every size.
+   ========================================================= */
+
 .def100-left-callout {
   margin-top: auto;
-  width: calc(100% + 12px);
+  width: 100%;
+  box-sizing: border-box;
+
   padding: 12px 14px;
   border: 1px solid rgba(56, 95, 164, 0.15);
   border-radius: 14px;
   background: #f7fbff;
+
   display: grid;
-  grid-template-columns: 28px minmax(0, 1fr);
-  gap: 32px;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 12px;
   align-items: center;
+
+  overflow: hidden;
 }
 
 .def100-left-callout-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    flex: 0 0 50px;
-    margin: 0;
-    transform: translateX(-2px);
+  width: 44px;
+  height: 44px;
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  overflow: hidden;
 }
 
 .def100-left-callout-icon img {
-  width: 90%;
+  display: block;
+  width: 100%;
   height: 100%;
   object-fit: contain;
-  display: block;
-  transform: scale(1) translateY(1px);
-  transform-origin: left;
+  transform: none;
 }
 
 .def100-left-callout p {
   margin: 0;
+  min-width: 0;
   color: #17345f;
   font-size: 0.95rem;
   line-height: 1.45;
-  padding: 0 0 0 -12px;
 }
 
-/* ==================================================
-   RESPONSIVE OVERRIDES — def-100
-   ================================================== */
+/* =========================================================
+   DEF-100 | COMPACT LANDSCAPE
+   Scale the existing two-column layout without stacking.
+   ========================================================= */
 
-/* 1280x800 and other wide-but-short landscape layouts */
-@media (min-width: 1201px) and (max-height: 800px) {
+@container cv-player (max-width: 1000px) {
+
   .def100-stage {
     gap: 14px;
   }
@@ -365,9 +388,26 @@
     margin: 10px 0 14px;
   }
 
-  .def100-lead,
-  .def100-sublead {
-    line-height: 1.55;
+  .def100-left-item {
+    padding: 10px 0;
+  }
+
+  .def100-left-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .def100-left-icon img {
+    transform: scale(2.5) translateY(1px);
+  }
+
+  .def100-left-copy h3 {
+    font-size: 0.95rem;
+  }
+
+  .def100-left-copy p {
+    font-size: 0.95rem;
+    line-height: 1.35;
   }
 
   .def100-visual-card {
@@ -385,254 +425,82 @@
   }
 
   .def100-purpose-grid {
-    margin-top: 12px;
-    gap: 10px;
-  }
-
-  .def100-purpose-card {
-    grid-template-rows: minmax(0, 1fr) 72px;
-  }
-
-  .def100-purpose-top {
-    padding-top: 24px;
-    grid-template-rows: 96px 2.8em 16px 5.2em;
-  }
-
-  .def100-purpose-icon-top {
-    width: 84px;
-    height: 84px;
-  }
-
-  .def100-purpose-icon-top img {
-    transform: scale(1.8) translateY(1px);
-  }
-
-  .def100-purpose-title {
-    font-size: 0.88rem;
-  }
-
-  .def100-purpose-rule {
-    margin: 8px auto 6px;
-    width: 48%;
-  }
-
-  .def100-purpose-desc {
-    max-width: 22ch;
-    height: 5.2em;
-    font-size: 0.84rem;
-    line-height: 1.38;
-  }
-
-  .def100-purpose-bottom {
-    height: 70px;
-    padding: 8px;
-  }
-
-  .def100-purpose-icon-bottom {
-    width: 38px;
-    height: 38px;
-  }
-
-  .def100-purpose-icon-bottom img {
-    transform: scale(1.45);
-  }
-
-  .def100-left-item {
-    padding: 10px 0;
-  }
-
-  .def100-left-icon {
-    width: 46px;
-    height: 46px;
-  }
-
-  .def100-left-icon img {
-    transform: scale(1.55) translateY(1px);
-  }
-
-  .def100-left-copy h3 {
-    font-size: 0.88rem;
-  }
-
-  .def100-left-copy p {
-    font-size: 0.84rem;
-    line-height: 1.38;
-  }
-
-  .def100-left-callout {
-    padding: 9px 10px;
+    margin-top: 10px;
     gap: 8px;
   }
 
-  .def100-left-callout-icon {
-    width: 22px;
-    height: 22px;
+  .def100-purpose-card {
+    grid-template-rows: minmax(0, 1fr) 56px;
+    min-height: 0;
   }
 
-  .def100-left-callout-icon img {
-    transform: scale(2.1) translateY(1px);
+  .def100-purpose-top {
+    padding: 14px 10px 8px;
+    grid-template-rows: 76px 2.4em 12px auto;
+    min-height: 0;
   }
 
-  .def100-left-callout p {
-    font-size: 0.84rem;
-    line-height: 1.34;
+  .def100-purpose-title,
+  .def100-purpose-desc {
+    min-width: 0;
+  }
+
+  .def100-purpose-icon-top {
+    width: 68px;
+    height: 68px;
+  }
+
+  .def100-purpose-icon-top img {
+    transform: scale(2.5) translateY(1px);
+  }
+
+  .def100-purpose-rule {
+    margin: 6px auto 4px;
+    width: 46%;
+  }
+
+  .def100-purpose-title {
+    font-size: clamp(0.72rem, 1.8cqw, 0.86rem);
+    line-height: 1.08;
+  }
+
+  .def100-purpose-desc {
+    max-width: 20ch;
+    height: auto;
+    font-size: clamp(0.65rem, 1.65cqw, 0.78rem);
+    line-height: 1.3;
+  }
+
+  .def100-purpose-bottom {
+    height: 56px;
+    padding: 6px;
+  }
+
+  .def100-purpose-icon-bottom {
+    width: 32px;
+    height: 32px;
+  }
+
+  .def100-purpose-icon-bottom img {
+    transform: scale(2.55);
   }
 }
 
-@media (max-width: 900px) {
+/* =========================================================
+   DEF-100 | STACKED / MOBILE
+   Stack only when the content container is genuinely small.
+   ========================================================= */
+
+@container cv-player (max-width: 760px) {
+
   .def100-stage {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .def100-copy-card {
     height: auto;
-    padding: 14px 0 0;
-  }
-
-  .def100-heading {
-    font-size: clamp(1.7rem, 5vw, 2.05rem);
-  }
-
-  .def100-lead,
-  .def100-sublead {
-    max-width: none;
-    font-size: 0.97rem;
-    line-height: 1.6;
-  }
-
-  .def100-sublead {
-    margin-top: 14px;
-  }
-
-  .def100-visual-card {
-    height: auto;
-    padding: 14px 14px 12px;
-  }
-
-  .def100-visual-title {
-    font-size: 0.96rem;
-    gap: 10px;
-  }
-
-  .def100-visual-title::before,
-  .def100-visual-title::after {
-    width: 40px;
-  }
-
-  .def100-purpose-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 12px;
-  }
-
-  .def100-purpose-card {
-    grid-template-rows: auto auto;
-  }
-
-  .def100-purpose-top {
-    padding: 22px 12px 10px;
-    grid-template-rows: 92px auto auto auto;
-  }
-
-  .def100-purpose-icon-top {
-    width: 86px;
-    height: 86px;
-    margin-bottom: 10px;
-  }
-
-  .def100-purpose-icon-top img {
-    transform: scale(2.05) translateY(2px);
-  }
-
-  .def100-purpose-title {
-    font-size: 0.94rem;
-    height: auto;
-    min-height: 2.4em;
-  }
-
-  .def100-purpose-rule {
-    margin: 10px auto 8px;
-    width: 52%;
-  }
-
-  .def100-purpose-desc {
-    max-width: 24ch;
-    height: auto;
-    font-size: 0.88rem;
-    line-height: 1.45;
-  }
-
-  .def100-purpose-bottom {
-    height: 72px;
-    padding: 10px;
-  }
-
-  .def100-purpose-icon-bottom {
-    width: 46px;
-    height: 46px;
-  }
-
-  .def100-purpose-icon-bottom img {
-    transform: scale(1.85);
-  }
-
-  .def100-left-stack {
-    margin-top: 0;
-  }
-
-  .def100-left-item {
-    grid-template-columns: 58px minmax(0, 1fr);
-    padding: 12px 0;
-  }
-
-  .def100-left-icon {
-    width: 52px;
-    height: 52px;
-  }
-
-  .def100-left-icon img {
-    transform: scale(1.8) translateY(1px);
-  }
-
-  .def100-left-copy h3 {
-    font-size: 0.92rem;
-  }
-
-  .def100-left-copy p {
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
-  .def100-left-callout {
-    padding: 10px 12px;
-    gap: 10px;
-  }
-
-  .def100-left-callout-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .def100-left-callout-icon img {
-    transform: scale(2.8) translateY(1px);
-  }
-
-  .def100-left-callout p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-}
-
-@media (max-width: 760px) {
-  .def100-stage {
-    gap: 12px;
-  }
-
-  .def100-copy-card,
-  .def100-visual-card {
     padding: 12px 10px 12px;
-    border-radius: 18px;
   }
 
   .def100-heading {
@@ -642,78 +510,6 @@
   .def100-accent {
     width: 48px;
     margin: 10px 0 14px;
-  }
-
-  .def100-lead,
-  .def100-sublead {
-    font-size: 0.93rem;
-    line-height: 1.55;
-  }
-
-  .def100-sublead {
-    margin-top: 12px;
-  }
-
-  .def100-visual-title {
-    font-size: 0.92rem;
-    gap: 8px;
-  }
-
-  .def100-visual-title::before,
-  .def100-visual-title::after {
-    width: 30px;
-  }
-
-  .def100-purpose-grid {
-    gap: 10px;
-  }
-
-  .def100-purpose-card {
-    border-radius: 16px;
-  }
-
-  .def100-purpose-top {
-    padding: 20px 10px 8px;
-    grid-template-rows: 84px auto auto auto;
-  }
-
-  .def100-purpose-icon-top {
-    width: 76px;
-    height: 76px;
-    margin-bottom: 8px;
-  }
-
-  .def100-purpose-icon-top img {
-    transform: scale(1.8) translateY(2px);
-  }
-
-  .def100-purpose-title {
-    font-size: 0.88rem;
-  }
-
-  .def100-purpose-rule {
-    margin: 8px auto 6px;
-    width: 48%;
-  }
-
-  .def100-purpose-desc {
-    max-width: none;
-    font-size: 0.84rem;
-    line-height: 1.42;
-  }
-
-  .def100-purpose-bottom {
-    height: 66px;
-    padding: 8px;
-  }
-
-  .def100-purpose-icon-bottom {
-    width: 42px;
-    height: 42px;
-  }
-
-  .def100-purpose-icon-bottom img {
-    transform: scale(1.6);
   }
 
   .def100-left-stack {
@@ -732,7 +528,7 @@
   }
 
   .def100-left-icon img {
-    transform: scale(1.6) translateY(1px);
+    transform: scale(2.5) translateY(1px);
   }
 
   .def100-left-copy h3 {
@@ -744,23 +540,88 @@
     line-height: 1.4;
   }
 
-  .def100-left-callout {
-    padding: 10px 11px;
+  .def100-visual-card {
+    height: auto;
+    padding: 12px 10px 12px;
+    border-radius: 18px;
+  }
+
+  .def100-visual-title {
+    font-size: 0.92rem;
     gap: 8px;
-    border-radius: 12px;
   }
 
-  .def100-left-callout-icon {
-    width: 22px;
-    height: 22px;
+  .def100-visual-title::before,
+  .def100-visual-title::after {
+    width: 30px;
   }
 
-  .def100-left-callout-icon img {
-    transform: scale(2.4) translateY(1px);
+  .def100-purpose-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 12px;
   }
 
-  .def100-left-callout p {
+  .def100-purpose-card {
+    border-radius: 16px;
+  }
+
+  .def100-purpose-top {
+    padding: 20px 10px 8px;
+    grid-template-rows: 84px auto auto auto;
+  }
+
+  .def100-purpose-icon-top {
+    width: 76px;
+    height: 76px;
+    margin-bottom: 8px;
+  }
+
+  .def100-purpose-icon-top img {
+    transform: scale(2.5) translateY(2px);
+  }
+
+  .def100-purpose-title {
     font-size: 0.88rem;
-    line-height: 1.35;
   }
+
+  .def100-purpose-rule {
+    margin: 8px auto 6px;
+    width: 48%;
+  }
+
+  .def100-purpose-desc {
+    max-width: none;
+    height: auto;
+    font-size: 0.84rem;
+    line-height: 1.42;
+  }
+
+  .def100-purpose-bottom {
+    height: 66px;
+    padding: 8px;
+  }
+
+  .def100-purpose-icon-bottom {
+    width: 42px;
+    height: 42px;
+  }
+
+  .def100-purpose-icon-bottom img {
+    transform: scale(2.55);
+  }
+}
+
+/* =========================================================
+   DEF-100 | CLEAN PAGE CANVAS
+   Prevent parent/page background from showing through.
+   ========================================================= */
+
+html,
+body,
+.summary-content,
+.def100-stage,
+.def100-copy,
+.def100-visual {
+  background: #ffffff;
 }

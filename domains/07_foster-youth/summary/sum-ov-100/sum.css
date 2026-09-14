@@ -1,1 +1,66 @@
-sum.css
+/* =========================================================
+   OV-100 | Overview
+   Page-owned responsive behavior
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTENT CONTAINER
+   --------------------------------------------------------- */
+
+.summary-overview {
+  container-type: inline-size;
+  container-name: cv-player;
+}
+
+
+/* ---------------------------------------------------------
+   CONSTRAINED
+   --------------------------------------------------------- */
+
+@container cv-player (max-width: 900px) {
+
+  .panel-body--overview > p {
+    text-align: left;
+    text-align-last: auto;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   NARROW
+   --------------------------------------------------------- */
+
+@container cv-player (max-width: 760px) {
+
+  .overview-image-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-image-grid::before,
+  .overview-image-grid::after {
+    display: none;
+  }
+
+  .overview-image-card {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   VERY SMALL
+   --------------------------------------------------------- */
+
+@container cv-player (max-width: 480px) {
+
+  .summary-overview .panel-body--overview > p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+}

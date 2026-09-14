@@ -1,3 +1,25 @@
+/* =========================================================
+   DEF-400 | Who Is Not Included?
+   Page-owned responsive layout
+   Based on validated DEF-300 responsive architecture
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTENT CONTAINER
+   The sub-page responds to the space it actually receives.
+   --------------------------------------------------------- */
+
+.summary-content.summary-content--def400 {
+  container-type: inline-size;
+  container-name: cv-player;
+}
+
+
+/* ---------------------------------------------------------
+   DEF-400 BASE
+   --------------------------------------------------------- */
+
 .summary-content--def400,
 .panel-body--def400 {
   height: 100%;
@@ -8,6 +30,11 @@
   padding: 0;
   overflow: hidden;
 }
+
+
+/* ---------------------------------------------------------
+   DEF-400 SHELL
+   --------------------------------------------------------- */
 
 .def-400-shell {
   display: grid;
@@ -20,17 +47,27 @@
   align-items: stretch;
 }
 
+
+/* ---------------------------------------------------------
+   DEF-400 INTRO PANEL
+   --------------------------------------------------------- */
+
 .def-400-left-panel {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  height: 100%;
+  height: auto;
   min-width: 0;
   min-height: 0;
   padding: 14px 14px 12px;
+  box-sizing: border-box;
   border: 1px solid rgba(23, 52, 95, 0.10);
   border-radius: 22px;
   background: #ffffff;
+}
+
+.def-400-shell {
+  align-items: stretch;
 }
 
 .def-400-left-panel h2 {
@@ -42,12 +79,13 @@
 
 .def-400-title-rule {
   border: 0;
-  width: 64px;
+  width: 58px;
   height: 4px;
   margin: 6px 0 22px;
   background: #C09A5A;
   border-radius: 999px;
   display: block;
+  flex: 0 0 auto;
 }
 
 .def-400-left-panel p {
@@ -57,19 +95,10 @@
   color: #17345f;
 }
 
-.def-400-left-panel h2 {
-  margin: 0;
-  font-size: clamp(1.45rem, 1.9vw, 1.9rem);
-  line-height: 1.02;
-  color: #17345f;
-}
 
-.def-400-left-panel p {
-  margin: 0;
-  font-size: 0.94rem;
-  line-height: 1.6;
-  color: #17345f;
-}
+/* ---------------------------------------------------------
+   DEF-400 CALLOUT
+   --------------------------------------------------------- */
 
 .def-400-callout {
   margin-top: auto;
@@ -94,16 +123,18 @@
   color: #ffffff;
   font-weight: 700;
   font-size: 0.95rem;
-  line-height: 1;
-  margin-top: 1px;
 }
 
 .def-400-callout-copy {
-  min-width: 0;
   font-size: 0.94rem;
   line-height: 1.45;
   color: #17345f;
 }
+
+
+/* ---------------------------------------------------------
+   DEF-400 STATUS LIST
+   --------------------------------------------------------- */
 
 .status-list {
   margin: 0.5rem 0 0;
@@ -114,306 +145,186 @@
   margin: 0.35rem 0;
 }
 
-.def-explorer-detail-grid {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
-  gap: 0;
-}
 
-.def-explorer-detail-col {
+/* ---------------------------------------------------------
+   DEF-400 RIGHT PANEL / FALLBACK
+   --------------------------------------------------------- */
+
+.def-400-right-panel {
   min-width: 0;
   min-height: 0;
-  padding: 0 18px;
-  border-right: 1px solid rgba(23, 52, 95, 0.10);
-  display: flex;
-  flex-direction: column;
+  border: 1px dashed rgba(23, 52, 95, 0.18);
+  border-radius: 22px;
+  background: #ffffff;
 }
 
-.def-explorer-detail-col:first-child {
-  border-left: 0;
-}
-
-.def-explorer-detail-kicker {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
-  justify-content: flex-start;
-  min-height: 0;
-}
-
-.def-explorer-detail-kicker-icon[hidden] {
-  display: none;
-}
-
-.def-explorer-detail-kicker-text {
-  color: #17345f;
-  font-size: 0.95rem;
-  font-weight: 800;
-  line-height: 1.15;
-}
-
-.def-explorer-detail-copy {
-  margin: 0;
-  color: #17345f;
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-
-/* ==================================================
-   Explorer Detail Layout (matches def-300)
-   ================================================== */
-
-.def-explorer {
-  display: flex;
-  flex-direction: column;
-  flex: 1 1 auto;
-  min-height: 0;
+.def-400-right-placeholder {
   height: 100%;
-  gap: 10px;
-}
-
-.def-explorer-top {
-  flex: 0 0 auto;
-}
-
-.def-explorer-detail {
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  color: #5f6f86;
 }
 
-.def-explorer-detail-grid {
-  flex: 1 1 auto;
-  min-height: 0;
-  height: auto;
-  overflow-y: auto;
+.def-400-right-placeholder h3 {
+  margin: 0 0 8px;
+  color: #17345f;
+  font-size: 1.1rem;
 }
 
-/* ==================================================
-   RESPONSIVE OVERRIDES — def-400
-   ================================================== */
+.def-400-right-placeholder p {
+  margin: 0;
+  max-width: 32ch;
+  line-height: 1.5;
+}
 
-@media (min-width: 1201px) and (max-height: 800px) {
-  .def-400-shell {
-    gap: 12px;
-    padding: 12px;
-  }
 
-  .def-400-left-panel,
-  .def-400-right-panel {
-    padding: 12px 12px 10px;
-    border-radius: 20px;
-  }
+/* =========================================================
+   DEF-400 DETAIL COLUMNS
+   Keep the vertical divider and provide readable text gutters
+   ========================================================= */
 
-  .def-400-left-panel h2 {
-    font-size: clamp(1.28rem, 1.65vw, 1.65rem);
-  }
+.summary-content--def400 .def-explorer-detail-col {
+  padding-left: 24px;
+  padding-right: 24px;
+}
 
-  .def-400-title-rule {
-    width: 48px;
-    height: 3px;
-    margin: 8px 0 12px;
-  }
+.summary-content--def400 .def-explorer-detail-col:last-child {
+  padding-left: 24px;
+  padding-right: 0;
+}
 
-  .def-400-left-panel p,
-  .def-400-callout-copy,
-  .def-explorer-detail-copy {
-    font-size: 0.90rem;
-    line-height: 1.45;
-  }
 
-  .def-400-callout {
-    padding: 12px 14px;
-    gap: 10px;
-    border-radius: 16px;
-  }
-
-  .def-400-callout-icon {
-    width: 32px;
-    height: 32px;
-    flex: 0 0 32px;
-    font-size: 0.9rem;
-  }
-
-  .def-explorer-detail-grid {
-    gap: 0;
-  }
-
-  .def-explorer-detail-col {
-    padding: 0 14px;
-  }
-
-  .def-explorer-detail-kicker {
-    margin-bottom: 10px;
-    gap: 8px;
-  }
-
-  .def-explorer-detail-kicker-text {
-    font-size: 0.9rem;
-  }
-
-  .def-explorer-detail-copy {
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
-  }
+/* =========================================================
+   DEF-400 STACKED LAYOUT
+   900px and below
+   ========================================================= */
 
 @media (max-width: 900px) {
+
+  /* -------------------------------------------------------
+     Page becomes naturally scrollable
+     ------------------------------------------------------- */
+
   .summary-content--def400,
-  .summary-content--def400 .panel-body,
-  .summary-content--def400 .def-400-shell {
-    height: auto;
+  .panel-body--def400 {
+    height: 100%;
     min-height: 0;
   }
 
-  .summary-content--def400 .panel-body {
-    display: flex;
-    flex-direction: column;
-    max-width: none;
-    margin: 0;
-    overflow: visible;
+  .panel-body--def400 {
+    overflow: auto;
   }
 
-  .def-400-shell {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    height: auto;
-    min-height: 0;
-    padding: 12px;
-  }
 
-  .def-400-left-panel,
-  .def-400-right-panel {
-    height: auto;
-    min-height: 0;
-    padding: 14px;
-    border-radius: 20px;
-  }
+  /* -------------------------------------------------------
+     Preserve two-column detail reading pattern
+     ------------------------------------------------------- */
 
-  .def-400-left-panel {
-    gap: 12px;
-  }
-
-  .def-400-title-rule {
-    width: 52px;
-    height: 3px;
-    margin: 8px 0 12px;
-  }
-
-  .def-400-left-panel h2 {
-    font-size: clamp(1.32rem, 4vw, 1.75rem);
-  }
-
-  .def-400-left-panel p,
-  .def-400-callout-copy,
-  .def-explorer-detail-copy {
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
-  .def-400-callout {
-    margin-top: 0;
-    padding: 12px 14px;
-    gap: 10px;
-    border-radius: 16px;
-  }
-
-  .def-400-callout-icon {
-    width: 30px;
-    height: 30px;
-    flex: 0 0 30px;
-    font-size: 0.88rem;
-  }
-
-  .def-400-right-panel {
-    padding: 14px;
-  }
-
-  .def-explorer-detail-grid {
-    grid-template-columns: 1fr;
+  .summary-content--def400 .def-explorer-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
+    align-items: stretch;
   }
 
-  .def-explorer-detail-col {
-    padding: 0 0 14px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(23, 52, 95, 0.1);
-  }
-
-  .def-explorer-detail-col:last-child {
+  .summary-content--def400 .def-explorer-detail-col {
+    padding: 0 24px;
+    border-right: 1px solid rgba(23, 52, 95, 0.10);
     border-bottom: 0;
-    padding-bottom: 0;
+    align-self: stretch;
   }
 
-  .def-explorer-detail-kicker {
-    margin-bottom: 10px;
-    gap: 8px;
+  .summary-content--def400 .def-explorer-detail-col:last-child {
+    padding-left: 24px;
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 0;
   }
 
-  .def-explorer-detail-kicker-text {
-    font-size: 0.9rem;
-  }
-}
 
-@media (max-width: 760px) {
-  .summary-content--def400,
-  .summary-content--def400 .panel-body,
-  .summary-content--def400 .def-400-shell {
-    height: auto;
-    min-height: 0;
-    overflow: visible;
-  }
-
-  .summary-content--def400 .panel-body {
-    display: flex;
-    flex-direction: column;
-    max-width: none;
-    margin: 0;
-  }
+  /* -------------------------------------------------------
+     Shell becomes normal document flow
+     ------------------------------------------------------- */
 
   .def-400-shell {
+    display: block;
+    height: auto;
+    min-height: 0;
     padding: 10px;
-    gap: 10px;
   }
 
-  .def-400-left-panel,
-  .def-400-right-panel {
-    padding: 12px;
-    border-radius: 18px;
-  }
+
+  /* -------------------------------------------------------
+     Introduction becomes a natural-flow section
+     ------------------------------------------------------- */
 
   .def-400-left-panel {
+    height: auto;
+    min-height: 0;
+    padding: 4px 2px 0;
+
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
     gap: 10px;
+
+    margin: 0 0 25px;
+  }
+
+  .def-400-fill-space {
+    display: none;
   }
 
   .def-400-left-panel h2 {
+    margin-bottom: 0;
     font-size: clamp(1.2rem, 6.5vw, 1.5rem);
   }
 
   .def-400-title-rule {
-    width: 48px;
-    height: 3px;
-    margin: 6px 0 12px;
+    width: 46px;
+    margin: 6px 0 14px;
   }
 
-  .def-400-left-panel p,
-  .def-400-callout-copy,
-  .def-explorer-detail-copy {
+  .def-400-left-panel p {
     font-size: 0.88rem;
     line-height: 1.42;
   }
 
+
+  /* -------------------------------------------------------
+     Inclusion / exclusion callout
+     ------------------------------------------------------- */
+
   .def-400-callout {
+    margin-top: auto;
+    width: auto;
+    max-width: none;
+    min-width: 0;
+    align-self: stretch;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
     padding: 10px 12px;
-    gap: 8px;
-    border-radius: 14px;
+    box-sizing: border-box;
+
+    border-radius: 18px;
+    background: linear-gradient(
+      180deg,
+      #edf4ff 0%,
+      #e7f0fd 100%
+    );
+    border: 1px solid rgba(23, 52, 95, 0.08);
+
+    overflow: hidden;
   }
 
   .def-400-callout-icon {
@@ -424,40 +335,105 @@
   }
 
   .def-400-callout-copy {
-    font-size: 0.88rem;
+    min-width: 0;
+    flex: 1 1 auto;
+
+    font-size: 0.94rem;
+    line-height: 1.45;
+    color: #17345f;
   }
 
-  .def-400-right-panel {
-    padding: 12px;
+
+  /* -------------------------------------------------------
+     Explorer follows the introduction naturally
+     ------------------------------------------------------- */
+
+  .def-explorer {
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    flex: none;
+    gap: 12px;
+  }
+
+  .def-explorer-top {
+    height: auto;
+  }
+
+  .def-explorer-detail {
+    height: auto;
+    min-height: 0;
+    flex: none;
+    overflow: visible;
+    margin-top: 12px;
   }
 
   .def-explorer-detail-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
+    height: auto;
+    min-height: 0;
+    flex: none;
+    overflow: visible;
   }
 
-  .def-explorer-detail-col {
-    padding: 0 0 12px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(23, 52, 95, 0.1);
-  }
 
-  .def-explorer-detail-col:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
+  /* -------------------------------------------------------
+     Keep category cards compact
+     ------------------------------------------------------- */
 
-  .def-explorer-detail-kicker {
-    margin-bottom: 8px;
+  .def-explorer-cards {
+    display: flex;
+    flex-wrap: nowrap;
     gap: 8px;
+    width: 100%;
+    margin-top: 0;
+    overflow: visible;
   }
 
-  .def-explorer-detail-kicker-text {
+  .def-explorer-card {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 82px;
+    padding: 4px 5px 7px;
+  }
+
+  .def-explorer-card-img {
+    width: 52px;
+    height: 52px;
+    margin-top: -5px;
+  }
+
+  .def-explorer-card-title {
+    margin-top: -6px;
+    font-size: 0.72rem;
+    line-height: 1.06;
+  }
+
+}
+
+/* =========================================================
+   DEF-400 | COMPACT-LANDSCAPE REFINEMENT
+   Give the exclusion callout a little more presence and
+   reserve usable reading space for the detail panel.
+   ========================================================= */
+
+@container cv-player (max-width: 900px) {
+
+  .def-400-callout-icon {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    flex: 0 0 30px;
     font-size: 0.88rem;
   }
 
-  .def-explorer-detail-copy {
-    font-size: 0.88rem;
-    line-height: 1.4;
+  .def-explorer-detail {
+    min-height: 220px;
+  }
+
+  .def-explorer-detail-grid {
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }

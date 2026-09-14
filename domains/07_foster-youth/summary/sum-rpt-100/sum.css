@@ -655,3 +655,16 @@
     object-fit: contain;
   }
 }
+
+  /* =========================================================
+    RPT-100 | CLEAN PAGE CANVAS
+    Prevent parent/page background from showing through.
+    ========================================================= */
+
+  html,
+  body,
+  .summary-content--rpt100,
+  .panel-body--rpt100,
+  .rpt-100-shell {
+    background: #ffffff;
+  }

@@ -1,3 +1,24 @@
+/* =========================================================
+   DEF-300 | Who Is Included?
+   Page-owned responsive layout
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CONTENT CONTAINER
+   The sub-page responds to the space it actually receives.
+   --------------------------------------------------------- */
+
+.summary-content.summary-content--def300 {
+  container-type: inline-size;
+  container-name: cv-player;
+}
+
+
+/* ---------------------------------------------------------
+   DEF-300 BASE
+   --------------------------------------------------------- */
+
 .summary-content--def300,
 .panel-body--def300 {
   height: 100%;
@@ -43,12 +64,13 @@
 
 .def-300-title-rule {
   border: 0;
-  width: 64px;
+  width: 58px;
   height: 4px;
   margin: 6px 0 22px;
   background: #C09A5A;
   border-radius: 999px;
   display: block;
+  flex: 0 0 auto;
 }
 
 .def-300-left-panel p {
@@ -122,216 +144,134 @@
 }
 
 /* ==================================================
-   RESPONSIVE OVERRIDES — def-300
+   DEF-300 DETAIL COLUMNS
+   Keep the divider, add a readable text gutter
    ================================================== */
 
-/* 1280x800 and similar compact landscape layouts */
-@media (min-width: 1201px) and (max-height: 800px) {
-  .summary-content--def300 .panel-body {
-    max-width: none;
+.summary-content--def300 .def-explorer-detail-col {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.summary-content--def300 .def-explorer-detail-col:last-child {
+  padding-left: 24px;
+  padding-right: 0;
+}
+
+
+/* ==================================================
+   DEF-300 STACKED LAYOUT
+   Matches the FY shell's 900px reflow
+   ================================================== */
+
+/* ==================================================
+   DEF-300 STACKED LAYOUT
+   900px and below
+   ================================================== */
+
+   
+@media (max-width: 900px) {
+
+  /* -------------------------------------------------
+     Page becomes naturally scrollable
+     ------------------------------------------------- */
+
+  .summary-content--def300,
+  .panel-body--def300 {
+    height: 100%;
+    min-height: 0;
   }
 
-  .def-300-shell {
-    gap: 12px;
-    padding: 12px;
+  .panel-body--def300 {
+    overflow: auto;
   }
 
-  .def-300-left-panel {
-    padding: 12px 12px 10px;
-    border-radius: 20px;
-    gap: 10px;
-  }
-
-  .def-300-left-panel h2 {
-    font-size: clamp(1.28rem, 1.65vw, 1.65rem);
-  }
-
-  .def-300-title-rule {
-    margin: 8px 0 14px;
-    width: 52px;
-  }
-
-  .def-300-left-panel p,
-  .def-300-callout-copy,
-  .def-300-right-placeholder p {
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
-  .def-300-callout {
-    padding: 12px 14px;
-    gap: 10px;
-    border-radius: 16px;
-  }
-
-  .def-300-callout-icon {
-    width: 32px;
-    height: 32px;
-    flex: 0 0 32px;
-    font-size: 0.9rem;
-  }
-
-  .def-300-right-placeholder {
-    padding: 18px;
-  }
-
-  .def-300-right-placeholder h3 {
-    font-size: 1rem;
-  }
+  /* ==================================================
+   DEF-300 DETAIL COLUMNS
+   Preserve two-column reading pattern and vertical divider
+   ================================================== */
 
   .summary-content--def300 .def-explorer-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0;
+    align-items: stretch;
   }
 
   .summary-content--def300 .def-explorer-detail-col {
-    padding: 0 14px;
+    padding: 0 24px;
+    border-right: 1px solid rgba(23, 52, 95, 0.10);
+    border-bottom: 0;
+    align-self: stretch;
   }
 
-  .summary-content--def300 .def-explorer-detail-kicker {
-    margin-bottom: 10px;
-    gap: 8px;
+  .summary-content--def300 .def-explorer-detail-col:last-child {
+    padding-left: 24px;
+    padding-right: 0;
+    border-right: 0;
+    border-bottom: 0;
   }
 
-  .summary-content--def300 .def-explorer-detail-kicker-text {
-    font-size: 0.9rem;
-  }
 
-  .summary-content--def300 .def-explorer-detail-copy {
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-}
-
-@media (max-width: 900px) {
-
-  .summary-content--def300,
-  .panel-body--def300 {
-    height: 100%;
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  .panel-body--def300 {
-    display: flex;
-    flex-direction: column;
-  }
+  /* -------------------------------------------------
+     Stack in normal document flow
+     ------------------------------------------------- */
 
   .def-300-shell {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto minmax(0,1fr);
-    gap: 12px;
-
-    height: 100%;
-    min-height: 0;
-
-    padding: 12px;
-    box-sizing: border-box;
-  }
-
-  .def-300-left-panel {
+    display: block;
     height: auto;
     min-height: 0;
-    padding: 12px;
-    border-radius: 18px;
-  }
-
-  /*
-      THIS is the important part.
-
-      The Explorer receives ALL remaining height.
-  */
-
-  .def-explorer {
-    display: flex;
-    flex-direction: column;
-
-    flex: 1 1 auto;
-
-    min-height: 0;
-    height: 100%;
-
-    gap: 10px;
-  }
-
-  .def-explorer-top {
-    flex: 0 0 auto;
-  }
-
-  .def-explorer-detail {
-
-    flex: 1 1 auto;
-
-    min-height: 240px;
-
-    overflow: hidden;
-
-    display:flex;
-    flex-direction:column;
-  }
-
-  .def-explorer-detail-grid {
-
-    flex:1 1 auto;
-
-    overflow-y:auto;
-
-    min-height:0;
-
-    height:auto;
-  }
-
-}
-
-@media (max-width: 760px) {
-  .summary-content--def300,
-  .summary-content--def300 .panel-body,
-  .summary-content--def300 .def-300-shell,
-  .summary-content--def300 .def-explorer {
-    height: auto;
-    min-height: 0;
-    overflow: visible;
-  }
-
-  .summary-content--def300 .panel-body {
-    display: flex;
-    flex-direction: column;
-    max-width: none;
-    margin: 0;
-  }
-
-  .def-300-shell {
     padding: 10px;
-    gap: 10px;
   }
 
-  .def-300-left-panel,
-  .def-300-right-panel {
-    padding: 12px;
-    border-radius: 18px;
-  }
+
+  /* -------------------------------------------------
+     Introduction
+     ------------------------------------------------- */
 
   .def-300-left-panel {
+    height: auto;
+    min-height: 0;
+    padding: 4px 2px 0;
+
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
     gap: 10px;
+
+    margin: 0 0 25px;
+  }
+
+  .def-300-fill-space {
+    display: none;
   }
 
   .def-300-left-panel h2 {
+    margin-bottom: 0;
     font-size: clamp(1.2rem, 6.5vw, 1.5rem);
   }
 
   .def-300-title-rule {
     width: 46px;
-    margin: 6px 0 12px;
+    margin: 6px 0 14px;
   }
 
-  .def-300-left-panel p,
-  .def-300-callout-copy,
-  .def-300-right-placeholder p {
+  .def-300-left-panel p {
     font-size: 0.88rem;
     line-height: 1.42;
   }
 
+
+  /* -------------------------------------------------
+     Inclusion callout
+     ------------------------------------------------- */
+
   .def-300-callout {
+    margin-top: auto;
+    margin-bottom: auto;
+    flex: 0 0 auto;
     padding: 10px 12px;
     gap: 8px;
     border-radius: 14px;
@@ -346,47 +286,72 @@
 
   .def-300-callout-copy {
     font-size: 0.88rem;
+    line-height: 1.42;
   }
 
-  .def-300-right-panel {
-    padding: 12px;
+
+  /* -------------------------------------------------
+     Explorer follows the introduction naturally
+     ------------------------------------------------- */
+
+  .def-explorer {
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    flex: none;
+    gap: 12px;
   }
 
-  .def-300-right-placeholder {
-    padding: 16px 12px;
+  .def-explorer-top {
+    height: auto;
   }
 
-  .def-300-right-placeholder h3 {
-    font-size: 0.98rem;
+  .def-explorer-detail {
+    height: auto;
+    min-height: 0;
+    flex: none;
+    overflow: visible;
+    margin-top: 12px;
   }
 
-  .summary-content--def300 .def-explorer-detail-grid {
-    grid-template-columns: 1fr;
-    gap: 0;
+  .def-explorer-detail-grid {
+    height: auto;
+    min-height: 0;
+    flex: none;
+    overflow: visible;
   }
 
-  .summary-content--def300 .def-explorer-detail-col {
-    padding: 0 0 12px;
-    border-right: 0;
-    border-bottom: 1px solid rgba(23, 52, 95, 0.1);
-  }
 
-  .summary-content--def300 .def-explorer-detail-col:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
-  }
+  /* -------------------------------------------------
+     Keep category cards compact
+     ------------------------------------------------- */
 
-  .summary-content--def300 .def-explorer-detail-kicker {
-    margin-bottom: 8px;
+  .def-explorer-cards {
+    display: flex;
+    flex-wrap: nowrap;
     gap: 8px;
+    width: 100%;
+    margin-top: 0;
+    overflow: visible;
   }
 
-  .summary-content--def300 .def-explorer-detail-kicker-text {
-    font-size: 0.88rem;
+  .def-explorer-card {
+    flex: 1 1 0;
+    min-width: 0;
+    min-height: 82px;
+    padding: 4px 5px 7px;
   }
 
-  .summary-content--def300 .def-explorer-detail-copy {
-    font-size: 0.88rem;
-    line-height: 1.4;
+  .def-explorer-card-img {
+    width: 52px;
+    height: 52px;
+    margin-top: -5px;
   }
+
+  .def-explorer-card-title {
+    margin-top: -6px;
+    font-size: 0.72rem;
+    line-height: 1.06;
+  }
+
 }

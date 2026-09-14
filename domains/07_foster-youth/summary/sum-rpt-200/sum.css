@@ -655,3 +655,15 @@
     object-fit: contain;
   }
 }
+
+  /* =========================================================
+    RPT-200 | CLEAN PAGE CANVAS
+    ========================================================= */
+
+  html,
+  body,
+  .summary-content--rpt200,
+  .panel-body--rpt200,
+  .rpt-200-shell {
+    background: #ffffff;
+  }
