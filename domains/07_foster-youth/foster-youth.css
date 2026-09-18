@@ -2298,7 +2298,7 @@ body.domain-foster-youth.summary-silo {
   .domain-intro {
     margin-left: 0;
     padding-left: 3px;
-    padding-top: 6px;
+    padding-top:18px;
 
     max-height: calc(
       100dvh
@@ -2312,8 +2312,8 @@ body.domain-foster-youth.summary-silo {
   }
 
   .viewer-shell {
-    height: 408px;
-    min-height: 408px;
+    height: 431px;
+    min-height: 431px;
   }
 
   .explorer-stage {
