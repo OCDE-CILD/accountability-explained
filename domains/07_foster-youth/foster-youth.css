@@ -2278,23 +2278,37 @@ body.domain-foster-youth.summary-silo {
 
   .stage {
     min-height: 0;
+    height: auto;
+    overflow: visible;
   }
 
   .stage-inner {
     min-height: 0;
+    height: auto;
+    overflow: visible;
     padding-top: 10px;
     padding-bottom: 10px;
   }
 
   .domain-intro {
-    margin-left: 8px;
-    padding-left: 8px;
-    padding-top: 24px;
+    margin-left: 0;
+    padding-left: 3px;
+    padding-top: 6px;
+
+    max-height: calc(
+      100dvh
+      - var(--fy-header-h)
+      - var(--fy-footer-h)
+      - 30px
+    );
+
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .viewer-shell {
-    height: 460px;
-    min-height: 460px;
+    height: 408px;
+    min-height: 408px;
   }
 
   .explorer-stage {
