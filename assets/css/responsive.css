@@ -182,10 +182,10 @@ canvas {
 .def-explorer {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
   min-height: 0;
-  height: 100%;
+  height: auto;
   gap: 10px;
 }
 
@@ -233,21 +233,22 @@ canvas {
 .def-explorer-detail {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
   min-height: 0;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
 }
 
 .def-explorer-detail-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
   min-height: 0;
   height: auto;
-  overflow-y: auto;
+  overflow: visible;
   align-items: stretch;
 }
 

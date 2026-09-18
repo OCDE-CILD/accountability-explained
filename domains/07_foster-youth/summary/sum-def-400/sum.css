@@ -28,7 +28,8 @@
 
 .panel-body--def400 {
   padding: 0;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 
@@ -55,13 +56,13 @@
 .def-400-left-panel {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 3px;
   height: auto;
   min-width: 0;
   min-height: 0;
   padding: 14px 14px 12px;
   box-sizing: border-box;
-  border: 1px solid rgba(23, 52, 95, 0.10);
+  border: 0;
   border-radius: 22px;
   background: #ffffff;
 }
@@ -101,20 +102,21 @@
    --------------------------------------------------------- */
 
 .def-400-callout {
-  margin-top: auto;
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 14px 16px;
-  border-radius: 18px;
+  position: relative;
+  margin-top: 22px;
+  display: block;
+  padding: 18px 16px 14px 28px;
+  border-radius: 16px;
   background: linear-gradient(180deg, #edf4ff 0%, #e7f0fd 100%);
   border: 1px solid rgba(23, 52, 95, 0.08);
 }
 
 .def-400-callout-icon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
   width: 36px;
   height: 36px;
-  flex: 0 0 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,6 +125,7 @@
   color: #ffffff;
   font-weight: 700;
   font-size: 0.95rem;
+  box-shadow: 0 3px 8px rgba(15, 30, 55, 0.14);
 }
 
 .def-400-callout-copy {
@@ -437,3 +440,7 @@
     overflow-x: hidden;
   }
 }
+
+
+
+

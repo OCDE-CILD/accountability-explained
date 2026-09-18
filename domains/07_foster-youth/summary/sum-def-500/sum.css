@@ -48,7 +48,7 @@
   min-height: 0;
 
   padding: 16px 16px 14px;
-  border: 1px solid rgba(23, 52, 95, 0.10);
+  border: 0;
   border-radius: 22px;
   background: #ffffff;
   overflow-y: auto;
@@ -87,11 +87,13 @@
   color: #17345f;
 }
 
+
 .def-500-takeaway {
-  margin-top: 4px;
+  position: relative;
+  margin-top: 14px;
   display: flex;
   gap: 12px;
-  padding: 12px 14px;
+  padding: 16px 14px 14px 28px;
   border-radius: 18px;
   background: linear-gradient(180deg, #fff8e6 0%, #fff3cf 100%);
   border: 1px solid rgba(192, 154, 90, 0.20);
@@ -99,9 +101,11 @@
 }
 
 .def-500-takeaway-icon {
+  position: absolute;
+  top: -10px;
+  left: -10px;
   width: 36px;
   height: 36px;
-  flex: 0 0 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,6 +114,8 @@
   color: #ffffff;
   font-weight: 700;
   font-size: 0.95rem;
+  line-height: 1;
+  box-shadow: 0 3px 8px rgba(15, 30, 55, 0.14);
 }
 
 .def-500-takeaway-copy {
