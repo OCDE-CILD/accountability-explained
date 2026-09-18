@@ -2268,6 +2268,11 @@ body.domain-foster-youth.summary-silo {
 
 @media (min-width: 901px) and (max-height: 800px) {
 
+  .site-header--shared {
+    min-height: 80px !important;
+    height: 80px !important;
+}
+
   .page-wrap {
     grid-template-rows: auto auto auto;
   }
