@@ -3,21 +3,22 @@ const SCENE_FADE_MS = 1000;
 
 const sceneImages = [
   "assets/images/california/sacramento-capitol.png",
+  "assets/images/california/tower-bridge.png",
+  "assets/images/california/san-francisco.png",
+  "assets/images/california/central-coast.png",
+  "assets/images/california/fresno-downtown.png",
+  "assets/images/california/fresno-japanese-gardens.png",
+  "assets/images/california/fresno-underground-gardens.png",
+  "assets/images/california/griffith-observatory.png",
   "assets/images/california/long-beach.png",
   "assets/images/california/huntington-pier.png",
   "assets/images/california/mission-san-juan.png",
   "assets/images/california/coronado-bridge.png",
-  "assets/images/california/griffith-observatory.png",
   "assets/images/california/mt-rubidoux.png",
-  "assets/images/california/fresno-underground-gardens.png",
-  "assets/images/california/fresno-downtown.png",
-  "assets/images/california/fresno-japanese-gardens.png",
-  "assets/images/california/central-valley.png",
-  "assets/images/california/san-francisco.png",
-  "assets/images/california/northern-coast.png",
   "assets/images/california/sierras.png",
-  "assets/images/california/central-coast.png",
-  "assets/images/california/tower-bridge.png"
+  "assets/images/california/central-valley.png",
+  "assets/images/california/northern-coast.png",
+
 ];
 
 const STORAGE_KEY = "californiaSceneIndex";
@@ -111,7 +112,10 @@ function advanceScene() {
 function initSceneRotation() {
   if (!sceneBand || sceneImages.length === 0) return;
 
-  currentIndex = getStoredIndex();
+const navigationEntry = performance.getEntriesByType("navigation")[0];
+const isReload = navigationEntry?.type === "reload";
+
+currentIndex = isReload ? getStoredIndex() : 0;
 
   activeImage.src = sceneImages[currentIndex];
   activeImage.alt = "California scenic illustration";
